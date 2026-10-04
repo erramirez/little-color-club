@@ -1,73 +1,399 @@
-const svg=body=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900"><rect width="900" height="900" fill="white"/><g fill="white" stroke="#303d35" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">${body}</g></svg>`;
-const path=d=>`<path d="${d}"/>`,line=d=>`<path d="${d}" fill="none"/>`,circle=(x,y,r)=>`<circle cx="${x}" cy="${y}" r="${r}"/>`,ellipse=(x,y,rx,ry)=>`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}"/>`,rect=(x,y,w,h,r=12)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}"/>`,group=(x,y,s,b)=>`<g transform="translate(${x} ${y}) scale(${s})">${b}</g>`;
-const eye=(x,y,r=9)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="#303d35"/>`,smile=(x,y,w=25)=>line(`M${x-w} ${y}q${w} ${w} ${w*2} 0`),star=(x,y,r=30)=>{let p=[];for(let i=0;i<10;i++){const a=i*Math.PI/5-Math.PI/2,rr=i%2?r*.45:r;p.push(`${x+Math.cos(a)*rr},${y+Math.sin(a)*rr}`)}return `<polygon points="${p.join(' ')}"/>`},cloud=(x,y,s=1)=>group(x,y,s,path('M0 65Q-30 20 25 15Q25-40 85-10Q135-45 155 15Q225 20 190 65Z'));
-const ground=line('M80 800H820'),sky=cloud(115,160,.8)+cloud(630,135,.8),sun=circle(740,165,60)+line('M740 70V45M740 260V285M645 165H620M835 165H860M673 98L652 77M807 232L828 253M673 232L652 253M807 98L828 77');
-const dots=[[125,270],[760,410],[150,670],[710,690]].map(([x,y])=>star(x,y,22)).join('');
-const flower=(x,y,s=1)=>group(x,y,s,line('M0 0V240')+path('M0 160Q-120 70-110 170Q-60 210 0 160M0 195Q115 95 110 200Q50 235 0 195')+Array.from({length:6},(_,i)=>`<ellipse cx="0" cy="-72" rx="44" ry="64" transform="rotate(${i*60})"/>`).join('')+circle(0,0,45));
-const fish=(x,y,s=1)=>group(x,y,s,path('M130 0L270-100V100Z')+ellipse(0,0,180,110)+line('M-85-90Q-145 0-85 90')+eye(-125,-20)+smile(-130,35,20)+path('M-35-108Q10-190 65-105M-10 110Q20 170 75 100'));
-const face=(x,y,s=1)=>group(x,y,s,eye(-35,-10)+eye(35,-10)+smile(0,30,28));
-const paw=(x,y,s=1)=>group(x,y,s,ellipse(0,15,42,34)+ellipse(-40,-35,16,23)+ellipse(-12,-53,16,23)+ellipse(19,-50,16,23)+ellipse(45,-29,16,23));
-const animal=(kind)=>{const ears={cat:path('M275 330L240 135L390 260M510 260L660 135L625 330'),dog:ellipse(275,370,65,135)+ellipse(625,370,65,135),bunny:ellipse(360,160,48,150)+ellipse(540,160,48,150),bear:circle(295,265,70)+circle(605,265,70),lion:circle(450,390,230),fox:path('M270 330L220 150L390 270M510 270L680 150L630 330')};return ellipse(450,680,155,130)+(kind==='lion'?ears.lion:'')+ellipse(450,405,190,170)+(kind!=='lion'?(ears[kind]||''):'')+ellipse(450,475,88,57)+eye(380,380,14)+eye(520,380,14)+path('M427 445H473L450 470Z')+smile(450,490,30)+ellipse(310,755,75,40)+ellipse(590,755,75,40)+(kind==='cat'||kind==='fox'?line('M285 440L180 420M285 480L175 485M615 440L720 420M615 480L725 485'):'')};
-const vehicle=(type)=>{const body={car:path('M140 500L255 490L355 350H555L665 490H735Q800 500 800 565V670H100V570Q100 510 140 500Z')+path('M290 490L375 375H440V490ZM470 375H540L625 490H470Z'),truck:rect(110,330,410,310)+path('M520 420H660L780 550V640H520Z')+path('M560 450H650L725 530H560Z'),fire:rect(110,430,650,210)+rect(570,340,190,230)+rect(610,365,110,90)+rect(160,270,350,55)+line('M170 290H690M205 270V325M260 270V325M315 270V325M370 270V325M425 270V325M480 270V325')+circle(340,535,45),bus:rect(110,320,680,320)+[0,1,2,3,4].map(i=>rect(145+i*122,360,94,95)).join('')+rect(685,475,65,150),tractor:rect(400,340,160,260)+rect(430,370,95,100)+path('M245 600V510H400V600M560 600V500H760V600Z')+rect(655,335,25,165),train:rect(220,340,270,300)+rect(260,390,170,105)+rect(490,485,290,150)+rect(680,365,45,120)+path('M780 545L845 665H770Z')+rect(180,285,345,50),race:path('M110 575L280 520L370 395H545L625 520L790 575V650H110Z')+path('M310 520L390 420H515L590 520Z')+rect(620,420,190,35)+line('M145 605H750')+circle(450,587,34)};const wheels=type==='tractor'?circle(330,645,120)+circle(685,665,75):circle(250,650,78)+circle(665,650,78);return (body[type]||body.car)+wheels+circle(type==='tractor'?330:250,650,type==='tractor'?55:35)+circle(type==='tractor'?685:665,type==='tractor'?665:650,35)+ground};
-const rocket=path('M340 610V400Q350 225 450 130Q550 225 560 400V610Z')+path('M340 460Q245 480 260 675L340 610M560 460Q655 480 640 675L560 610')+line('M340 340H560M340 565H560')+circle(450,440,60)+path('M380 610Q325 725 395 820L450 755L505 820Q575 725 520 610Z')+path('M423 610Q395 705 450 740Q505 705 477 610Z');
-const snowman=circle(450,690,140)+circle(450,470,112)+ellipse(450,285,86,108)+eye(420,265)+eye(480,265)+path('M435 300L590 280L440 324Z')+smile(450,340,40)+line('M400 177L385 120M450 177V105M480 185L515 120M340 460L240 350M560 460L665 365')+circle(450,460,13)+circle(450,515,13)+circle(450,650,15)+circle(450,720,15);
-const mouse=(bow=false)=>circle(290,280,100)+circle(610,280,100)+ellipse(450,425,200,190)+ellipse(390,415,80,118)+ellipse(510,415,80,118)+ellipse(450,510,160,85)+ellipse(450,467,42,24)+eye(400,405,17)+eye(500,405,17)+smile(450,535,85)+(bow?path('M450 275Q280 155 320 295Q355 340 450 290Q545 340 580 295Q620 155 450 275Z')+circle(450,283,28):'')+dots;
-const princess=(snow=false)=>path('M295 360Q245 80 445 125Q680 110 605 405L550 425H330Z')+ellipse(450,290,100,135)+path('M350 260Q320 110 455 145Q540 140 555 220Q435 185 350 260Z')+eye(415,290)+eye(485,290)+smile(450,335,27)+path('M370 420L270 750Q450 845 630 750L530 420Z')+path('M370 420Q450 495 530 420L500 530H400Z')+line('M400 530L345 745M500 530L560 745')+path('M375 435L250 555L220 520L340 385M525 435L650 555L680 520L560 385')+(snow?Array.from({length:8},(_,i)=>star(120+(i%4)*220,90+Math.floor(i/4)*600,25)).join(''):sky+ground);
-const hero=(mask=true)=>path('M345 410L190 755L450 675L710 755L555 410Z')+rect(350,410,200,230,40)+path('M365 610L295 765H380L450 660L520 765H605L535 610Z')+path('M355 435L205 570L240 620L380 530M545 435L695 570L660 620L520 530')+circle(450,280,125)+(mask?path('M333 250Q450 210 567 250V320Q450 345 333 320Z'):'')+ellipse(405,280,28,20)+ellipse(495,280,28,20)+smile(450,345,34)+star(450,500,55);
-const pages=[];function add(id,title,theme,level,body){pages.push({id,title,theme,level,svg:svg(body)})}
-// Big closed shapes for little hands; a mix of detail levels for older artists.
-add('garden','Garden friends','Animals','Easy',flower(290,430,1)+flower(640,500,.75)+sky+ground);
-add('cat','Curious kitten','Animals','Easy',animal('cat')+paw(140,160,.75));
-add('puppy','Playful puppy','Animals','Easy',animal('dog')+circle(150,170,45)+path('M730 650Q800 590 780 760'));
-add('bunny','Bunny in the garden','Animals','Easy',animal('bunny')+flower(150,570,.5)+flower(750,590,.5));
-add('lion','King of the jungle','Animals','Playful',animal('lion')+sky+ground);
-add('fox','Forest fox','Animals','Playful',animal('fox')+path('M95 770L175 460L255 770ZM660 770L755 400L835 770Z')+ground);
-add('dinosaur','Dinosaur day','Animals','Playful',path('M230 660Q150 410 360 405V275Q365 180 470 180Q620 180 620 290V360H470V515Q650 610 790 510Q790 665 605 675L640 795H550L475 695H345L290 795H200Z')+eye(535,260,13)+smile(570,315,25)+[0,1,2,3].map(i=>path(`M${240+i*38} ${475+i*18}l-40-65 70 15Z`)).join('')+sky+ground);
-add('owl','Night owl','Animals','Detailed',ellipse(450,525,210,220)+path('M255 385L245 220L370 340M530 340L655 220L645 385Z')+circle(365,450,90)+circle(535,450,90)+circle(365,450,40)+circle(535,450,40)+path('M420 530H480L450 570Z')+ellipse(290,595,65,115)+ellipse(610,595,65,115)+line('M160 760H740')+path('M380 735L360 785L410 775M520 735L540 785L490 775')+star(140,160,45)+star(740,230,30));
-add('rocket','Blast off!','Space','Easy',rocket+star(165,220,50)+star(725,390,40));
-add('planet','Ringed planet','Space','Easy',circle(450,450,230)+`<ellipse cx="450" cy="450" rx="365" ry="68" transform="rotate(-25 450 450)"/>`+star(130,190,40)+star(760,730,50));
-add('astronaut','Moon explorer','Space','Playful',rect(330,400,240,235,45)+path('M330 425L215 555L270 605L365 520M570 425L685 555L630 605L535 520M355 625L310 790H395L450 680L505 790H590L545 625Z')+circle(450,270,155)+rect(340,205,220,140,60)+face(450,265,.8)+rect(370,455,160,100)+circle(410,495,14)+circle(485,495,14)+path('M70 820Q450 735 830 820V875H70Z')+star(130,230,40));
-add('ufo','Friendly flying saucer','Space','Easy',path('M305 450Q295 180 450 180Q605 180 595 450Z')+ellipse(450,490,320,85)+[0,1,2,3,4].map(i=>circle(210+i*120,490,21)).join('')+path('M290 550L180 780Q450 850 720 780L610 550Z')+ellipse(450,350,70,100)+ellipse(420,335,15,25)+ellipse(480,335,15,25)+smile(450,390,25)+dots);
-add('solar-system','Solar system adventure','Space','Detailed',circle(145,450,92)+[0,1,2,3,4,5].map((i)=>circle(290+i*88,310+(i%2)*230,23+i*6)).join('')+line('M270 120Q805 180 805 450T270 800')+star(180,130,35)+star(725,755,45)+star(465,700,25));
-add('moon-base','Moon base','Space','Detailed',path('M170 720V560Q180 290 390 300Q580 290 600 560V720Z')+rect(280,550,150,170)+circle(270,445,40)+circle(475,445,40)+path('M600 720H770V560H600Z')+line('M695 560V400L645 350M620 330Q700 340 720 420')+circle(125,180,68)+star(740,190,45)+ground);
-add('robot','Robot friend','Space','Playful',rect(290,180,320,220,40)+rect(340,425,220,225,20)+rect(205,445,80,170,25)+rect(615,445,80,170,25)+rect(355,650,70,130)+rect(475,650,70,130)+line('M450 180V105')+circle(450,90,25)+circle(370,270,40)+circle(530,270,40)+rect(370,345,160,25)+star(450,525,60)+ground);
-add('star-map','Constellation dreams','Space','Detailed',[0,1,2,3,4,5,6].map(i=>star(160+(i%3)*275,170+Math.floor(i/3)*270,40)).join('')+line('M160 170L435 170L710 440L435 440L160 710M710 170L160 440L435 710')+circle(710,730,70));
-add('fish','Bubbly fish','Ocean','Easy',fish(420,460,1.1)+circle(180,200,40)+circle(300,125,25)+circle(735,250,30)+ground);
-add('turtle','Sea turtle','Ocean','Easy',ellipse(450,465,220,185)+ellipse(720,435,83,70)+ellipse(275,285,75,50)+ellipse(285,650,75,50)+ellipse(585,285,75,50)+ellipse(590,650,75,50)+path('M230 450L135 490L230 515Z')+path('M450 340L550 390V515L450 585L350 515V390Z')+eye(740,415,12)+smile(750,450,20)+circle(150,160,30));
-add('octopus','Eight happy arms','Ocean','Playful',path('M285 465Q245 180 450 175Q655 180 615 465Q740 450 760 565Q730 675 645 555Q760 790 635 785Q585 760 570 610Q610 830 510 825Q455 825 465 635Q425 850 355 810Q300 785 365 610Q205 835 180 745Q155 670 285 560Q95 630 150 505Q200 435 285 465Z')+face(450,360,1.4)+circle(200,165,30)+circle(720,200,40));
-add('whale','Whale hello there','Ocean','Easy',path('M180 495Q200 280 450 315Q650 335 690 470L800 350L820 510L715 585Q655 725 365 675Q165 645 180 495Z')+eye(260,460,14)+smile(270,525,30)+path('M415 625Q490 730 570 650L500 590Z')+path('M410 300V215Q300 205 340 160Q370 130 420 190Q440 100 485 130Q530 165 445 215V300Z')+line('M110 800Q230 760 350 800T590 800T830 800'));
-add('dolphin','Dolphin splash','Ocean','Playful',path('M160 475Q390 285 600 430L750 300L760 475L650 555Q440 710 235 585L130 570L230 510Z')+path('M385 380Q395 240 490 335L530 400M425 600Q520 730 585 615L510 555Z')+eye(245,475,12)+line('M160 525Q250 545 305 510')+circle(650,170,40)+circle(730,115,22)+ground);
-add('reef','Coral reef explorers','Ocean','Detailed',fish(320,320,.7)+fish(545,555,.62)+path('M180 785V570Q115 540 125 475Q150 445 180 510V425Q225 370 235 430V590Q275 540 305 575Q320 640 230 680V785Z')+path('M625 785Q565 680 610 620Q665 625 650 700Q745 570 780 625Q810 675 700 760V785Z')+circle(745,220,40)+circle(180,160,28)+ground);
-add('submarine','Yellow submarine','Ocean','Playful',rect(180,360,510,245,115)+path('M690 435L810 370V595L690 535Z')+rect(400,210,60,150)+rect(400,175,130,55)+[0,1,2].map(i=>circle(290+i*140,475,46)).join('')+circle(175,220,35)+circle(740,180,25)+fish(410,740,.35));
-add('mermaid','Mermaid treasure','Ocean','Detailed',ellipse(450,260,85,105)+path('M360 240Q320 90 450 125Q610 100 550 360L505 310L525 200Q420 170 360 240Z')+face(450,265,.75)+path('M395 370H505L530 515Q635 660 430 720L350 800L340 695L405 645Q455 605 375 520Z')+path('M395 370Q450 425 505 370L490 460H410Z')+line('M400 510L520 530M420 550L540 570M430 595L510 620')+rect(650,650,135,100)+path('M650 650Q715 570 785 650Z')+circle(180,400,40)+star(175,700,50));
-['car','truck','fire','bus','tractor','train','race'].forEach((t,i)=>add(t,['Cruising car','Big delivery truck','Fire engine rescue','School bus buddies','Farm tractor','Choo-choo train','Race day'][i],'Wheels',i===4||i===6?'Playful':'Easy',vehicle(t)+sky));
-add('excavator','Digging day','Wheels','Detailed',rect(290,405,220,190)+rect(330,440,130,110)+path('M510 460L625 320L710 460L665 495L625 390L560 500Z')+path('M710 460L810 575L715 625L665 495Z')+rect(220,620,390,130,65)+circle(295,685,40)+circle(530,685,40)+line('M335 685H490')+ground+sky);
-add('soccer','Soccer star','Sports','Easy',circle(450,450,240)+path('M450 325L565 410L520 540H380L335 410Z')+line('M450 325V215M565 410L678 385M520 540L595 640M380 540L305 640M335 410L222 385')+star(150,170,40)+star(750,745,40));
-add('basketball','Basketball bounce','Sports','Easy',circle(450,480,240)+line('M210 480H690M450 240V720M280 310Q560 480 280 650M620 310Q340 480 620 650')+star(200,140,38)+star(720,780,38));
-add('baseball','Home run','Sports','Playful',circle(330,430,175)+line('M235 285Q400 430 235 575M425 285Q260 430 425 575')+Array.from({length:7},(_,i)=>line(`M${268+Math.sin(i/6*Math.PI)*52} ${315+i*38}l25 10`)).join('')+path('M535 675L620 275Q640 200 690 230Q730 255 700 330L585 690Z')+ellipse(565,710,65,22)+ground);
-add('football','Touchdown time','Sports','Playful',`<ellipse cx="450" cy="450" rx="290" ry="165" transform="rotate(-25 450 450)"/>`+line('M315 510L585 385')+[0,1,2,3,4].map(i=>line(`M${360+i*40} ${470-i*18}l20 35`)).join('')+star(160,200,45)+star(750,710,45));
-add('tennis','Tennis rally','Sports','Detailed',ellipse(380,330,155,200)+ellipse(380,330,125,170)+path('M340 520L325 790H390L415 520Z')+[0,1,2,3,4].map(i=>line(`M${300+i*40} 190V465`)).join('')+[0,1,2,3,4].map(i=>line(`M265 ${230+i*50}H495`)).join('')+circle(690,630,90)+line('M640 555Q740 630 640 705')+ground);
-add('skateboard','Skate park','Sports','Playful',`<g transform="rotate(-20 450 450)">${rect(140,350,620,180,90)+star(450,440,60)+circle(270,560,55)+circle(630,560,55)}</g>`+dots+ground);
-add('trophy','You’re a superstar','Sports','Easy',path('M300 205H600V440Q590 545 450 550Q310 545 300 440Z')+path('M300 255H185Q150 430 315 430M600 255H715Q750 430 585 430')+rect(425,550,50,160)+rect(320,710,260,65)+star(450,365,85)+dots);
-add('bike','Bicycle adventure','Sports','Detailed',circle(245,630,145)+circle(665,630,145)+line('M245 630L375 410L475 630H245L560 405L665 630M375 410H560M375 410L345 350M310 350H390M560 405L590 310H655')+circle(475,630,25)+ground+sky);
-add('mickey','Mickey Mouse','Disney','Easy',mouse(false));
-add('minnie','Minnie Mouse','Disney','Easy',mouse(true));
-add('olaf','Olaf’s snow day','Disney','Playful',snowman+star(170,205,35)+star(735,500,35)+ground);
-add('pooh','Winnie the Pooh','Disney','Playful',circle(310,270,65)+circle(590,270,65)+ellipse(450,405,180,175)+ellipse(450,690,150,130)+path('M290 570Q450 525 610 570L590 660H310Z')+ellipse(450,470,78,58)+eye(390,390,12)+eye(510,390,12)+ellipse(450,455,24,16)+smile(450,500,32)+ellipse(325,790,70,35)+ellipse(575,790,70,35)+path('M650 620H795L775 770H670Z')+ellipse(720,620,75,25));
-add('stitch','Stitch says aloha','Disney','Detailed',path('M290 355Q175 160 100 265Q70 370 285 450M610 355Q725 160 800 265Q830 370 615 450')+ellipse(450,435,200,170)+ellipse(450,695,130,105)+ellipse(330,455,50,70)+ellipse(570,455,50,70)+ellipse(330,445,20,38)+ellipse(570,445,20,38)+ellipse(450,430,63,38)+path('M320 520Q450 620 580 520Q450 690 320 520Z')+path('M365 546L375 576L390 558M415 567L430 595L445 575M475 575L490 595L505 567')+ellipse(295,745,60,40)+ellipse(605,745,60,40)+flower(740,720,.35));
-add('elsa','Elsa’s icy magic','Disney','Detailed',princess(true));
-add('ariel','Ariel under the sea','Disney','Detailed',ellipse(450,270,80,105)+path('M370 250Q315 110 455 125Q615 100 555 370L500 315L520 200Q415 180 370 250Z')+face(450,270,.8)+path('M385 385Q415 350 450 395Q485 350 515 385L500 455H400Z')+path('M400 455H500L520 540Q630 705 415 745L335 815L325 715L400 670Q440 620 375 540Z')+line('M400 535L520 555M420 580L540 600M425 630L495 655')+circle(165,240,35)+fish(710,410,.35)+star(715,735,40));
-add('simba','Simba’s big adventure','Disney','Playful',animal('lion')+sun+ground);
-add('hero','My first superhero','Comics','Easy',hero()+dots);
-add('hero-city','City-saving hero','Comics','Detailed',rect(80,500,140,300)+rect(680,440,140,360)+[0,1,2].map(i=>rect(105,530+i*80,35,40)+rect(745,485+i*90,35,40)).join('')+group(155,140,.67,hero())+star(450,90,35));
-add('comic-cat','Captain Cat','Comics','Playful',animal('cat')+path('M280 590L140 800L330 740M620 590L760 800L570 740')+star(450,685,45)+path('M280 360Q450 305 620 360V405Q450 435 280 405Z')+eye(380,380,14)+eye(520,380,14));
-add('comic-robot','Robot to the rescue','Comics','Detailed',rect(320,240,260,190,25)+circle(390,315,35)+circle(510,315,35)+smile(450,370,40)+rect(340,460,220,180)+path('M340 480L210 590L245 635L370 555M560 480L690 590L655 635L530 555M365 640L320 785H400L450 685L500 785H580L535 640Z')+star(450,545,50)+path('M120 180L175 110L220 190L300 175L275 250L320 305L240 325L205 400L160 335L75 340L95 260L50 205Z')+ground);
-add('comic-panels','Draw your own comic','Comics','Detailed',rect(80,100,355,315)+rect(465,100,355,315)+rect(80,445,740,350)+ellipse(250,225,120,70)+path('M265 290L220 350L235 290')+ellipse(650,225,120,70)+path('M665 290L620 350L635 290')+ellipse(450,560,210,75)+path('M445 635L380 700L405 633'));
-add('dragon','Friendly comic dragon','Comics','Playful',ellipse(450,650,150,130)+ellipse(450,390,170,160)+path('M300 335L310 195L375 240M525 240L590 195L600 335M315 540L180 370L145 610L315 675M585 540L720 370L755 610L585 675')+eye(395,370,12)+eye(505,370,12)+ellipse(450,470,110,65)+circle(410,455,13)+circle(490,455,13)+smile(450,490,45)+ellipse(325,785,70,35)+ellipse(575,785,70,35)+star(450,640,45));
-add('comic-space','Space comic adventure','Comics','Detailed',rect(60,80,360,355)+rect(450,80,390,355)+rect(60,465,780,360)+group(210,80,.38,rocket)+group(520,50,.28,hero())+group(420,490,.4,fish(0,0,1))+ellipse(225,690,125,75)+path('M260 760L300 800L270 744')+star(720,660,65));
-add('comic-unicorn','Unicorn magic','Comics','Playful',ellipse(450,665,170,110)+path('M375 640V400Q320 270 430 225Q565 175 605 325L640 440L555 475L505 405V625Z')+path('M430 225L440 100L485 225Z')+path('M420 260Q330 330 375 480L310 520Q260 370 325 270Z')+eye(540,335,13)+smile(590,410,20)+rect(330,700,55,125)+rect(485,700,55,125)+path('M290 650Q130 545 160 755Q205 680 290 705Z')+dots);
-export const THEMES=['All','Disney','Space','Ocean','Animals','Wheels','Sports','Comics'];
+export const PAGES=[
+  {
+    "id": "v3-garden",
+    "title": "Butterfly Garden",
+    "theme": "Animals",
+    "level": "Easy",
+    "image": "/pages/garden.png"
+  },
+  {
+    "id": "v3-cat",
+    "title": "Kitten and a Ball of Yarn",
+    "theme": "Animals",
+    "level": "Easy",
+    "image": "/pages/cat.png"
+  },
+  {
+    "id": "v3-puppy",
+    "title": "Puppy’s Picnic",
+    "theme": "Animals",
+    "level": "Easy",
+    "image": "/pages/puppy.png"
+  },
+  {
+    "id": "v3-bunny",
+    "title": "Bunny’s Carrot Garden",
+    "theme": "Animals",
+    "level": "Easy",
+    "image": "/pages/bunny.png"
+  },
+  {
+    "id": "v3-lion",
+    "title": "Lion on the Savannah",
+    "theme": "Animals",
+    "level": "Playful",
+    "image": "/pages/lion.png"
+  },
+  {
+    "id": "v3-fox",
+    "title": "Fox in the Woodland",
+    "theme": "Animals",
+    "level": "Playful",
+    "image": "/pages/fox.png"
+  },
+  {
+    "id": "v3-dinosaur",
+    "title": "Dinosaur Valley",
+    "theme": "Animals",
+    "level": "Playful",
+    "image": "/pages/dinosaur.png"
+  },
+  {
+    "id": "v3-owl",
+    "title": "Moonlit Owl",
+    "theme": "Animals",
+    "level": "Detailed",
+    "image": "/pages/owl.png"
+  },
+  {
+    "id": "v3-rocket",
+    "title": "Ready for Blastoff",
+    "theme": "Space",
+    "level": "Easy",
+    "image": "/pages/rocket.png"
+  },
+  {
+    "id": "v3-planet",
+    "title": "A Planet of Possibilities",
+    "theme": "Space",
+    "level": "Easy",
+    "image": "/pages/planet.png"
+  },
+  {
+    "id": "v3-astronaut",
+    "title": "A Walk on the Moon",
+    "theme": "Space",
+    "level": "Playful",
+    "image": "/pages/astronaut.png"
+  },
+  {
+    "id": "v3-ufo",
+    "title": "Hello, Space Friends",
+    "theme": "Space",
+    "level": "Easy",
+    "image": "/pages/ufo.png"
+  },
+  {
+    "id": "v3-solar-system",
+    "title": "Explore the Solar System",
+    "theme": "Space",
+    "level": "Detailed",
+    "image": "/pages/solar-system.png"
+  },
+  {
+    "id": "v3-moon-base",
+    "title": "Our Moon Base",
+    "theme": "Space",
+    "level": "Detailed",
+    "image": "/pages/moon-base.png"
+  },
+  {
+    "id": "v3-robot",
+    "title": "My Robot Buddy",
+    "theme": "Space",
+    "level": "Playful",
+    "image": "/pages/robot.png"
+  },
+  {
+    "id": "v3-star-map",
+    "title": "Shooting-Star Wishes",
+    "theme": "Space",
+    "level": "Detailed",
+    "image": "/pages/star-map.png"
+  },
+  {
+    "id": "v3-fish",
+    "title": "Fish Among the Bubbles",
+    "theme": "Ocean",
+    "level": "Easy",
+    "image": "/pages/fish.png"
+  },
+  {
+    "id": "v3-turtle",
+    "title": "Sea Turtle’s Adventure",
+    "theme": "Ocean",
+    "level": "Easy",
+    "image": "/pages/turtle.png"
+  },
+  {
+    "id": "v3-octopus",
+    "title": "Octopus’s Shell Collection",
+    "theme": "Ocean",
+    "level": "Playful",
+    "image": "/pages/octopus.png"
+  },
+  {
+    "id": "v3-whale",
+    "title": "Whale Says Hello",
+    "theme": "Ocean",
+    "level": "Easy",
+    "image": "/pages/whale.png"
+  },
+  {
+    "id": "v3-dolphin",
+    "title": "Dolphin’s Big Splash",
+    "theme": "Ocean",
+    "level": "Playful",
+    "image": "/pages/dolphin.png"
+  },
+  {
+    "id": "v3-reef",
+    "title": "Coral Reef Neighborhood",
+    "theme": "Ocean",
+    "level": "Detailed",
+    "image": "/pages/reef.png"
+  },
+  {
+    "id": "v3-submarine",
+    "title": "Underwater Explorers",
+    "theme": "Ocean",
+    "level": "Playful",
+    "image": "/pages/submarine.png"
+  },
+  {
+    "id": "v3-mermaid",
+    "title": "Mermaid’s Treasure Cove",
+    "theme": "Ocean",
+    "level": "Detailed",
+    "image": "/pages/mermaid.png"
+  },
+  {
+    "id": "v3-car",
+    "title": "A Sunny Road Trip",
+    "theme": "Wheels",
+    "level": "Easy",
+    "image": "/pages/car.png"
+  },
+  {
+    "id": "v3-truck",
+    "title": "Delivery Truck Day",
+    "theme": "Wheels",
+    "level": "Easy",
+    "image": "/pages/truck.png"
+  },
+  {
+    "id": "v3-fire",
+    "title": "Fire Engine to the Rescue",
+    "theme": "Wheels",
+    "level": "Playful",
+    "image": "/pages/fire.png"
+  },
+  {
+    "id": "v3-bus",
+    "title": "The Happy School Bus",
+    "theme": "Wheels",
+    "level": "Easy",
+    "image": "/pages/bus.png"
+  },
+  {
+    "id": "v3-tractor",
+    "title": "Tractor on the Farm",
+    "theme": "Wheels",
+    "level": "Playful",
+    "image": "/pages/tractor.png"
+  },
+  {
+    "id": "v3-train",
+    "title": "All Aboard the Little Train",
+    "theme": "Wheels",
+    "level": "Playful",
+    "image": "/pages/train.png"
+  },
+  {
+    "id": "v3-race",
+    "title": "Race Day Champion",
+    "theme": "Wheels",
+    "level": "Playful",
+    "image": "/pages/race.png"
+  },
+  {
+    "id": "v3-excavator",
+    "title": "Digging at the Building Site",
+    "theme": "Wheels",
+    "level": "Detailed",
+    "image": "/pages/excavator.png"
+  },
+  {
+    "id": "v3-soccer",
+    "title": "Soccer at the Park",
+    "theme": "Sports",
+    "level": "Easy",
+    "image": "/pages/soccer.png"
+  },
+  {
+    "id": "v3-basketball",
+    "title": "A Perfect Basketball Shot",
+    "theme": "Sports",
+    "level": "Playful",
+    "image": "/pages/basketball.png"
+  },
+  {
+    "id": "v3-baseball",
+    "title": "Ready for a Home Run",
+    "theme": "Sports",
+    "level": "Easy",
+    "image": "/pages/baseball.png"
+  },
+  {
+    "id": "v3-football",
+    "title": "Football in the Backyard",
+    "theme": "Sports",
+    "level": "Playful",
+    "image": "/pages/football.png"
+  },
+  {
+    "id": "v3-tennis",
+    "title": "Tennis Time",
+    "theme": "Sports",
+    "level": "Detailed",
+    "image": "/pages/tennis.png"
+  },
+  {
+    "id": "v3-skateboard",
+    "title": "Skate Park Adventure",
+    "theme": "Sports",
+    "level": "Playful",
+    "image": "/pages/skateboard.png"
+  },
+  {
+    "id": "v3-trophy",
+    "title": "Everyone’s a Superstar",
+    "theme": "Sports",
+    "level": "Easy",
+    "image": "/pages/trophy.png"
+  },
+  {
+    "id": "v3-bike",
+    "title": "Bicycle Ride in the Park",
+    "theme": "Sports",
+    "level": "Detailed",
+    "image": "/pages/bike.png"
+  },
+  {
+    "id": "v3-princess-garden",
+    "title": "Princess in the Rose Garden",
+    "theme": "Fairy Tales",
+    "level": "Playful",
+    "image": "/pages/princess-garden.png"
+  },
+  {
+    "id": "v3-storybook-castle",
+    "title": "The Storybook Castle",
+    "theme": "Fairy Tales",
+    "level": "Easy",
+    "image": "/pages/storybook-castle.png"
+  },
+  {
+    "id": "v3-winter-castle",
+    "title": "The Snowflake Castle",
+    "theme": "Fairy Tales",
+    "level": "Detailed",
+    "image": "/pages/winter-castle.png"
+  },
+  {
+    "id": "v3-fairy-tea",
+    "title": "A Fairy’s Tea Party",
+    "theme": "Fairy Tales",
+    "level": "Playful",
+    "image": "/pages/fairy-tea.png"
+  },
+  {
+    "id": "v3-friendly-dragon",
+    "title": "Dragon at the Castle Gate",
+    "theme": "Fairy Tales",
+    "level": "Playful",
+    "image": "/pages/friendly-dragon.png"
+  },
+  {
+    "id": "v3-enchanted-carriage",
+    "title": "The Enchanted Carriage",
+    "theme": "Fairy Tales",
+    "level": "Detailed",
+    "image": "/pages/enchanted-carriage.png"
+  },
+  {
+    "id": "v3-mermaid-palace",
+    "title": "The Mermaid Palace",
+    "theme": "Fairy Tales",
+    "level": "Detailed",
+    "image": "/pages/mermaid-palace.png"
+  },
+  {
+    "id": "v3-unicorn-meadow",
+    "title": "Unicorn in the Flower Meadow",
+    "theme": "Fairy Tales",
+    "level": "Easy",
+    "image": "/pages/unicorn-meadow.png"
+  },
+  {
+    "id": "v3-hero",
+    "title": "My First Superhero",
+    "theme": "Comics",
+    "level": "Easy",
+    "image": "/pages/hero.png"
+  },
+  {
+    "id": "v3-hero-city",
+    "title": "Helping the City",
+    "theme": "Comics",
+    "level": "Detailed",
+    "image": "/pages/hero-city.png"
+  },
+  {
+    "id": "v3-comic-cat",
+    "title": "Captain Cat Saves the Day",
+    "theme": "Comics",
+    "level": "Playful",
+    "image": "/pages/comic-cat.png"
+  },
+  {
+    "id": "v3-comic-robot",
+    "title": "Robot Rescue Team",
+    "theme": "Comics",
+    "level": "Detailed",
+    "image": "/pages/comic-robot.png"
+  },
+  {
+    "id": "v3-comic-panels",
+    "title": "Make Your Own Comic",
+    "theme": "Comics",
+    "level": "Playful",
+    "image": "/pages/comic-panels.png"
+  },
+  {
+    "id": "v3-dragon",
+    "title": "The Dragon’s Delivery",
+    "theme": "Comics",
+    "level": "Playful",
+    "image": "/pages/dragon.png"
+  },
+  {
+    "id": "v3-comic-space",
+    "title": "Space Friends to the Rescue",
+    "theme": "Comics",
+    "level": "Detailed",
+    "image": "/pages/comic-space.png"
+  },
+  {
+    "id": "v3-comic-unicorn",
+    "title": "Unicorn’s Rainbow Adventure",
+    "theme": "Comics",
+    "level": "Playful",
+    "image": "/pages/comic-unicorn.png"
+  }
+];
+export const THEMES=['All','Fairy Tales','Space','Ocean','Animals','Wheels','Sports','Comics'];
 export const LEVELS=['Easy','Playful','Detailed'];
-export const PAGES=pages;
-export const pageById=id=>pages.find(p=>p.id===id);
-export const svgURL=svg=>'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+export const pageById=id=>PAGES.find(p=>p.id===id);
+export const pageSource=page=>page.image;
+export const pageThumbnail=page=>'/.netlify/images?url='+encodeURIComponent(page.image)+'&w=360&h=360&fit=contain&fm=webp';

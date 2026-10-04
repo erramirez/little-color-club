@@ -1,0 +1,394 @@
+[
+  {
+    "id": "garden",
+    "title": "Butterfly Garden",
+    "theme": "Animals",
+    "level": "Easy",
+    "scene": "Two cheerful butterflies visiting three large daisies, with broad leaves and a tiny friendly ladybug on a leaf. No people."
+  },
+  {
+    "id": "cat",
+    "title": "Kitten and a Ball of Yarn",
+    "theme": "Animals",
+    "level": "Easy",
+    "scene": "An adorable fluffy kitten sitting beside a ball of yarn in a small flower garden, with a butterfly above its nose."
+  },
+  {
+    "id": "puppy",
+    "title": "Puppy’s Picnic",
+    "theme": "Animals",
+    "level": "Easy",
+    "scene": "An adorable floppy-eared puppy sitting on a picnic blanket beside a toy ball, a simple basket and two large daisies."
+  },
+  {
+    "id": "bunny",
+    "title": "Bunny’s Carrot Garden",
+    "theme": "Animals",
+    "level": "Easy",
+    "scene": "A cute bunny with long upright ears and all four paws, sitting beside two carrots and broad leafy vegetables in a small garden."
+  },
+  {
+    "id": "lion",
+    "title": "Lion on the Savannah",
+    "theme": "Animals",
+    "level": "Playful",
+    "scene": "A friendly young lion with a fluffy mane, a complete natural four-legged body and curling tail, resting under an acacia tree. Two butterflies and broad savannah grass."
+  },
+  {
+    "id": "fox",
+    "title": "Fox in the Woodland",
+    "theme": "Animals",
+    "level": "Playful",
+    "scene": "A lovely fluffy woodland fox with a large bushy tail sitting beside mushrooms and a fallen log beneath two leafy branches."
+  },
+  {
+    "id": "dinosaur",
+    "title": "Dinosaur Valley",
+    "theme": "Animals",
+    "level": "Playful",
+    "scene": "A friendly triceratops walking by a fern and a volcanic mountain in the distance. A tiny pterodactyl overhead. Correctly formed dinosaur legs and horns."
+  },
+  {
+    "id": "owl",
+    "title": "Moonlit Owl",
+    "theme": "Animals",
+    "level": "Detailed",
+    "scene": "A charming wide-eyed owl perched on a leafy oak branch under a crescent moon, with a few stars, forest flowers and mushrooms below. Distinct closed feather shapes, no feather hatching."
+  },
+  {
+    "id": "rocket",
+    "title": "Ready for Blastoff",
+    "theme": "Space",
+    "level": "Easy",
+    "scene": "An appealing cartoon rocket blasting upward with three large window shapes and a curling plume of exhaust, one ringed planet and a few large stars."
+  },
+  {
+    "id": "planet",
+    "title": "A Planet of Possibilities",
+    "theme": "Space",
+    "level": "Easy",
+    "scene": "One large beautifully drawn ringed planet, a small nearby moon, and five large stars in a charming outer space composition. All planet bands uncolored white."
+  },
+  {
+    "id": "astronaut",
+    "title": "A Walk on the Moon",
+    "theme": "Space",
+    "level": "Playful",
+    "scene": "A friendly child astronaut in a complete correctly formed space suit, waving on the moon beside a small moon rover, with Earth and stars overhead. Face visible inside visor."
+  },
+  {
+    "id": "ufo",
+    "title": "Hello, Space Friends",
+    "theme": "Space",
+    "level": "Easy",
+    "scene": "A friendly little alien waving from a classic domed flying saucer hovering over a moon crater. Large enclosed lights on saucer, a few stars and one planet."
+  },
+  {
+    "id": "solar-system",
+    "title": "Explore the Solar System",
+    "theme": "Space",
+    "level": "Detailed",
+    "scene": "A beautifully arranged child-friendly solar system, with a large smiling sun, eight differently sized planets along gently curved orbit paths, Saturn with recognizable rings and a small comet. No labels or text."
+  },
+  {
+    "id": "moon-base",
+    "title": "Our Moon Base",
+    "theme": "Space",
+    "level": "Detailed",
+    "scene": "An appealing lunar base with two connected rounded habitat domes, a tiny astronaut, a six-wheel moon rover, a satellite dish and a rocket parked in the background. Clear readable construction, distinct enclosed panels."
+  },
+  {
+    "id": "robot",
+    "title": "My Robot Buddy",
+    "theme": "Space",
+    "level": "Playful",
+    "scene": "A lovable expressive robot with rounded mechanical limbs, a window in its chest showing three simple gears, waving next to a potted alien flower. Coherent complete robot with two arms and two legs."
+  },
+  {
+    "id": "star-map",
+    "title": "Shooting-Star Wishes",
+    "theme": "Space",
+    "level": "Detailed",
+    "scene": "A magical field of large shooting stars, a sleeping crescent moon, two decorated planets, and a charming tiny satellite. The stars and planet patterns are enclosed shapes for coloring. Balanced scene without dense scatter."
+  },
+  {
+    "id": "fish",
+    "title": "Fish Among the Bubbles",
+    "theme": "Ocean",
+    "level": "Easy",
+    "scene": "An adorable large tropical fish swimming beside three broad seaweed leaves and a starfish, with a few large bubbles. Beautiful complete fish with recognizable fins and tail."
+  },
+  {
+    "id": "turtle",
+    "title": "Sea Turtle’s Adventure",
+    "theme": "Ocean",
+    "level": "Easy",
+    "scene": "A lovable sea turtle swimming gently over a patch of simple sea grass with two large shells and a few bubbles. Four flippers clearly visible; large closed shell panels."
+  },
+  {
+    "id": "octopus",
+    "title": "Octopus’s Shell Collection",
+    "theme": "Ocean",
+    "level": "Playful",
+    "scene": "A charming octopus with exactly eight distinct natural curling arms, arranging three seashells on a sandy sea floor. Friendly expressive face, small seaweed and bubbles."
+  },
+  {
+    "id": "whale",
+    "title": "Whale Says Hello",
+    "theme": "Ocean",
+    "level": "Easy",
+    "scene": "A beautiful friendly whale with a correct rounded whale body, two flippers and a broad tail, coming up above gentle ocean waves with a large playful spout and a seagull overhead."
+  },
+  {
+    "id": "dolphin",
+    "title": "Dolphin’s Big Splash",
+    "theme": "Ocean",
+    "level": "Playful",
+    "scene": "A graceful cheerful dolphin leaping over a curling wave, with a little sailboat in the far distance, sun and soft clouds. Coherent recognizable dolphin anatomy."
+  },
+  {
+    "id": "reef",
+    "title": "Coral Reef Neighborhood",
+    "theme": "Ocean",
+    "level": "Detailed",
+    "scene": "A gorgeous coral reef scene with three distinct tropical fish, a small seahorse, broad branching coral, a sea anemone and a large clam. Beautiful varied but well-separated enclosed shapes."
+  },
+  {
+    "id": "submarine",
+    "title": "Underwater Explorers",
+    "theme": "Ocean",
+    "level": "Playful",
+    "scene": "A charming compact submarine with three big portholes and a periscope exploring beside a sea turtle, coral and broad underwater plants. Friendly child explorer visible in one porthole."
+  },
+  {
+    "id": "mermaid",
+    "title": "Mermaid’s Treasure Cove",
+    "theme": "Ocean",
+    "level": "Detailed",
+    "scene": "An original sweet young mermaid with a beautifully flowing tail and long wavy hair, sitting on a large shell beside an open treasure chest, with a little fish and starfish. Correct face, two arms, hands and one tail; tasteful child-friendly clothing."
+  },
+  {
+    "id": "car",
+    "title": "A Sunny Road Trip",
+    "theme": "Wheels",
+    "level": "Easy",
+    "scene": "A beautiful friendly small vintage-style car seen in three-quarter view driving along a curved country road, with two visible wheels, large windows, a tree and a cloud. No text or license-plate characters."
+  },
+  {
+    "id": "truck",
+    "title": "Delivery Truck Day",
+    "theme": "Wheels",
+    "level": "Easy",
+    "scene": "A charming well-proportioned delivery truck with a large cab, large box-shaped cargo compartment and correct visible wheels, parked by a small house with three parcels beside it. Three-quarter view, no text or logos."
+  },
+  {
+    "id": "fire",
+    "title": "Fire Engine to the Rescue",
+    "theme": "Wheels",
+    "level": "Playful",
+    "scene": "A beautifully constructed fire engine in three-quarter view with a ladder, hoses, large compartment doors and correct visible wheels, in front of a simple friendly fire station. No fire or danger, no lettering or numbers."
+  },
+  {
+    "id": "bus",
+    "title": "The Happy School Bus",
+    "theme": "Wheels",
+    "level": "Easy",
+    "scene": "A lovely rounded school bus in three-quarter view with big windows and two correctly placed visible wheels, parked by a simple schoolhouse and a leafy tree. No lettering or numerals."
+  },
+  {
+    "id": "tractor",
+    "title": "Tractor on the Farm",
+    "theme": "Wheels",
+    "level": "Playful",
+    "scene": "A well-proportioned friendly farm tractor with large rear tire, small front tire, a cab and curved hood, with a small trailer carrying three pumpkins. Barn and broad corn leaves behind. Coherent wheel and axle placement."
+  },
+  {
+    "id": "train",
+    "title": "All Aboard the Little Train",
+    "theme": "Wheels",
+    "level": "Playful",
+    "scene": "An appealing old-fashioned steam locomotive with a chimney, large round boiler front and correct wheels, pulling one small carriage on a curved track. A charming station, trees and big puffs of steam, no text."
+  },
+  {
+    "id": "race",
+    "title": "Race Day Champion",
+    "theme": "Wheels",
+    "level": "Playful",
+    "scene": "A beautifully drawn sporty racing car in three-quarter view with a rear spoiler and correct wheels, passing a waving checkered flag at a curving race track. Flag squares uncolored white with outlines. No brand marks, numbers or words."
+  },
+  {
+    "id": "excavator",
+    "title": "Digging at the Building Site",
+    "theme": "Wheels",
+    "level": "Detailed",
+    "scene": "A coherent excavator in three-quarter view with articulated boom and bucket, two crawler tracks, cab and visible pivot joints, beside a neat mound of earth and a small dump truck in the distance. Mechanically plausible construction."
+  },
+  {
+    "id": "soccer",
+    "title": "Soccer at the Park",
+    "theme": "Sports",
+    "level": "Easy",
+    "scene": "A large soccer ball with correctly formed pentagon and hexagon panels, a soccer shoe and a simple goal in the background on a grassy field. No people, all ball panels uncolored white."
+  },
+  {
+    "id": "basketball",
+    "title": "A Perfect Basketball Shot",
+    "theme": "Sports",
+    "level": "Playful",
+    "scene": "A cheerful child in a simple sports outfit making a basketball shot toward a hoop on an outdoor court. Correct body, two arms and two legs, distinct ball, coherent hoop and net, no letters or numbers on clothes."
+  },
+  {
+    "id": "baseball",
+    "title": "Ready for a Home Run",
+    "theme": "Sports",
+    "level": "Easy",
+    "scene": "A carefully drawn baseball glove holding a large baseball, with a baseball bat and cap resting beside it on simple grass. Recognizable glove fingers and baseball seams, no lettering."
+  },
+  {
+    "id": "football",
+    "title": "Football in the Backyard",
+    "theme": "Sports",
+    "level": "Playful",
+    "scene": "Two cheerful children tossing an American football in a backyard park, a simple goal post in the distance, a broad tree and a few clouds. Coherent faces and limbs, no letters or numerals on clothes."
+  },
+  {
+    "id": "tennis",
+    "title": "Tennis Time",
+    "theme": "Sports",
+    "level": "Detailed",
+    "scene": "A cheerful child with correctly formed arms and legs swinging a tennis racket toward a large ball across a simple net, on an outdoor tennis court. Readable racket grid, sneakers and trees, no text."
+  },
+  {
+    "id": "skateboard",
+    "title": "Skate Park Adventure",
+    "theme": "Sports",
+    "level": "Playful",
+    "scene": "A cheerful child wearing a helmet and knee pads riding a skateboard down a small smooth ramp in a park. Correct skateboard deck, trucks and wheels, natural safe pose and coherent hands and feet."
+  },
+  {
+    "id": "trophy",
+    "title": "Everyone’s a Superstar",
+    "theme": "Sports",
+    "level": "Easy",
+    "scene": "A large beautiful trophy cup with two curved handles and a star medallion, resting on a broad pedestal next to a medal on a ribbon and a soccer ball. No lettering or numerals."
+  },
+  {
+    "id": "bike",
+    "title": "Bicycle Ride in the Park",
+    "theme": "Sports",
+    "level": "Detailed",
+    "scene": "A beautifully drawn bicycle with correct frame, handlebars, pedals and two circular spoked wheels, parked beside a picnic basket under a tree beside a winding park path. No people."
+  },
+  {
+    "id": "princess-garden",
+    "title": "Princess in the Rose Garden",
+    "theme": "Fairy Tales",
+    "level": "Playful",
+    "scene": "An original kind princess in a beautiful flowing gown and a small crown holding a rose in a charming garden, with a fountain and a castle tower in the distance. Elegant child-friendly storybook face, natural hands and complete body."
+  },
+  {
+    "id": "storybook-castle",
+    "title": "The Storybook Castle",
+    "theme": "Fairy Tales",
+    "level": "Easy",
+    "scene": "A beautiful magical castle with three tall towers, pointed roofs, large arched windows and a welcoming bridge over a little moat. A few clouds and flowers. Large simple coloring areas."
+  },
+  {
+    "id": "winter-castle",
+    "title": "The Snowflake Castle",
+    "theme": "Fairy Tales",
+    "level": "Detailed",
+    "scene": "An original fairy-tale winter castle with snowy towers, an arched doorway, evergreen trees and large snowflakes."
+  },
+  {
+    "id": "fairy-tea",
+    "title": "A Fairy’s Tea Party",
+    "theme": "Fairy Tales",
+    "level": "Playful",
+    "scene": "A delightful tiny original fairy with two lovely wings and a flower petal dress, having tea at a mushroom table with a small bunny. One large teapot, two cups and broad flowers. Coherent figures and hands."
+  },
+  {
+    "id": "friendly-dragon",
+    "title": "Dragon at the Castle Gate",
+    "theme": "Fairy Tales",
+    "level": "Playful",
+    "scene": "A sweet friendly young dragon with a coherent body, four legs, two wings and a curling tail, resting beside a castle gate and a small crown on a cushion. Large scales drawn as closed shapes, no hatching."
+  },
+  {
+    "id": "enchanted-carriage",
+    "title": "The Enchanted Carriage",
+    "theme": "Fairy Tales",
+    "level": "Detailed",
+    "scene": "A gorgeous pumpkin-shaped royal carriage with two visible decorated wheels, an arched door and curving leafy ornaments, resting beside a castle path, flowers and a small butterfly. No horse required. Mechanically coherent carriage."
+  },
+  {
+    "id": "mermaid-palace",
+    "title": "The Mermaid Palace",
+    "theme": "Fairy Tales",
+    "level": "Detailed",
+    "scene": "A beautiful underwater mermaid palace with shell-shaped towers, arched doorways, flowing seaweed and a tiny original young mermaid waving beside it. A few fish and broad coral. Coherent mermaid anatomy and elegant clear architecture."
+  },
+  {
+    "id": "unicorn-meadow",
+    "title": "Unicorn in the Flower Meadow",
+    "theme": "Fairy Tales",
+    "level": "Easy",
+    "scene": "A gorgeous adorable unicorn with four correctly formed legs, a flowing mane and tail and one spiral horn, standing among three large flowers under a rainbow. All rainbow bands uncolored white, generous coloring spaces."
+  },
+  {
+    "id": "hero",
+    "title": "My First Superhero",
+    "theme": "Comics",
+    "level": "Easy",
+    "scene": "An original cheerful child superhero in a cape and simple star-emblem costume standing confidently on a rooftop with a small friendly city skyline. Coherent complete body, natural hands and feet, no text or brands."
+  },
+  {
+    "id": "hero-city",
+    "title": "Helping the City",
+    "theme": "Comics",
+    "level": "Detailed",
+    "scene": "A lively original comic-book scene of a friendly young caped superhero rescuing a kitten from a tree on a city street, while two grateful children look on. Clear readable action, natural anatomy, moderate architectural detail, no panels or speech bubbles."
+  },
+  {
+    "id": "comic-cat",
+    "title": "Captain Cat Saves the Day",
+    "theme": "Comics",
+    "level": "Playful",
+    "scene": "A charming original anthropomorphic cat superhero wearing a cape and small eye mask, jumping over a puddle while carrying a little lost teddy bear. Coherent cat anatomy, expressive face and beautifully drawn motion in a park setting."
+  },
+  {
+    "id": "comic-robot",
+    "title": "Robot Rescue Team",
+    "theme": "Comics",
+    "level": "Detailed",
+    "scene": "A lovable original robot superhero with rounded mechanical limbs helping a child retrieve a toy airplane from a low tree branch. Clear readable comic-book storytelling, a dog watching, natural coherent human anatomy."
+  },
+  {
+    "id": "comic-panels",
+    "title": "Make Your Own Comic",
+    "theme": "Comics",
+    "level": "Playful",
+    "scene": "A carefully composed three-panel blank comic template: two top panels and one wide bottom panel, with beautifully drawn empty speech bubbles inside. Attractive original tiny doodles of stars, a friendly robot and a superhero mask outside the panels near the margins. Panel interiors otherwise blank for the child's own drawings. No text at all."
+  },
+  {
+    "id": "dragon",
+    "title": "The Dragon’s Delivery",
+    "theme": "Comics",
+    "level": "Playful",
+    "scene": "A friendly original young dragon wearing a small mailbag, carrying a wrapped gift through a whimsical village of mushroom houses. Coherent dragon body with four legs, two wings and a tail, charming expressive face, no lettering."
+  },
+  {
+    "id": "comic-space",
+    "title": "Space Friends to the Rescue",
+    "theme": "Comics",
+    "level": "Detailed",
+    "scene": "An original child astronaut and a cute robot repairing their small spaceship on an alien planet, watched by a friendly round alien. Beautiful professional children's comic illustration, clear action and well-separated complete bodies, no text, logos or speech bubbles."
+  },
+  {
+    "id": "comic-unicorn",
+    "title": "Unicorn’s Rainbow Adventure",
+    "theme": "Comics",
+    "level": "Playful",
+    "scene": "A lovely original winged unicorn leaping over a rainbow bridge beside a tiny fairy waving a star-tipped wand, with two soft clouds and a faraway tower. Correctly formed unicorn with four legs, two wings and one horn, clear natural cartoon anatomy."
+  }
+]
