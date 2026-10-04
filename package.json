@@ -1,0 +1,20 @@
+{
+  "name": "little-color-club",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/check.mjs",
+    "dev": "npx netlify-cli dev"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.7.0"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "^6.2.5"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
