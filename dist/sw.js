@@ -1,5 +1,5 @@
-const CACHE='little-color-club-v3-art-1';
-const SHELL=['./','./index.html','./style.css','./app.mjs','./core.mjs','./storage.mjs','./sync.mjs','./library.mjs','./manifest.webmanifest','./icons/icon.svg','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png'];
+const CACHE='little-color-club-v4-ui-5';
+const SHELL=['./','./index.html','./style.css','./app.mjs','./core.mjs','./puzzle-drag.mjs','./storage.mjs','./sync.mjs','./library.mjs','./manifest.webmanifest','./icons/ui.svg','./icons/crayons.svg','./icons/crayons-192.png','./icons/crayons-512.png','./icons/crayons-apple.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('little-color-club-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',event=>{const url=new URL(event.request.url);if(url.origin!==self.location.origin||event.request.method!=='GET'||url.pathname.startsWith('/api/')||url.pathname.startsWith('/.netlify/functions/'))return;event.respondWith(fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();event.waitUntil(caches.open(CACHE).then(cache=>cache.put(event.request,copy)))}return response}).catch(async()=>{const cached=await caches.match(event.request);if(cached)return cached;if(event.request.mode==='navigate')return caches.match('./index.html');return new Response('Offline',{status:503})}))});

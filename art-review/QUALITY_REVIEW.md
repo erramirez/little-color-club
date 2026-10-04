@@ -1,31 +1,15 @@
-# Coloring library replacement
+# Current local artwork review
 
-## Artwork
+The current image revision is complete locally and awaits the UX/UI pass. It has not been sent to GitHub, built, or deployed.
 
-56 individual illustrations created with the built-in image generation tool. Original generated PNGs are copied into `dist/pages/` without creative post-processing. Exact prompts are in `prompts.json`; subject, theme, and difficulty are in `catalog.json`.
+37 crowded pages were simplified, eight comic pages were replaced with original young-reader graphic-novel scenes, and 11 simpler pages were retained. The full library still contains 56 pages.
 
-The visible library uses original fairy-tale characters rather than franchise character likenesses. Seven themes each contain eight pages: Animals, Space, Ocean, Wheels, Sports, Fairy Tales, and Comics.
+See [revision notes](revision-2/REVIEW.md), [per-page comparisons](revision-2/comparisons.json), [current raster measurements](raster-checks.json), and [exact prompts](prompts.json). Current project assets are in `../dist/pages/`. Replacements use new filenames to avoid serving cached older illustrations when a future deployment is authorized.
 
-## Review criteria
+The 37 simplified pages average 36.2 enclosed areas, down from 201.0. Their small regions fell from 5,004 to 340. Every redraw passes the revised upper limits on density, small regions and thin ink runs. These are raster screening measurements; an all-page visual approval is not claimed. No image previews were shown in chat during this pass.
 
-- Recognizable subjects, appealing expressions, coherent compositions.
-- Continuous dark outlines on white; no coloring, gray shading, hatching, or photo backgrounds.
-- Large coloring spaces on Easy pages, moderate details on Playful pages, richer scenes on Detailed pages.
-- Enclosed shapes suitable for tap-to-fill; no visible labels, logos, or watermarks.
-- Full square illustrations with sufficient resolution for the 900px coloring canvas.
+The [previous deployed review](revision-2/previous-deployed-review.md) describes the earlier illustrations and does not certify the current local replacements.
 
-## Completed checks and limits
+## October 4 additions
 
-The 24 Animals, Space, and Ocean illustrations were visually inspected in contact sheets. They have substantially clearer subjects, expressive faces, coherent scenes, and usable coloring spaces compared with the former geometric SVG drawings. The kitten was also inspected at full size.
-
-The user requested that no further images be displayed in the chat. Visual sheet inspections stopped at that point. The remaining illustrations use the same strict prompt specification and receive raster checks, but those checks do not establish character anatomy or subjective artistic quality. All-page visual approval is therefore not claimed.
-
-`raster-checks.json` records resolution, white space, ink coverage, unwanted color, and enclosed white regions measured after resizing to the actual 900px canvas. All 56 pages passed these checks with zero flags. These are screening checks, not a substitute for visual review. The original image files are not altered by this process.
-
-## Compatibility and delivery
-
-New pages use `v3-` identifiers. The original SVG library is removed at the owner’s request; there was no artwork requiring preservation. Painting and erasing remain on a separate transparent layer.
-
-The library uses smaller Netlify Image CDN previews; the coloring canvas loads the full PNG. The service worker caches pages as they are opened rather than downloading the entire library during installation.
-
-The final build passed all 12 tests. Build checks validate all 56 PNG assets, the app modules, coloring/puzzle logic, new-library references, and sync behavior. Production verification checks all hosted PNGs and a thumbnail for each theme. Interactive browser automation remains blocked by the environment; physical iPad testing remains necessary.
+Twelve new pages bring the local library to 68: three forest-cat scenes, three unicorns, a baby dragon and five zoo animals. Existing assets were preserved. All 68 pass current raster screening. See [addition review](additions-2026-10-04-review.md) and [exact new prompts](additions-2026-10-04.json). No build or publish occurred.

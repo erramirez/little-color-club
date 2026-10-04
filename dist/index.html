@@ -1,1 +1,136 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#faf7ef"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Color Club"><meta name="description" content="A family coloring studio with personal galleries and picture puzzles."><title>Little Color Club</title><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"></head><body><header><a href="./" class="brand"><span class="logo">✿</span><span>little color club<small>A little imagination. A lot of fun.</small></span></a><div class="header-actions"><span id="syncStatus" role="status">Ready to play</span><button id="parentBtn" class="iconbtn" aria-label="Grown-up settings">⚙</button><button id="switchBtn" hidden><span id="profileName"></span> · Switch</button></div></header><main><section id="welcome"><div class="welcome-doodles" aria-hidden="true">✦ <span>✿</span> ✧</div><div class="eyebrow">THREE ARTISTS. ENDLESS POSSIBILITIES.</div><h1>Who’s making <em>magic</em> today?</h1><p>Pick your name. Your colors, your creations, your little world.</p><div id="profiles" class="profiles"><button data-profile="Olivia" class="profile olivia"><span class="avatar">✿</span><strong>Olivia</strong><span>Let’s create →</span></button><button data-profile="Henry" class="profile henry"><span class="avatar">🚀</span><strong>Henry</strong><span>Let’s explore →</span></button><button data-profile="Issa" class="profile issa"><span class="avatar">☀</span><strong>Issa</strong><span>Let’s play →</span></button></div><div class="welcome-note">Your own artwork shelf. A whole library to share.</div><button id="welcomeInstall" class="textbtn">＋ Add Color Club to your iPad</button><button id="welcomePair" class="textbtn">Grown-ups: connect another device</button></section><div id="app" hidden><nav class="tabs"><button id="libraryTab" class="active">▧ Coloring pages</button><button id="puzzleTab">▦ Puzzle time</button><button id="galleryTab">♡ My artwork</button></nav><section id="library"><div class="section-heading"><div><div class="eyebrow">A BIG WORLD OF LITTLE ADVENTURES</div><h1>What will you color today?</h1><p>Every page is for everyone. Make it your own.</p></div><label class="level-picker">Detail level<select id="level"><option value="All">All levels</option><option>Easy</option><option>Playful</option><option>Detailed</option></select></label></div><div id="themes" class="theme-tabs"></div><div class="library-meta"><span id="pageCount"></span><label class="upload">＋ Add your own page<input id="upload" type="file" accept="image/*"></label></div><div id="pageLibrary" class="page-grid"></div></section><section id="studio" hidden><div class="studio-heading"><button id="backLibrary">← All coloring pages</button><div><input id="artTitle" aria-label="Name your artwork" maxlength="100"><span id="saveStatus" role="status">Ready for your colors</span></div><button class="primary" id="save">♡ Save artwork</button></div><div class="workspace"><aside class="tools"><div class="sectionlabel">YOUR LITTLE TOOLBOX</div><div class="toolrow"><button id="fillTool" class="selected">◒<span>Fill</span></button><button id="brushTool">✎<span>Brush</span></button><button id="eraserTool">▱<span>Eraser</span></button></div><div class="sectionlabel space">PICK A COLOR</div><div id="palette"></div><label class="custom">Rainbow picker<input type="color" id="customColor" value="#ed7180" aria-label="Choose any color"></label><label class="sectionlabel space" for="size">BRUSH SIZE</label><input id="size" type="range" min="8" max="90" value="30"><div class="toolnote">Your colors are yours.<br>The outlines stay safe. ✨</div><button id="undo" class="wide" disabled>↶ Undo</button><button id="redo" class="wide" disabled>↷ Redo</button></aside><div class="art-area"><div class="paper"><canvas id="canvas" width="900" height="900" aria-label="Coloring page. Tap shapes to fill or draw using a finger, mouse, or pencil."></canvas></div><div class="art-bottom"><span id="tip">Tap a color, then tap a shape. Magic!</span><button id="makePuzzle" class="primary">Make a puzzle →</button></div></div><aside class="art-sidebar"><div class="sectionlabel">MADE BY YOU</div><div class="mini-art"><span>✿</span><strong id="artistLabel"></strong><p>There’s no wrong way to make something lovely.</p></div><button class="wide" id="download">↓ Download picture</button><button class="wide" id="exportArt">↓ Keep editable file</button><button class="quiet" id="clear">Clear my colors</button></aside></div></section><section id="puzzle" hidden><div class="puzzle-head"><div><h2>Your art. Your puzzle.</h2><p id="puzzleStatus" aria-live="polite">Tap a piece, then tap its spot.</p></div><div class="timer-wrap"><span id="timer" role="timer" aria-label="Puzzle time">0:00</span><button id="pauseTimer" disabled>Pause</button></div></div><div class="difficulty"><label for="difficulty">Pieces</label><select id="difficulty"><option value="9">9 · Puzzle pal</option><option value="16">16 · Explorer</option><option value="24">24 · Adventurer</option><option value="36">36 · Super solver</option><option value="50">50 · Master puzzler</option></select><button id="shuffle">↻ Mix again</button><button id="hint">☀ Show picture</button><button id="back">← Keep coloring</button></div><div class="puzzle-layout"><div class="board-wrap"><div id="board"></div><div id="pauseOverlay" hidden><span>Taking a little break.</span><button id="resume" class="primary">Keep puzzling →</button></div></div><div class="piece-side"><div class="sectionlabel">TAP A PIECE, THEN ITS SPOT</div><div id="tray"></div><img id="reference" alt="Your complete artwork" hidden></div></div></section><section id="gallery" hidden><div class="section-heading"><div><div class="eyebrow">YOUR VERY OWN ART SHELF</div><h1 id="galleryHeading">My masterpieces</h1><p>Saved for you. Ready to color and play again.</p></div><div class="gallery-actions"><button id="refreshGallery">↻ Refresh</button><label class="upload">↑ Open editable file<input id="importArt" type="file" accept=".json,.colorclub,application/json"></label></div></div><div id="galleryItems" class="page-grid"></div></section></div></main><footer><span>✿ Made for imagination</span><span>No ads. No scores. Just play.</span></footer><div id="toast" role="status" aria-live="polite"></div><dialog id="resetDialog"><h2>A fresh start?</h2><p>This clears only your colors. The page stays safe.</p><div class="dialog-actions"><button id="cancelReset">Keep coloring</button><button id="confirmReset" class="primary">Clear colors</button></div></dialog><dialog id="parentDialog"><div class="dialog-top"><h2>Grown-up corner</h2><button id="closeParent" aria-label="Close settings">✕</button></div><section><h3>Color Club on your iPad</h3><p>Open this page in Safari, tap Share, then Add to Home Screen. Open Color Club from its new icon. If that opens a new family, pair it below.</p></section><section><h3>One family, all your devices</h3><p>Use this family code on another device to see the same three galleries. Keep a copy somewhere safe: it is the key to your family’s artwork.</p><button id="showCode">Show family code</button><div id="familyCodeArea" hidden><textarea id="familyCode" rows="3" readonly aria-label="Family pairing code"></textarea><button id="copyCode">Copy code</button></div><label for="pairCode">Connect to an existing family</label><input id="pairCode" placeholder="Paste the full family code" autocomplete="off" spellcheck="false"><button id="pair" class="primary">Connect this device</button><p id="pairStatus" role="status">Connecting changes the gallery shown on this device. Its previous artwork stays stored under its previous family code.</p></section></dialog><script type="module" src="app.mjs"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#eef6f0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Color Club">
+  <meta name="description" content="Color pictures and turn your artwork into puzzles.">
+  <title>Little Color Club</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/crayons-apple.png">
+  <link rel="icon" href="icons/crayons.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-view="welcome">
+<header class="site-header">
+  <span class="brand"><img src="icons/crayons.svg" width="44" height="44" alt="">Color Club</span>
+  <div class="header-actions">
+    <button id="switchBtn" class="profile-switch" hidden aria-label="Change player"><span id="profileAvatar" aria-hidden="true">✿</span><span id="profileName"></span></button>
+    <button id="parentBtn" class="icon-only" aria-label="Grown-up settings"><svg aria-hidden="true"><use href="icons/ui.svg#settings"/></svg></button>
+  </div>
+</header>
+<main>
+  <section id="welcome" aria-labelledby="welcomeHeading">
+    <h1 id="welcomeHeading" tabindex="-1">Who’s playing?</h1>
+    <div id="profiles" class="profiles">
+      <button data-profile="Olivia" class="profile olivia"><span class="avatar" aria-hidden="true">🦄</span><strong>Olivia</strong></button>
+      <button data-profile="Henry" class="profile henry"><span class="avatar" aria-hidden="true">⚽</span><strong>Henry</strong></button>
+      <button data-profile="Issa" class="profile issa"><span class="avatar" aria-hidden="true">🐱</span><strong>Issa</strong></button>
+    </div>
+  </section>
+  <div id="app" hidden>
+    <nav class="tabs" aria-label="Activities">
+      <button id="libraryTab" class="active" aria-pressed="true"><svg aria-hidden="true"><use href="icons/ui.svg#palette"/></svg><span>Color</span></button>
+      <button id="galleryTab" aria-pressed="false"><svg aria-hidden="true"><use href="icons/ui.svg#pictures"/></svg><span>My pictures</span></button>
+    </nav>
+    <section id="library" aria-labelledby="libraryHeading">
+      <h1 id="libraryHeading" tabindex="-1">Pick a picture</h1>
+      <div id="themes" class="theme-tabs" role="group" aria-label="Picture themes"></div>
+      <div id="pageLibrary" class="page-grid"></div>
+    </section>
+    <section id="studio" hidden tabindex="-1" aria-label="Coloring">
+      <div class="studio-bar">
+        <button id="backLibrary" aria-label="Back to pictures" class="back-button"><svg aria-hidden="true"><use href="icons/ui.svg#back"/></svg><span>Back</span></button>
+        <div class="history-buttons">
+          <button id="undo" aria-label="Undo" disabled><svg aria-hidden="true"><use href="icons/ui.svg#undo"/></svg><span>Undo</span></button>
+          <button id="redo" aria-label="Redo" disabled><svg aria-hidden="true"><use href="icons/ui.svg#redo"/></svg><span>Redo</span></button>
+        </div>
+        <button class="primary" id="save"><svg aria-hidden="true"><use href="icons/ui.svg#check"/></svg><span>Done</span></button>
+        <span id="saveStatus" class="sr-only" aria-live="off">Ready</span>
+      </div>
+      <div class="studio-shell">
+        <div class="canvas-stage">
+          <div class="paper"><canvas id="canvas" width="900" height="900" aria-label="Coloring picture. Select a color and use Fill, Draw, or Erase."></canvas></div>
+          <div id="loadingArt" class="loading-art" hidden role="status">Opening…</div>
+        </div>
+        <div class="tool-dock" role="group" aria-label="Coloring tools">
+          <button id="fillTool" class="tool selected" aria-pressed="true"><svg aria-hidden="true"><use href="icons/ui.svg#fill"/></svg><span>Fill</span></button>
+          <button id="brushTool" class="tool" aria-pressed="false"><svg aria-hidden="true"><use href="icons/ui.svg#draw"/></svg><span>Draw</span></button>
+          <button id="eraserTool" class="tool" aria-pressed="false"><svg aria-hidden="true"><use href="icons/ui.svg#erase"/></svg><span>Erase</span></button>
+          <button id="brushSize" class="tool" hidden aria-label="Brush size: medium"><span id="brushDot" aria-hidden="true"></span><span>Size</span></button>
+          <button id="studioMore" class="tool"><svg aria-hidden="true"><use href="icons/ui.svg#more"/></svg><span>More</span></button>
+          <input id="size" type="hidden" value="36">
+        </div>
+        <div class="palette-dock"><div id="palette" role="group" aria-label="Colors"></div></div>
+      </div>
+    </section>
+    <section id="puzzle" hidden tabindex="-1" aria-label="Picture puzzle">
+      <div class="puzzle-bar">
+        <button id="back"><svg aria-hidden="true"><use href="icons/ui.svg#back"/></svg><span>Color</span></button>
+        <div class="puzzle-progress"><span id="puzzleStatus" role="status">Pick a piece</span><span id="timer" role="timer" aria-label="Puzzle time">0:00</span></div>
+        <button id="hint" aria-pressed="false"><svg aria-hidden="true"><use href="icons/ui.svg#eye"/></svg><span>Picture</span></button>
+        <button id="pauseTimer" disabled><svg aria-hidden="true"><use href="icons/ui.svg#pause"/></svg><span>Pause</span></button>
+        <button id="shuffle"><svg aria-hidden="true"><use href="icons/ui.svg#mix"/></svg><span>Mix</span></button>
+      </div>
+      <div class="puzzle-layout">
+        <div class="board-wrap"><div class="board-frame">
+          <div id="board" aria-label="Puzzle board"></div>
+          <img id="reference" alt="Completed picture hint" hidden>
+          <div id="pauseOverlay" hidden><svg aria-hidden="true"><use href="icons/ui.svg#pause"/></svg><button id="resume" class="primary"><svg aria-hidden="true"><use href="icons/ui.svg#play"/></svg><span>Play</span></button></div>
+        </div></div>
+        <div id="tray" role="group" aria-label="Puzzle pieces"></div>
+      </div>
+      <select id="difficulty" hidden aria-hidden="true" tabindex="-1"><option value="9">9</option><option value="16">16</option><option value="24">24</option><option value="36">36</option></select>
+    </section>
+    <section id="gallery" hidden aria-labelledby="galleryHeading">
+      <h1 id="galleryHeading" tabindex="-1">My pictures</h1>
+      <div id="galleryItems" class="page-grid"></div>
+    </section>
+  </div>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="artMenu" aria-labelledby="artMenuHeading">
+  <div class="dialog-top"><h2 id="artMenuHeading">Your picture</h2><button id="closeArtMenu" class="icon-only" aria-label="Close"><svg aria-hidden="true"><use href="icons/ui.svg#close"/></svg></button></div>
+  <div id="extraPalette" role="group" aria-label="More colors"></div>
+  <label class="custom-color">More colors<input type="color" id="customColor" value="#f05b67" aria-label="Choose any color"></label>
+  <div class="art-menu-actions">
+    <button id="makePuzzle" class="primary"><svg aria-hidden="true"><use href="icons/ui.svg#puzzle"/></svg><span>Puzzle</span></button>
+    <button id="clear"><svg aria-hidden="true"><use href="icons/ui.svg#erase"/></svg><span>Start over</span></button>
+  </div>
+  <button id="studioParent" class="grown-up-link">Grown-ups</button>
+</dialog>
+<dialog id="finishedDialog" aria-labelledby="finishedHeading">
+  <div class="dialog-top"><h2 id="finishedHeading">Your picture!</h2><button id="closeFinished" class="icon-only" aria-label="Keep coloring"><svg aria-hidden="true"><use href="icons/ui.svg#close"/></svg></button></div>
+  <img id="finishedPicture" alt="Your saved coloring picture">
+  <div class="completion-actions"><button id="finishedPuzzle" class="primary"><svg aria-hidden="true"><use href="icons/ui.svg#puzzle"/></svg><span>Puzzle</span></button><button id="finishedColor"><svg aria-hidden="true"><use href="icons/ui.svg#palette"/></svg><span>Color</span></button><button id="finishedGallery"><svg aria-hidden="true"><use href="icons/ui.svg#pictures"/></svg><span>My pictures</span></button></div>
+</dialog>
+<dialog id="puzzleSetup" aria-labelledby="puzzleSetupHeading">
+  <div class="dialog-top"><h2 id="puzzleSetupHeading">Pick a puzzle</h2><button id="closePuzzleSetup" class="icon-only" aria-label="Cancel puzzle"><svg aria-hidden="true"><use href="icons/ui.svg#close"/></svg></button></div>
+  <div id="puzzleSizes" class="puzzle-sizes" role="group" aria-label="Number of puzzle pieces"></div>
+</dialog>
+<dialog id="completeDialog" aria-labelledby="completeHeading">
+  <div class="celebration" aria-hidden="true"><svg><use href="icons/ui.svg#check"/></svg></div>
+  <h2 id="completeHeading">You did it!</h2>
+  <p id="completeTime"></p>
+  <div class="completion-actions"><button id="playAgain" class="primary"><svg aria-hidden="true"><use href="icons/ui.svg#mix"/></svg><span>Again</span></button><button id="completeColor"><svg aria-hidden="true"><use href="icons/ui.svg#palette"/></svg><span>Color</span></button><button id="completeGallery"><svg aria-hidden="true"><use href="icons/ui.svg#pictures"/></svg><span>My pictures</span></button></div>
+</dialog>
+<dialog id="resetDialog" aria-labelledby="resetHeading">
+  <h2 id="resetHeading">Erase all your colors?</h2>
+  <div class="dialog-actions"><button id="cancelReset">No</button><button id="confirmReset" class="danger">Yes, erase</button></div>
+</dialog>
+<dialog id="parentDialog" aria-labelledby="parentHeading">
+  <div class="dialog-top"><h2 id="parentHeading">Grown-ups</h2><button id="closeParent" class="icon-only" aria-label="Close settings"><svg aria-hidden="true"><use href="icons/ui.svg#close"/></svg></button></div>
+  <section><h3>Add to the iPad</h3><p>In Safari, tap Share → Add to Home Screen. Open Color Club from the new icon. Use your three-word family phrase below to connect that installation if needed.</p></section>
+  <section class="parent-files"><h3>Your files</h3>
+    <label class="file-button"><svg aria-hidden="true"><use href="icons/ui.svg#pictures"/></svg><span>Add a coloring page</span><input id="upload" type="file" accept="image/*" aria-label="Add a coloring page"></label>
+    <label class="file-button"><svg aria-hidden="true"><use href="icons/ui.svg#pictures"/></svg><span>Open an editable file</span><input id="importArt" type="file" accept=".json,.colorclub,application/json" aria-label="Open an editable artwork file"></label>
+    <div id="parentArtActions" hidden><label for="artTitle">Picture name</label><input id="artTitle" maxlength="100"><button id="download"><svg aria-hidden="true"><use href="icons/ui.svg#download"/></svg><span>Download picture</span></button><button id="exportArt"><svg aria-hidden="true"><use href="icons/ui.svg#download"/></svg><span>Download editable file</span></button></div>
+  </section>
+  <section><h3>Family connection</h3><p id="syncStatus" role="status">Ready</p><p>Use these three words on another device to open your family’s pictures.</p><button id="showCode">Show family phrase</button><div id="familyCodeArea" hidden><textarea id="familyCode" rows="1" readonly aria-label="Three-word family phrase"></textarea><button id="copyCode">Copy phrase</button></div><label for="pairCode">Connect another family</label><input id="pairCode" placeholder="purple-dog-kite" autocomplete="off" spellcheck="false"><button id="pair" class="primary">Connect</button><p id="pairStatus" role="status">Connecting changes the family shown here. Previous artwork stays saved under its previous family phrase.</p></section>
+</dialog>
+<script type="module" src="app.mjs"></script>
+</body>
+</html>

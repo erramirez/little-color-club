@@ -1,5 +1,5 @@
 export const PROFILES=['Olivia','Henry','Issa'];
-export const SIZES={9:[3,3],16:[4,4],24:[6,4],36:[6,6],50:[10,5]};
+export const SIZES={9:[3,3],16:[4,4],24:[6,4],36:[6,6]};
 export const SIDE=900;
 export function puzzleGrid(count){const grid=SIZES[count];if(!grid)throw new Error('Unsupported puzzle size');return {cols:grid[0],rows:grid[1],count:Number(count)}}
 export function shuffled(a,random=Math.random){const out=[...a];for(let i=out.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[out[i],out[j]]=[out[j],out[i]]}return out}
@@ -9,5 +9,11 @@ export class PuzzleClock{constructor(now=()=>performance.now()){this.now=now;thi
 export function compositePixels(base,paint){const result=new Uint8ClampedArray(base.length);for(let k=0;k<base.length;k+=4){const a=paint[k+3]/255;for(let c=0;c<3;c++)result[k+c]=base[k+c]*(1-a)+base[k+c]*paint[k+c]/255*a;result[k+3]=255}return result}
 export function floodFill(composite,paint,width,height,x,y,rgb){if(x<0||y<0||x>=width||y>=height)return false;const start=(y*width+x)*4,target=Array.from(composite.slice(start,start+3));if(Math.max(...target)<105)return false;const seen=new Uint8Array(width*height),queue=new Int32Array(width*height);let head=0,tail=1,changed=false;queue[0]=y*width+x;seen[queue[0]]=1;while(head<tail){const p=queue[head++],k=p*4;if(!target.every((v,c)=>Math.abs(v-composite[k+c])<=32))continue;if(paint[k]!==rgb[0]||paint[k+1]!==rgb[1]||paint[k+2]!==rgb[2]||paint[k+3]!==255)changed=true;paint[k]=rgb[0];paint[k+1]=rgb[1];paint[k+2]=rgb[2];paint[k+3]=255;const px=p%width;for(const q of [px>0?p-1:-1,px<width-1?p+1:-1,p>=width?p-width:-1,p<width*(height-1)?p+width:-1])if(q>=0&&!seen[q]){seen[q]=1;queue[tail++]=q}}return changed}
 export function erasePixels(paint,width,height,x,y,radius){for(let py=Math.max(0,Math.floor(y-radius));py<Math.min(height,y+radius+1);py++)for(let px=Math.max(0,Math.floor(x-radius));px<Math.min(width,x+radius+1);px++)if((px-x)**2+(py-y)**2<=radius**2)paint[(py*width+px)*4+3]=0;return paint}
-export function normalizePairCode(code){const value=code.replace(/[\s-]/g,'').toLowerCase();if(!/^[a-f0-9]{64}$/.test(value))throw new Error('Use the full 64-character family code.');return value}
+export function normalizePairCode(code){
+  if(typeof code!=='string'||code.length>200)throw new Error('Enter three words, like purple-dog-kite.');
+  const legacy=code.replace(/[\s-]/g,'').toLowerCase();if(/^[a-f0-9]{64}$/.test(legacy))return legacy;
+  const phrase=code.trim().toLowerCase().replace(/[\s–—-]+/g,'-');
+  if(!/^[a-z]{2,16}-[a-z]{2,16}-[a-z]{2,16}$/.test(phrase))throw new Error('Enter three words, like purple-dog-kite.');
+  return phrase;
+}
 export function validateArtwork(a){return !!a&&/^[a-z0-9-]{8,80}$/.test(a.id)&&PROFILES.includes(a.profile)&&typeof a.title==='string'&&a.title.length<=100&&typeof a.pageId==='string'&&a.pageId.length<=80&&typeof a.updatedAt==='number'&&Number.isFinite(a.updatedAt)&&typeof a.paint==='string'&&/^data:image\/png;base64,[A-Za-z0-9+/=]*$/.test(a.paint)&&a.paint.length<=2300000&&typeof a.thumbnail==='string'&&/^data:image\/webp;base64,[A-Za-z0-9+/=]*$/.test(a.thumbnail)&&a.thumbnail.length<=200000&&(!a.customBase||(typeof a.customBase==='string'&&/^data:image\/(png|webp|jpeg);base64,[A-Za-z0-9+/=]*$/.test(a.customBase)&&a.customBase.length<=1800000))}

@@ -1,0 +1,954 @@
+[
+  {
+    "id": "garden",
+    "title": "Butterfly Garden",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8473,
+    "ink_fraction": 0.1022,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 92,
+    "largest_enclosed_pixels": 14477,
+    "small_regions": 27,
+    "large_regions": 65,
+    "median_region_pixels": 3658.0,
+    "failures": []
+  },
+  {
+    "id": "cat",
+    "title": "Kitten and a Ball of Yarn",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8685,
+    "ink_fraction": 0.0902,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 79,
+    "largest_enclosed_pixels": 161016,
+    "small_regions": 38,
+    "large_regions": 41,
+    "median_region_pixels": 1095.0,
+    "failures": []
+  },
+  {
+    "id": "puppy",
+    "title": "Puppy\u2019s Picnic",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8622,
+    "ink_fraction": 0.0959,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 99,
+    "largest_enclosed_pixels": 148938,
+    "small_regions": 40,
+    "large_regions": 59,
+    "median_region_pixels": 1307.0,
+    "failures": []
+  },
+  {
+    "id": "bunny",
+    "title": "Bunny\u2019s Carrot Garden",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8736,
+    "ink_fraction": 0.0846,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 48,
+    "largest_enclosed_pixels": 131743,
+    "small_regions": 18,
+    "large_regions": 30,
+    "median_region_pixels": 1631.0,
+    "failures": []
+  },
+  {
+    "id": "lion",
+    "title": "Lion on the Savannah",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8327,
+    "ink_fraction": 0.1009,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 88,
+    "largest_enclosed_pixels": 42273,
+    "small_regions": 52,
+    "large_regions": 36,
+    "median_region_pixels": 576.5,
+    "failures": []
+  },
+  {
+    "id": "fox",
+    "title": "Fox in the Woodland",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8281,
+    "ink_fraction": 0.1114,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 106,
+    "largest_enclosed_pixels": 130065,
+    "small_regions": 61,
+    "large_regions": 45,
+    "median_region_pixels": 670.0,
+    "failures": []
+  },
+  {
+    "id": "dinosaur",
+    "title": "Dinosaur Valley",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8622,
+    "ink_fraction": 0.0823,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 129,
+    "largest_enclosed_pixels": 107375,
+    "small_regions": 98,
+    "large_regions": 31,
+    "median_region_pixels": 425.0,
+    "failures": []
+  },
+  {
+    "id": "owl",
+    "title": "Moonlit Owl",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.801,
+    "ink_fraction": 0.1206,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 135,
+    "largest_enclosed_pixels": 42981,
+    "small_regions": 85,
+    "large_regions": 50,
+    "median_region_pixels": 550.0,
+    "failures": []
+  },
+  {
+    "id": "rocket",
+    "title": "Ready for Blastoff",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.9089,
+    "ink_fraction": 0.065,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 31,
+    "largest_enclosed_pixels": 119227,
+    "small_regions": 6,
+    "large_regions": 25,
+    "median_region_pixels": 4645.0,
+    "failures": []
+  },
+  {
+    "id": "planet",
+    "title": "A Planet of Possibilities",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.9055,
+    "ink_fraction": 0.0673,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 33,
+    "largest_enclosed_pixels": 38097,
+    "small_regions": 12,
+    "large_regions": 21,
+    "median_region_pixels": 2869.0,
+    "failures": []
+  },
+  {
+    "id": "astronaut",
+    "title": "A Walk on the Moon",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8228,
+    "ink_fraction": 0.1101,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 206,
+    "largest_enclosed_pixels": 37444,
+    "small_regions": 140,
+    "large_regions": 66,
+    "median_region_pixels": 495.0,
+    "failures": []
+  },
+  {
+    "id": "ufo",
+    "title": "Hello, Space Friends",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8748,
+    "ink_fraction": 0.0869,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 57,
+    "largest_enclosed_pixels": 64644,
+    "small_regions": 18,
+    "large_regions": 39,
+    "median_region_pixels": 1769.0,
+    "failures": []
+  },
+  {
+    "id": "solar-system",
+    "title": "Explore the Solar System",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8603,
+    "ink_fraction": 0.078,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 122,
+    "largest_enclosed_pixels": 42931,
+    "small_regions": 81,
+    "large_regions": 41,
+    "median_region_pixels": 427.5,
+    "failures": []
+  },
+  {
+    "id": "moon-base",
+    "title": "Our Moon Base",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.7948,
+    "ink_fraction": 0.1217,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 261,
+    "largest_enclosed_pixels": 14032,
+    "small_regions": 178,
+    "large_regions": 83,
+    "median_region_pixels": 501.0,
+    "failures": []
+  },
+  {
+    "id": "robot",
+    "title": "My Robot Buddy",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8583,
+    "ink_fraction": 0.0965,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 123,
+    "largest_enclosed_pixels": 33481,
+    "small_regions": 60,
+    "large_regions": 63,
+    "median_region_pixels": 975.0,
+    "failures": []
+  },
+  {
+    "id": "star-map",
+    "title": "Shooting-Star Wishes",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8709,
+    "ink_fraction": 0.0776,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 116,
+    "largest_enclosed_pixels": 72776,
+    "small_regions": 68,
+    "large_regions": 48,
+    "median_region_pixels": 664.0,
+    "failures": []
+  },
+  {
+    "id": "fish",
+    "title": "Fish Among the Bubbles",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8975,
+    "ink_fraction": 0.0677,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 67,
+    "largest_enclosed_pixels": 39495,
+    "small_regions": 19,
+    "large_regions": 48,
+    "median_region_pixels": 2470.0,
+    "failures": []
+  },
+  {
+    "id": "turtle",
+    "title": "Sea Turtle\u2019s Adventure",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8635,
+    "ink_fraction": 0.0898,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 107,
+    "largest_enclosed_pixels": 77951,
+    "small_regions": 51,
+    "large_regions": 56,
+    "median_region_pixels": 993.0,
+    "failures": []
+  },
+  {
+    "id": "octopus",
+    "title": "Octopus\u2019s Shell Collection",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8637,
+    "ink_fraction": 0.087,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 125,
+    "largest_enclosed_pixels": 175382,
+    "small_regions": 96,
+    "large_regions": 29,
+    "median_region_pixels": 250.0,
+    "failures": []
+  },
+  {
+    "id": "whale",
+    "title": "Whale Says Hello",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.9016,
+    "ink_fraction": 0.0656,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 30,
+    "largest_enclosed_pixels": 162719,
+    "small_regions": 20,
+    "large_regions": 10,
+    "median_region_pixels": 576.5,
+    "failures": []
+  },
+  {
+    "id": "dolphin",
+    "title": "Dolphin\u2019s Big Splash",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8936,
+    "ink_fraction": 0.0673,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 33,
+    "largest_enclosed_pixels": 91412,
+    "small_regions": 20,
+    "large_regions": 13,
+    "median_region_pixels": 519.0,
+    "failures": []
+  },
+  {
+    "id": "reef",
+    "title": "Coral Reef Neighborhood",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.7864,
+    "ink_fraction": 0.1313,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 256,
+    "largest_enclosed_pixels": 52048,
+    "small_regions": 152,
+    "large_regions": 104,
+    "median_region_pixels": 562.0,
+    "failures": []
+  },
+  {
+    "id": "submarine",
+    "title": "Underwater Explorers",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8219,
+    "ink_fraction": 0.107,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 172,
+    "largest_enclosed_pixels": 54721,
+    "small_regions": 92,
+    "large_regions": 80,
+    "median_region_pixels": 743.0,
+    "failures": []
+  },
+  {
+    "id": "mermaid",
+    "title": "Mermaid\u2019s Treasure Cove",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.809,
+    "ink_fraction": 0.1079,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 284,
+    "largest_enclosed_pixels": 21995,
+    "small_regions": 182,
+    "large_regions": 102,
+    "median_region_pixels": 491.0,
+    "failures": []
+  },
+  {
+    "id": "car",
+    "title": "A Sunny Road Trip",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8673,
+    "ink_fraction": 0.092,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 62,
+    "largest_enclosed_pixels": 63132,
+    "small_regions": 19,
+    "large_regions": 43,
+    "median_region_pixels": 1529.5,
+    "failures": []
+  },
+  {
+    "id": "truck",
+    "title": "Delivery Truck Day",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8438,
+    "ink_fraction": 0.0998,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 111,
+    "largest_enclosed_pixels": 55798,
+    "small_regions": 53,
+    "large_regions": 58,
+    "median_region_pixels": 1099.0,
+    "failures": []
+  },
+  {
+    "id": "fire",
+    "title": "Fire Engine to the Rescue",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.7498,
+    "ink_fraction": 0.1447,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 341,
+    "largest_enclosed_pixels": 48057,
+    "small_regions": 262,
+    "large_regions": 79,
+    "median_region_pixels": 453.0,
+    "failures": []
+  },
+  {
+    "id": "bus",
+    "title": "The Happy School Bus",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8338,
+    "ink_fraction": 0.1101,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 111,
+    "largest_enclosed_pixels": 60798,
+    "small_regions": 43,
+    "large_regions": 68,
+    "median_region_pixels": 1371.0,
+    "failures": []
+  },
+  {
+    "id": "tractor",
+    "title": "Tractor on the Farm",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.7773,
+    "ink_fraction": 0.1357,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 247,
+    "largest_enclosed_pixels": 23443,
+    "small_regions": 134,
+    "large_regions": 113,
+    "median_region_pixels": 788.0,
+    "failures": []
+  },
+  {
+    "id": "train",
+    "title": "All Aboard the Little Train",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.7573,
+    "ink_fraction": 0.1472,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 271,
+    "largest_enclosed_pixels": 57637,
+    "small_regions": 196,
+    "large_regions": 75,
+    "median_region_pixels": 360.0,
+    "failures": []
+  },
+  {
+    "id": "race",
+    "title": "Race Day Champion",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.817,
+    "ink_fraction": 0.1248,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 122,
+    "largest_enclosed_pixels": 63750,
+    "small_regions": 46,
+    "large_regions": 76,
+    "median_region_pixels": 1488.5,
+    "failures": []
+  },
+  {
+    "id": "excavator",
+    "title": "Digging at the Building Site",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8143,
+    "ink_fraction": 0.1131,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 225,
+    "largest_enclosed_pixels": 17489,
+    "small_regions": 163,
+    "large_regions": 62,
+    "median_region_pixels": 413.0,
+    "failures": []
+  },
+  {
+    "id": "soccer",
+    "title": "Soccer at the Park",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8533,
+    "ink_fraction": 0.104,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 158,
+    "largest_enclosed_pixels": 24123,
+    "small_regions": 123,
+    "large_regions": 35,
+    "median_region_pixels": 508.0,
+    "failures": []
+  },
+  {
+    "id": "basketball",
+    "title": "A Perfect Basketball Shot",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8358,
+    "ink_fraction": 0.0887,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 357,
+    "largest_enclosed_pixels": 18243,
+    "small_regions": 322,
+    "large_regions": 35,
+    "median_region_pixels": 159.0,
+    "failures": []
+  },
+  {
+    "id": "baseball",
+    "title": "Ready for a Home Run",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8582,
+    "ink_fraction": 0.0987,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 107,
+    "largest_enclosed_pixels": 33488,
+    "small_regions": 71,
+    "large_regions": 36,
+    "median_region_pixels": 569.0,
+    "failures": []
+  },
+  {
+    "id": "football",
+    "title": "Football in the Backyard",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8575,
+    "ink_fraction": 0.087,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 85,
+    "largest_enclosed_pixels": 17839,
+    "small_regions": 46,
+    "large_regions": 39,
+    "median_region_pixels": 693.0,
+    "failures": []
+  },
+  {
+    "id": "tennis",
+    "title": "Tennis Time",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.7979,
+    "ink_fraction": 0.1007,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 562,
+    "largest_enclosed_pixels": 20251,
+    "small_regions": 528,
+    "large_regions": 34,
+    "median_region_pixels": 165.0,
+    "failures": []
+  },
+  {
+    "id": "skateboard",
+    "title": "Skate Park Adventure",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8655,
+    "ink_fraction": 0.0846,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 89,
+    "largest_enclosed_pixels": 86309,
+    "small_regions": 52,
+    "large_regions": 37,
+    "median_region_pixels": 686.0,
+    "failures": []
+  },
+  {
+    "id": "trophy",
+    "title": "Everyone\u2019s a Superstar",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.846,
+    "ink_fraction": 0.1133,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 64,
+    "largest_enclosed_pixels": 35967,
+    "small_regions": 11,
+    "large_regions": 53,
+    "median_region_pixels": 3675.5,
+    "failures": []
+  },
+  {
+    "id": "bike",
+    "title": "Bicycle Ride in the Park",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.7528,
+    "ink_fraction": 0.1377,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 319,
+    "largest_enclosed_pixels": 18330,
+    "small_regions": 261,
+    "large_regions": 58,
+    "median_region_pixels": 266.0,
+    "failures": []
+  },
+  {
+    "id": "princess-garden",
+    "title": "Princess in the Rose Garden",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8009,
+    "ink_fraction": 0.1046,
+    "colored_fraction": 2e-05,
+    "enclosed_regions": 339,
+    "largest_enclosed_pixels": 44051,
+    "small_regions": 246,
+    "large_regions": 93,
+    "median_region_pixels": 349.0,
+    "failures": []
+  },
+  {
+    "id": "storybook-castle",
+    "title": "The Storybook Castle",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8545,
+    "ink_fraction": 0.0934,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 126,
+    "largest_enclosed_pixels": 31165,
+    "small_regions": 63,
+    "large_regions": 63,
+    "median_region_pixels": 863.5,
+    "failures": []
+  },
+  {
+    "id": "winter-castle",
+    "title": "The Snowflake Castle",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8014,
+    "ink_fraction": 0.1115,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 335,
+    "largest_enclosed_pixels": 16314,
+    "small_regions": 236,
+    "large_regions": 99,
+    "median_region_pixels": 409.0,
+    "failures": []
+  },
+  {
+    "id": "fairy-tea",
+    "title": "A Fairy\u2019s Tea Party",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.822,
+    "ink_fraction": 0.112,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 176,
+    "largest_enclosed_pixels": 35422,
+    "small_regions": 77,
+    "large_regions": 99,
+    "median_region_pixels": 1013.5,
+    "failures": []
+  },
+  {
+    "id": "friendly-dragon",
+    "title": "Dragon at the Castle Gate",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.7986,
+    "ink_fraction": 0.1242,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 267,
+    "largest_enclosed_pixels": 30789,
+    "small_regions": 158,
+    "large_regions": 109,
+    "median_region_pixels": 745.0,
+    "failures": []
+  },
+  {
+    "id": "enchanted-carriage",
+    "title": "The Enchanted Carriage",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.783,
+    "ink_fraction": 0.1218,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 300,
+    "largest_enclosed_pixels": 19479,
+    "small_regions": 194,
+    "large_regions": 106,
+    "median_region_pixels": 595.5,
+    "failures": []
+  },
+  {
+    "id": "mermaid-palace",
+    "title": "The Mermaid Palace",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.7733,
+    "ink_fraction": 0.1248,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 368,
+    "largest_enclosed_pixels": 25128,
+    "small_regions": 267,
+    "large_regions": 101,
+    "median_region_pixels": 464.5,
+    "failures": []
+  },
+  {
+    "id": "unicorn-meadow",
+    "title": "Unicorn in the Flower Meadow",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8684,
+    "ink_fraction": 0.0862,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 77,
+    "largest_enclosed_pixels": 61618,
+    "small_regions": 12,
+    "large_regions": 65,
+    "median_region_pixels": 2692.0,
+    "failures": []
+  },
+  {
+    "id": "hero",
+    "title": "My First Superhero",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8655,
+    "ink_fraction": 0.0869,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 96,
+    "largest_enclosed_pixels": 44383,
+    "small_regions": 46,
+    "large_regions": 50,
+    "median_region_pixels": 981.0,
+    "failures": []
+  },
+  {
+    "id": "hero-city",
+    "title": "Helping the City",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.778,
+    "ink_fraction": 0.1289,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 205,
+    "largest_enclosed_pixels": 22805,
+    "small_regions": 133,
+    "large_regions": 72,
+    "median_region_pixels": 557.0,
+    "failures": []
+  },
+  {
+    "id": "comic-cat",
+    "title": "Captain Cat Saves the Day",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.829,
+    "ink_fraction": 0.1097,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 92,
+    "largest_enclosed_pixels": 53200,
+    "small_regions": 52,
+    "large_regions": 40,
+    "median_region_pixels": 679.0,
+    "failures": []
+  },
+  {
+    "id": "comic-robot",
+    "title": "Robot Rescue Team",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8298,
+    "ink_fraction": 0.1001,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 138,
+    "largest_enclosed_pixels": 15677,
+    "small_regions": 87,
+    "large_regions": 51,
+    "median_region_pixels": 490.5,
+    "failures": []
+  },
+  {
+    "id": "comic-panels",
+    "title": "Make Your Own Comic",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8987,
+    "ink_fraction": 0.0732,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 44,
+    "largest_enclosed_pixels": 217627,
+    "small_regions": 27,
+    "large_regions": 17,
+    "median_region_pixels": 470.5,
+    "failures": []
+  },
+  {
+    "id": "dragon",
+    "title": "The Dragon\u2019s Delivery",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.807,
+    "ink_fraction": 0.1127,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 207,
+    "largest_enclosed_pixels": 55016,
+    "small_regions": 119,
+    "large_regions": 88,
+    "median_region_pixels": 733.0,
+    "failures": []
+  },
+  {
+    "id": "comic-space",
+    "title": "Space Friends to the Rescue",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.7921,
+    "ink_fraction": 0.1195,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 261,
+    "largest_enclosed_pixels": 20523,
+    "small_regions": 176,
+    "large_regions": 85,
+    "median_region_pixels": 474.0,
+    "failures": []
+  },
+  {
+    "id": "comic-unicorn",
+    "title": "Unicorn\u2019s Rainbow Adventure",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8735,
+    "ink_fraction": 0.0712,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 133,
+    "largest_enclosed_pixels": 82092,
+    "small_regions": 78,
+    "large_regions": 55,
+    "median_region_pixels": 673.0,
+    "failures": []
+  }
+]

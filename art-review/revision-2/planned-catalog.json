@@ -1,0 +1,484 @@
+[
+  {
+    "id": "garden",
+    "title": "Butterfly Garden",
+    "theme": "Animals",
+    "level": "Easy",
+    "scene": "One lovely butterfly with four broad plain wing segments above two large five-petal daisies and four simple broad leaves. No tiny insects or extra flowers.",
+    "revision": 2,
+    "asset": "garden-simple.png"
+  },
+  {
+    "id": "cat",
+    "title": "Kitten and a Ball of Yarn",
+    "theme": "Animals",
+    "level": "Easy",
+    "scene": "An adorable fluffy kitten sitting beside a ball of yarn in a small flower garden, with a butterfly above its nose."
+  },
+  {
+    "id": "puppy",
+    "title": "Puppy’s Picnic",
+    "theme": "Animals",
+    "level": "Easy",
+    "scene": "A charming floppy-eared puppy sitting beside one large toy ball on a plain picnic blanket. Smooth body contour, no fur marks; blanket is one broad unpatterned shape. No basket, food, grass or garden.",
+    "revision": 2,
+    "asset": "puppy-simple.png"
+  },
+  {
+    "id": "bunny",
+    "title": "Bunny’s Carrot Garden",
+    "theme": "Animals",
+    "level": "Easy",
+    "scene": "A cute bunny with long upright ears and all four paws, sitting beside two carrots and broad leafy vegetables in a small garden."
+  },
+  {
+    "id": "lion",
+    "title": "Lion on the Savannah",
+    "theme": "Animals",
+    "level": "Playful",
+    "scene": "One friendly lion with a large mane drawn as eight broad lobes, sitting beside the simple silhouette of a small acacia tree. Body and tail clearly separated; no fur marks, grass or individual tree leaves.",
+    "revision": 2,
+    "asset": "lion-simple.png"
+  },
+  {
+    "id": "fox",
+    "title": "Fox in the Woodland",
+    "theme": "Animals",
+    "level": "Playful",
+    "scene": "One charming fox sitting with its broad bushy tail curling around its paws, beside one large mushroom. Smooth outline and two large fur-color patches only. No woodland, logs or fur texture.",
+    "revision": 2,
+    "asset": "fox-simple.png"
+  },
+  {
+    "id": "dinosaur",
+    "title": "Dinosaur Valley",
+    "theme": "Animals",
+    "level": "Playful",
+    "scene": "One friendly triceratops with correctly formed legs and three horns beside one very simple fern with six broad leaves. One distant smooth volcano silhouette. No ground texture or tiny creatures.",
+    "revision": 2,
+    "asset": "dinosaur-simple.png"
+  },
+  {
+    "id": "owl",
+    "title": "Moonlit Owl",
+    "theme": "Animals",
+    "level": "Detailed",
+    "scene": "A lovely owl perched on a thick simple branch with two broad leaves, beneath one crescent moon. Chest has only six very large rounded feather shapes. No forest, stars, fine feather marks or flowers.",
+    "revision": 2,
+    "asset": "owl-simple.png"
+  },
+  {
+    "id": "rocket",
+    "title": "Ready for Blastoff",
+    "theme": "Space",
+    "level": "Easy",
+    "scene": "An appealing cartoon rocket blasting upward with three large window shapes and a curling plume of exhaust, one ringed planet and a few large stars."
+  },
+  {
+    "id": "planet",
+    "title": "A Planet of Possibilities",
+    "theme": "Space",
+    "level": "Easy",
+    "scene": "One large beautifully drawn ringed planet, a small nearby moon, and five large stars in a charming outer space composition. All planet bands uncolored white."
+  },
+  {
+    "id": "astronaut",
+    "title": "A Walk on the Moon",
+    "theme": "Space",
+    "level": "Playful",
+    "scene": "One child astronaut waving on a moon mound with one large planet above. Simplified suit with broad sleeves and legs, one chest panel and two large buttons. No rover, hoses, wires, detailed rocks or craters.",
+    "revision": 2,
+    "asset": "astronaut-simple.png"
+  },
+  {
+    "id": "ufo",
+    "title": "Hello, Space Friends",
+    "theme": "Space",
+    "level": "Easy",
+    "scene": "A friendly little alien waving from a classic domed flying saucer hovering over a moon crater. Large enclosed lights on saucer, a few stars and one planet."
+  },
+  {
+    "id": "solar-system",
+    "title": "Explore the Solar System",
+    "theme": "Space",
+    "level": "Detailed",
+    "scene": "A large simple smiling sun with eight clearly separated differently sized planets arranged around it. One broad ring on one planet, one broad band on two others; all other planets plain. No orbit lines, extra stars, craters, tiny spots or faces on the planets.",
+    "revision": 2,
+    "asset": "solar-system-simple.png"
+  },
+  {
+    "id": "moon-base",
+    "title": "Our Moon Base",
+    "theme": "Space",
+    "level": "Detailed",
+    "scene": "One friendly round moon habitat dome with one wide doorway, two large windows and a simple satellite dish, beside one small waving astronaut. Only one smooth moon hill. No rover, rockets, wires, surface rocks or extra buildings.",
+    "revision": 2,
+    "asset": "moon-base-simple.png"
+  },
+  {
+    "id": "robot",
+    "title": "My Robot Buddy",
+    "theme": "Space",
+    "level": "Playful",
+    "scene": "One lovable rounded robot waving, with a broad rounded head, two eyes, one chest panel, two buttons, smooth mitten-like hands and large simple boots. No gears, wires, plant, bolts or detailed mechanical joints.",
+    "revision": 2,
+    "asset": "robot-simple.png"
+  },
+  {
+    "id": "star-map",
+    "title": "Shooting-Star Wishes",
+    "theme": "Space",
+    "level": "Detailed",
+    "scene": "One large smiling crescent moon and one large shooting star with two broad curved trail bands, plus one plain ringed planet. No other stars, spots, textures or intersecting linework.",
+    "revision": 2,
+    "asset": "star-map-simple.png"
+  },
+  {
+    "id": "fish",
+    "title": "Fish Among the Bubbles",
+    "theme": "Ocean",
+    "level": "Easy",
+    "scene": "An adorable large tropical fish swimming beside three broad seaweed leaves and a starfish, with a few large bubbles. Beautiful complete fish with recognizable fins and tail."
+  },
+  {
+    "id": "turtle",
+    "title": "Sea Turtle’s Adventure",
+    "theme": "Ocean",
+    "level": "Easy",
+    "scene": "One smiling sea turtle swimming with four correctly formed broad flippers. Shell divided into only six large plates, flippers completely plain. One broad seaweed plant with four leaves. No spots, bubbles, rocks or tiny sea life.",
+    "revision": 2,
+    "asset": "turtle-simple.png"
+  },
+  {
+    "id": "octopus",
+    "title": "Octopus and a Seashell",
+    "theme": "Ocean",
+    "level": "Playful",
+    "scene": "One friendly octopus with exactly eight clearly separated broad curling arms, above one large shell. Arms have no suction-cup circles or texture. Empty white background, no seaweed or bubbles.",
+    "revision": 2,
+    "asset": "octopus-simple.png"
+  },
+  {
+    "id": "whale",
+    "title": "Whale Says Hello",
+    "theme": "Ocean",
+    "level": "Easy",
+    "scene": "A beautiful friendly whale with a correct rounded whale body, two flippers and a broad tail, coming up above gentle ocean waves with a large playful spout and a seagull overhead."
+  },
+  {
+    "id": "dolphin",
+    "title": "Dolphin’s Big Splash",
+    "theme": "Ocean",
+    "level": "Playful",
+    "scene": "A graceful cheerful dolphin leaping over a curling wave, with a little sailboat in the far distance, sun and soft clouds. Coherent recognizable dolphin anatomy."
+  },
+  {
+    "id": "reef",
+    "title": "Coral Reef Neighborhood",
+    "theme": "Ocean",
+    "level": "Detailed",
+    "scene": "Two charming fish facing each other above two broad simple coral silhouettes. Each fish has a broad body, one large fin and at most two body bands. No fine coral branches, scales, bubbles, seabed detail or small creatures.",
+    "revision": 2,
+    "asset": "reef-simple.png"
+  },
+  {
+    "id": "submarine",
+    "title": "Underwater Explorers",
+    "theme": "Ocean",
+    "level": "Playful",
+    "scene": "One rounded child-friendly submarine with three large portholes, one showing a smiling child's face, and a simple periscope. One small plain fish nearby. No bolts, seam stripes, plants, gears, extra animals or bubbles.",
+    "revision": 2,
+    "asset": "submarine-simple.png"
+  },
+  {
+    "id": "mermaid",
+    "title": "Mermaid and a Seashell",
+    "theme": "Ocean",
+    "level": "Detailed",
+    "scene": "An original adult mermaid in a plain long-sleeved blouse with broad hair shapes and a smooth fish tail, sitting beside one large seashell on a plain rock.",
+    "revision": 2,
+    "asset": "mermaid-simple.png"
+  },
+  {
+    "id": "car",
+    "title": "A Sunny Road Trip",
+    "theme": "Wheels",
+    "level": "Easy",
+    "scene": "A beautiful friendly small vintage-style car seen in three-quarter view driving along a curved country road, with two visible wheels, large windows, a tree and a cloud. No text or license-plate characters."
+  },
+  {
+    "id": "truck",
+    "title": "Delivery Truck Day",
+    "theme": "Wheels",
+    "level": "Easy",
+    "scene": "One charming delivery truck in readable side view, with a large plain rectangular cargo box, broad cab window and two visible round wheels. One smooth road line. No tire tread, bolts, buildings, boxes, lettering or detailed chassis.",
+    "revision": 2,
+    "asset": "truck-simple.png"
+  },
+  {
+    "id": "fire",
+    "title": "Fire Engine to the Rescue",
+    "theme": "Wheels",
+    "level": "Playful",
+    "scene": "One friendly fire engine in readable side view, with a broad cab, two visible large wheels and a simple ladder of only four wide rungs above a plain body panel. No hoses, equipment, bolts, tread, buildings, emergency scene or lettering.",
+    "revision": 2,
+    "asset": "fire-simple.png"
+  },
+  {
+    "id": "bus",
+    "title": "The Happy School Bus",
+    "theme": "Wheels",
+    "level": "Easy",
+    "scene": "One rounded school bus in side view, with three broad windows and two large visible wheels. One smooth road line. No passengers, window reflections, stripes, lettering, buildings or tire tread.",
+    "revision": 2,
+    "asset": "bus-simple.png"
+  },
+  {
+    "id": "tractor",
+    "title": "Tractor on the Farm",
+    "theme": "Wheels",
+    "level": "Playful",
+    "scene": "One charming farm tractor in clear side view with one large rear wheel, one smaller front wheel, a broad cab and plain front hood. Each tire has only four broad tread segments. One smooth field hill. No farm buildings, crops, tools or machinery detail.",
+    "revision": 2,
+    "asset": "tractor-simple.png"
+  },
+  {
+    "id": "train",
+    "title": "All Aboard the Little Train",
+    "theme": "Wheels",
+    "level": "Playful",
+    "scene": "One appealing little steam locomotive pulling one plain carriage, with four large simple wheels and one broad puff of steam. Smooth curved ground line. No rail ties, bolts, interior machinery, passengers, buildings or landscapes.",
+    "revision": 2,
+    "asset": "train-simple.png"
+  },
+  {
+    "id": "race",
+    "title": "Race Day Champion",
+    "theme": "Wheels",
+    "level": "Playful",
+    "scene": "One appealing rounded racing car in clear three-quarter view with two visible large wheels and a broad windshield, beside one flag with four big checker squares. No crowd, road detail, numbers, sponsors, tread, detailed grills or tiny stripes.",
+    "revision": 2,
+    "asset": "race-simple.png"
+  },
+  {
+    "id": "excavator",
+    "title": "Digging at the Building Site",
+    "theme": "Wheels",
+    "level": "Detailed",
+    "scene": "One friendly excavator in side view with a broad cab window, simple articulated arm and large digging bucket, on two smooth tracks divided into only three wide sections each. One plain mound of soil. No bolts, machinery, rocks or construction site background.",
+    "revision": 2,
+    "asset": "excavator-simple.png"
+  },
+  {
+    "id": "soccer",
+    "title": "Soccer at the Park",
+    "theme": "Sports",
+    "level": "Easy",
+    "scene": "One cheerful child in a plain soccer outfit standing beside one large soccer ball with six broad patches. One smooth ground line, no goal, net, grass, crowds, uniform patterns or buildings. Natural hands and legs, simple hair masses.",
+    "revision": 2,
+    "asset": "soccer-simple.png"
+  },
+  {
+    "id": "basketball",
+    "title": "A Perfect Basketball Shot",
+    "theme": "Sports",
+    "level": "Playful",
+    "scene": "One cheerful child in a plain basketball uniform holding one large ball, with a simple hoop and broad backboard nearby. Hoop has no net mesh; a single plain outline for the short hanging net is okay. No spectators, buildings, shoe laces, uniform patterns or textures.",
+    "revision": 2,
+    "asset": "basketball-simple.png"
+  },
+  {
+    "id": "baseball",
+    "title": "Ready for a Home Run",
+    "theme": "Sports",
+    "level": "Easy",
+    "scene": "One cheerful child in a plain baseball cap and uniform holding a broad simple bat beside one large plain ball. No tiny ball stitches, uniform stripes, shoe laces, glove stitching, sports field or crowd. Natural hands and legs, simplified hair.",
+    "revision": 2,
+    "asset": "baseball-simple.png"
+  },
+  {
+    "id": "football",
+    "title": "Football in the Backyard",
+    "theme": "Sports",
+    "level": "Playful",
+    "scene": "One smiling child in a plain T-shirt and shorts carrying a large oval football with one broad seam and three large simple laces. One plain ground line, no field, yard details, patterned clothing or tiny shoe laces.",
+    "revision": 2,
+    "asset": "football-simple.png"
+  },
+  {
+    "id": "tennis",
+    "title": "Tennis Time",
+    "theme": "Sports",
+    "level": "Detailed",
+    "scene": "One cheerful child holding a large tennis racket beside one large ball. The racket face is a plain empty oval suitable for coloring, with NO string grid or mesh. Plain shirt and shorts; one ground line, no fence, net, scenery, clothes patterns or shoe laces.",
+    "revision": 2,
+    "asset": "tennis-simple.png"
+  },
+  {
+    "id": "skateboard",
+    "title": "Skate Park Adventure",
+    "theme": "Sports",
+    "level": "Playful",
+    "scene": "One happy child wearing a helmet standing on a broad skateboard beside one simple low curved ramp. Plain shirt, shorts and shoes, smooth simple hair. No skate park buildings, graffiti, tiny shoe laces, patterned clothes or extra scenery.",
+    "revision": 2,
+    "asset": "skateboard-simple.png"
+  },
+  {
+    "id": "trophy",
+    "title": "Everyone’s a Superstar",
+    "theme": "Sports",
+    "level": "Easy",
+    "scene": "A large beautiful trophy cup with two curved handles and a star medallion, resting on a broad pedestal next to a medal on a ribbon and a soccer ball. No lettering or numerals."
+  },
+  {
+    "id": "bike",
+    "title": "Bicycle Ride in the Park",
+    "theme": "Sports",
+    "level": "Detailed",
+    "scene": "One cheerful helmeted child standing beside a simple bicycle with two large wheels, a clear frame, handlebars and saddle. Each wheel has only four broad spokes. Empty white background with one ground line; no park, chains, detailed gears or patterned clothes.",
+    "revision": 2,
+    "asset": "bike-simple.png"
+  },
+  {
+    "id": "princess-garden",
+    "title": "Princess in the Rose Garden",
+    "theme": "Fairy Tales",
+    "level": "Playful",
+    "scene": "One original friendly princess in a beautiful plain flowing gown with only three broad skirt panels, a simple crown with three points and hair in three broad smooth locks, beside one large five-petal rose bloom and two broad leaves. No lace, jewelry, tiny dress decorations, hair strands or garden detail.",
+    "revision": 2,
+    "asset": "princess-garden-simple.png"
+  },
+  {
+    "id": "storybook-castle",
+    "title": "The Storybook Castle",
+    "theme": "Fairy Tales",
+    "level": "Easy",
+    "scene": "One lovely fairy-tale castle with only three broad towers, large plain pointed roofs, one arched doorway and four large windows. One smooth hill. No individual bricks, roof tiles, detailed crenellations, shrubs, flags or ornamental architecture.",
+    "revision": 2,
+    "asset": "storybook-castle-simple.png"
+  },
+  {
+    "id": "winter-castle",
+    "title": "The Snowflake Castle",
+    "theme": "Fairy Tales",
+    "level": "Detailed",
+    "scene": "One lovely snow-covered fairy-tale castle with three broad towers, plain snowy pointed roofs, one arched door and three large windows. One large simple six-point snowflake overhead. No bricks, roof tiles, snow textures, tiny snowflakes, trees or ornaments.",
+    "revision": 2,
+    "asset": "winter-castle-simple.png"
+  },
+  {
+    "id": "fairy-tea",
+    "title": "A Fairy’s Tea Party",
+    "theme": "Fairy Tales",
+    "level": "Playful",
+    "scene": "One original little fairy with two broad plain wings sitting beside a large mushroom table, holding one big plain teacup. Plain simple dress, smooth hair masses. No tea set pieces, elaborate wings, tiny furniture, flowers, glitter or patterned clothing.",
+    "revision": 2,
+    "asset": "fairy-tea-simple.png"
+  },
+  {
+    "id": "friendly-dragon",
+    "title": "Dragon at the Castle Gate",
+    "theme": "Fairy Tales",
+    "level": "Playful",
+    "scene": "One friendly dragon with four correctly formed legs, two simple wings and a curling tail, beside one broad castle doorway silhouette. Dragon body is smooth without scale texture; wings have only one broad panel each. No individual bricks, flowers or small ornaments.",
+    "revision": 2,
+    "asset": "friendly-dragon-simple.png"
+  },
+  {
+    "id": "enchanted-carriage",
+    "title": "The Enchanted Carriage",
+    "theme": "Fairy Tales",
+    "level": "Detailed",
+    "scene": "One beautiful fairy-tale carriage with a broad rounded cab, one large arched window and two large wheels with only four spokes each, topped with one simple crown shape. No filigree, vines, leaf patterns, tiny ornaments, spokes beyond four, castle or garden background.",
+    "revision": 2,
+    "asset": "enchanted-carriage-simple.png"
+  },
+  {
+    "id": "mermaid-palace",
+    "title": "The Mermaid Palace",
+    "theme": "Fairy Tales",
+    "level": "Detailed",
+    "scene": "One beautiful underwater fairy-tale palace with three broad shell-shaped towers, one arched doorway and four large windows. Two broad seaweed leaves only. No mermaid figure, fish, coral, individual scales, tiles, filigree or tiny architectural ornament.",
+    "revision": 2,
+    "asset": "mermaid-palace-simple.png"
+  },
+  {
+    "id": "unicorn-meadow",
+    "title": "Unicorn in the Flower Meadow",
+    "theme": "Fairy Tales",
+    "level": "Easy",
+    "scene": "A gorgeous adorable unicorn with four correctly formed legs, a flowing mane and tail and one spiral horn, standing among three large flowers under a rainbow. All rainbow bands uncolored white, generous coloring spaces."
+  },
+  {
+    "id": "friend-club",
+    "title": "Our After-School Club",
+    "scene": "Two original preteen friends with distinct simple hairstyles, standing together proudly beside their large simple hand-made club banner, which is a plain empty rectangle they can decorate themselves. One friend holds each side of the banner. Warm expressive faces, natural preteen proportions and clear friendly body language. Plain short-sleeved shirts, plain trousers, broad simple shoes. White background with no furniture or room details. No text, intricate fingers, decorative hair marks, patterned clothes or tiny props.",
+    "theme": "Graphic Novels",
+    "level": "Playful",
+    "revision": 2,
+    "asset": "friend-club.png"
+  },
+  {
+    "id": "babysitting-crew",
+    "title": "The Babysitting Crew",
+    "scene": "One original preteen babysitter and one younger child happily building a tower from four very large plain blocks together. Both seated on a simple blank floor, one large clear full-body figure on each side. Plain T-shirts and trousers, broad simple shoes, hair in one or two smooth closed masses. No room, furniture, scattered toys, tiny fingers, patterns or text.",
+    "theme": "Graphic Novels",
+    "level": "Playful",
+    "revision": 2,
+    "asset": "babysitting-crew.png"
+  },
+  {
+    "id": "talent-show",
+    "title": "Ready for the Talent Show",
+    "scene": "Two original school-age friends standing together on a simple school stage. One holds a single broad microphone and smiles confidently; the other claps encouragement. One broad curtain on each side and one simple floor line. Both figures are large, fully visible, wearing plain casual clothing. No instrument, audience, stars, lights, decorations, patterned clothes, tiny fingers or room detail.",
+    "theme": "Graphic Novels",
+    "level": "Playful",
+    "revision": 2,
+    "asset": "talent-show.png"
+  },
+  {
+    "id": "new-friend",
+    "title": "A Seat for a New Friend",
+    "scene": "Two original school-age classmates, one seated on a very simple broad park-style school bench and warmly gesturing to the empty seat beside them, the other standing close by smiling. Both figures large and clearly readable. Plain clothes, broad hair masses, no cafeteria, table, food, lunch boxes, room details, patterned clothes or tiny fingers.",
+    "theme": "Graphic Novels",
+    "level": "Playful",
+    "revision": 2,
+    "asset": "new-friend.png"
+  },
+  {
+    "id": "science-team",
+    "title": "The Science Fair Team",
+    "scene": "Two original school-age friends working together on a large simple model rocket on a plain table. One holds a broad rocket fin and the other smiles encouragingly. No tools, parts clutter, room detail, lettering or decorative clothes.",
+    "theme": "Graphic Novels",
+    "level": "Playful",
+    "revision": 2,
+    "asset": "science-team.png"
+  },
+  {
+    "id": "forest-patrol",
+    "title": "Forest Cat Patrol",
+    "scene": "Two original courageous forest cats walking together along a simple winding path beneath one large tree trunk and one broad leafy branch. Natural graceful feline proportions, readable alert expressions, smooth coats without fur texture or small stripes. No clothing, weapons, fighting or detailed forest.",
+    "theme": "Graphic Novels",
+    "level": "Playful",
+    "revision": 2,
+    "asset": "forest-patrol.png"
+  },
+  {
+    "id": "river-crossing",
+    "title": "Across the Stream",
+    "scene": "Two original adventurous forest cats crossing a stream on three large smooth stepping stones, one looking back encouragingly at the other. Natural graceful feline anatomy and expressive poses. Stream has only two broad curved banks, no ripples, fur hatching, detailed plants or scenery.",
+    "theme": "Graphic Novels",
+    "level": "Playful",
+    "revision": 2,
+    "asset": "river-crossing.png"
+  },
+  {
+    "id": "moon-gathering",
+    "title": "The Moonlit Gathering",
+    "scene": "Three original forest cats sitting together on a broad smooth hill beneath one large crescent moon, with one broad leafy branch at the margin. Natural feline proportions, thoughtful friendly expressions, distinct silhouettes. No fur texture, tiny markings, stars, detailed vegetation or fighting.",
+    "theme": "Graphic Novels",
+    "level": "Playful",
+    "revision": 2,
+    "asset": "moon-gathering.png"
+  }
+]

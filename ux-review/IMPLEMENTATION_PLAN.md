@@ -1,0 +1,14 @@
+# UX implementation plan and results
+
+Local-only scope: no build, commit, GitHub update, or deployment. See [findings](REVIEW.md) for priorities, evidence and outstanding decisions.
+
+1. **Reduce the child’s navigation and reading load — complete.** Keep three recognizable player cards; simplify to Color and My pictures; remove tags, levels, counts and explanatory copy. Show all category choices together. Addresses 03, 04, 07.
+2. **Make coloring the dominant activity — complete in source.** Full viewport studio; large square paper; landscape side docks and portrait bottom docks. Keep Fill/Draw/Erase prominent, 12 main colors, and More for extra choices. Increase targets; retain undo/redo. Addresses 01, 02, 10, 12, 19. Actual viewport acceptance pending.
+3. **Connect coloring to puzzles — complete.** Done → saved preview → Puzzle → large size choices → puzzle. Saved cards also offer Puzzle. Preserve 9/16/24/36 and exact grids. Addresses 05, 06, 08.
+4. **Protect effort and make state understandable — complete.** Confirm destructive actions, allow undo after clearing, preserve the base layer, show loading, discard stale openings, retain local saves and family/profile separation. Hide file/family controls in Grown-ups. Addresses 09, 11, 16, 17, 22.
+5. **Review the first rebuild and correct discovered issues — complete in source.** Repair board overflow/hint alignment, portrait tile sizing and smallest-phone spacing; retain selected checkmarks; pause on leaving, show Play while paused; improve keyboard focus and reduce timer DOM churn. Addresses 13–15, 18–20.
+6. **Preserve offline UI assets — complete in source.** Add the new native SVG sprite to the cached shell and bump the cache version locally. Addresses 21. Actual service-worker update/offline behavior pending.
+7. **Run appropriate local checks — complete.** Module syntax, HTML/script/icon/page references, balanced HTML structure and 26 core/API/storage/controller/phrase tests. The controller tests use a mock DOM/canvas and do not certify rendering or touch interactions. No build run.
+8. **Record review and larger decisions — complete.** Keep findings and implementation results here. Owner decisions are resolved in DECISIONS-2026-10-04.md: omit speech, a parent gate and coloring assistance; implement dragging, the bottom tray and three-word pairing.
+9. **Hands-on device validation — pending.** Execute the acceptance session in REVIEW.md; address observed problems locally. Browser inspection could not run because the admin security check was unavailable. Do not treat static calculations as screenshots or user testing.
+10. **Publish only after the owner authorizes the next stage — pending.** This task explicitly stops short of repo/build/deploy. Review the local UI with the owner, resolve major decisions, then obtain authorization for that next stage.

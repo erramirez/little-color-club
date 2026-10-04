@@ -6,11 +6,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8473,
-    "ink_fraction": 0.1022,
+    "white_fraction": 0.8981,
+    "ink_fraction": 0.0756,
     "colored_fraction": 0.0,
-    "enclosed_regions": 92,
-    "largest_enclosed_pixels": 14477,
+    "enclosed_regions": 38,
+    "largest_enclosed_pixels": 43919,
+    "small_regions": 5,
+    "large_regions": 33,
+    "median_region_pixels": 9372.0,
+    "thin_ink_fraction": 0.0042,
     "failures": []
   },
   {
@@ -25,6 +29,10 @@
     "colored_fraction": 0.0,
     "enclosed_regions": 79,
     "largest_enclosed_pixels": 161016,
+    "small_regions": 38,
+    "large_regions": 41,
+    "median_region_pixels": 1095.0,
+    "thin_ink_fraction": 0.0564,
     "failures": []
   },
   {
@@ -34,11 +42,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8622,
-    "ink_fraction": 0.0959,
+    "white_fraction": 0.918,
+    "ink_fraction": 0.0639,
     "colored_fraction": 0.0,
-    "enclosed_regions": 99,
-    "largest_enclosed_pixels": 148938,
+    "enclosed_regions": 11,
+    "largest_enclosed_pixels": 211559,
+    "small_regions": 3,
+    "large_regions": 8,
+    "median_region_pixels": 7801.0,
+    "thin_ink_fraction": 0.0056,
     "failures": []
   },
   {
@@ -53,6 +65,10 @@
     "colored_fraction": 0.0,
     "enclosed_regions": 48,
     "largest_enclosed_pixels": 131743,
+    "small_regions": 18,
+    "large_regions": 30,
+    "median_region_pixels": 1631.0,
+    "thin_ink_fraction": 0.091,
     "failures": []
   },
   {
@@ -62,11 +78,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8327,
-    "ink_fraction": 0.1009,
+    "white_fraction": 0.9067,
+    "ink_fraction": 0.0697,
     "colored_fraction": 0.0,
-    "enclosed_regions": 88,
-    "largest_enclosed_pixels": 42273,
+    "enclosed_regions": 34,
+    "largest_enclosed_pixels": 73369,
+    "small_regions": 9,
+    "large_regions": 25,
+    "median_region_pixels": 2493.5,
+    "thin_ink_fraction": 0.0083,
     "failures": []
   },
   {
@@ -76,11 +96,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8281,
-    "ink_fraction": 0.1114,
+    "white_fraction": 0.9236,
+    "ink_fraction": 0.0575,
     "colored_fraction": 0.0,
-    "enclosed_regions": 106,
-    "largest_enclosed_pixels": 130065,
+    "enclosed_regions": 17,
+    "largest_enclosed_pixels": 112066,
+    "small_regions": 4,
+    "large_regions": 13,
+    "median_region_pixels": 3055.0,
+    "thin_ink_fraction": 0.0156,
     "failures": []
   },
   {
@@ -90,11 +114,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8622,
-    "ink_fraction": 0.0823,
+    "white_fraction": 0.9125,
+    "ink_fraction": 0.0659,
     "colored_fraction": 0.0,
-    "enclosed_regions": 129,
-    "largest_enclosed_pixels": 107375,
+    "enclosed_regions": 35,
+    "largest_enclosed_pixels": 127638,
+    "small_regions": 10,
+    "large_regions": 25,
+    "median_region_pixels": 1300.0,
+    "thin_ink_fraction": 0.0033,
     "failures": []
   },
   {
@@ -104,11 +132,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.801,
-    "ink_fraction": 0.1206,
+    "white_fraction": 0.8977,
+    "ink_fraction": 0.0793,
     "colored_fraction": 0.0,
-    "enclosed_regions": 135,
-    "largest_enclosed_pixels": 42981,
+    "enclosed_regions": 19,
+    "largest_enclosed_pixels": 178788,
+    "small_regions": 6,
+    "large_regions": 13,
+    "median_region_pixels": 1528.0,
+    "thin_ink_fraction": 0.0075,
     "failures": []
   },
   {
@@ -123,6 +155,10 @@
     "colored_fraction": 0.0,
     "enclosed_regions": 31,
     "largest_enclosed_pixels": 119227,
+    "small_regions": 6,
+    "large_regions": 25,
+    "median_region_pixels": 4645.0,
+    "thin_ink_fraction": 0.0117,
     "failures": []
   },
   {
@@ -137,6 +173,10 @@
     "colored_fraction": 0.0,
     "enclosed_regions": 33,
     "largest_enclosed_pixels": 38097,
+    "small_regions": 12,
+    "large_regions": 21,
+    "median_region_pixels": 2869.0,
+    "thin_ink_fraction": 0.0059,
     "failures": []
   },
   {
@@ -146,11 +186,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8228,
-    "ink_fraction": 0.1101,
+    "white_fraction": 0.8865,
+    "ink_fraction": 0.0805,
     "colored_fraction": 0.0,
-    "enclosed_regions": 206,
-    "largest_enclosed_pixels": 37444,
+    "enclosed_regions": 44,
+    "largest_enclosed_pixels": 42200,
+    "small_regions": 7,
+    "large_regions": 37,
+    "median_region_pixels": 3302.0,
+    "thin_ink_fraction": 0.0094,
     "failures": []
   },
   {
@@ -165,6 +209,10 @@
     "colored_fraction": 0.0,
     "enclosed_regions": 57,
     "largest_enclosed_pixels": 64644,
+    "small_regions": 18,
+    "large_regions": 39,
+    "median_region_pixels": 1769.0,
+    "thin_ink_fraction": 0.0317,
     "failures": []
   },
   {
@@ -174,11 +222,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8603,
-    "ink_fraction": 0.078,
+    "white_fraction": 0.9129,
+    "ink_fraction": 0.0643,
     "colored_fraction": 0.0,
-    "enclosed_regions": 122,
-    "largest_enclosed_pixels": 42931,
+    "enclosed_regions": 25,
+    "largest_enclosed_pixels": 66896,
+    "small_regions": 5,
+    "large_regions": 20,
+    "median_region_pixels": 7724.0,
+    "thin_ink_fraction": 0.0018,
     "failures": []
   },
   {
@@ -188,11 +240,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.7948,
-    "ink_fraction": 0.1217,
+    "white_fraction": 0.9005,
+    "ink_fraction": 0.0711,
     "colored_fraction": 0.0,
-    "enclosed_regions": 261,
-    "largest_enclosed_pixels": 14032,
+    "enclosed_regions": 59,
+    "largest_enclosed_pixels": 73929,
+    "small_regions": 19,
+    "large_regions": 40,
+    "median_region_pixels": 1720.0,
+    "thin_ink_fraction": 0.009,
     "failures": []
   },
   {
@@ -202,11 +258,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8583,
-    "ink_fraction": 0.0965,
+    "white_fraction": 0.9106,
+    "ink_fraction": 0.0692,
     "colored_fraction": 0.0,
-    "enclosed_regions": 123,
-    "largest_enclosed_pixels": 33481,
+    "enclosed_regions": 32,
+    "largest_enclosed_pixels": 71426,
+    "small_regions": 3,
+    "large_regions": 29,
+    "median_region_pixels": 3524.0,
+    "thin_ink_fraction": 0.0008,
     "failures": []
   },
   {
@@ -216,11 +276,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8709,
-    "ink_fraction": 0.0776,
+    "white_fraction": 0.9213,
+    "ink_fraction": 0.0623,
     "colored_fraction": 0.0,
-    "enclosed_regions": 116,
-    "largest_enclosed_pixels": 72776,
+    "enclosed_regions": 17,
+    "largest_enclosed_pixels": 195161,
+    "small_regions": 7,
+    "large_regions": 10,
+    "median_region_pixels": 1269.0,
+    "thin_ink_fraction": 0.0007,
     "failures": []
   },
   {
@@ -235,6 +299,10 @@
     "colored_fraction": 0.0,
     "enclosed_regions": 67,
     "largest_enclosed_pixels": 39495,
+    "small_regions": 19,
+    "large_regions": 48,
+    "median_region_pixels": 2470.0,
+    "thin_ink_fraction": 0.1467,
     "failures": []
   },
   {
@@ -244,25 +312,33 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8635,
-    "ink_fraction": 0.0898,
+    "white_fraction": 0.9176,
+    "ink_fraction": 0.0624,
     "colored_fraction": 0.0,
-    "enclosed_regions": 107,
-    "largest_enclosed_pixels": 77951,
+    "enclosed_regions": 25,
+    "largest_enclosed_pixels": 103459,
+    "small_regions": 5,
+    "large_regions": 20,
+    "median_region_pixels": 7366.0,
+    "thin_ink_fraction": 0.0028,
     "failures": []
   },
   {
     "id": "octopus",
-    "title": "Octopus\u2019s Shell Collection",
+    "title": "Octopus and a Seashell",
     "size": [
       1254,
       1254
     ],
-    "white_fraction": 0.8637,
-    "ink_fraction": 0.087,
+    "white_fraction": 0.9139,
+    "ink_fraction": 0.0644,
     "colored_fraction": 0.0,
-    "enclosed_regions": 125,
-    "largest_enclosed_pixels": 175382,
+    "enclosed_regions": 17,
+    "largest_enclosed_pixels": 247621,
+    "small_regions": 3,
+    "large_regions": 14,
+    "median_region_pixels": 5893.0,
+    "thin_ink_fraction": 0.0016,
     "failures": []
   },
   {
@@ -277,6 +353,10 @@
     "colored_fraction": 0.0,
     "enclosed_regions": 30,
     "largest_enclosed_pixels": 162719,
+    "small_regions": 20,
+    "large_regions": 10,
+    "median_region_pixels": 576.5,
+    "thin_ink_fraction": 0.0955,
     "failures": []
   },
   {
@@ -291,6 +371,10 @@
     "colored_fraction": 0.0,
     "enclosed_regions": 33,
     "largest_enclosed_pixels": 91412,
+    "small_regions": 20,
+    "large_regions": 13,
+    "median_region_pixels": 519.0,
+    "thin_ink_fraction": 0.1592,
     "failures": []
   },
   {
@@ -300,11 +384,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.7864,
-    "ink_fraction": 0.1313,
+    "white_fraction": 0.8983,
+    "ink_fraction": 0.0779,
     "colored_fraction": 0.0,
-    "enclosed_regions": 256,
-    "largest_enclosed_pixels": 52048,
+    "enclosed_regions": 21,
+    "largest_enclosed_pixels": 20950,
+    "small_regions": 2,
+    "large_regions": 19,
+    "median_region_pixels": 7776.0,
+    "thin_ink_fraction": 0.0022,
     "failures": []
   },
   {
@@ -314,25 +402,33 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8219,
-    "ink_fraction": 0.107,
+    "white_fraction": 0.9086,
+    "ink_fraction": 0.0689,
     "colored_fraction": 0.0,
-    "enclosed_regions": 172,
-    "largest_enclosed_pixels": 54721,
+    "enclosed_regions": 26,
+    "largest_enclosed_pixels": 104829,
+    "small_regions": 7,
+    "large_regions": 19,
+    "median_region_pixels": 6748.5,
+    "thin_ink_fraction": 0.0047,
     "failures": []
   },
   {
     "id": "mermaid",
-    "title": "Mermaid\u2019s Treasure Cove",
+    "title": "Mermaid and a Seashell",
     "size": [
       1254,
       1254
     ],
-    "white_fraction": 0.809,
-    "ink_fraction": 0.1079,
+    "white_fraction": 0.9305,
+    "ink_fraction": 0.048,
     "colored_fraction": 0.0,
-    "enclosed_regions": 284,
-    "largest_enclosed_pixels": 21995,
+    "enclosed_regions": 24,
+    "largest_enclosed_pixels": 132458,
+    "small_regions": 7,
+    "large_regions": 17,
+    "median_region_pixels": 5012.0,
+    "thin_ink_fraction": 0.062,
     "failures": []
   },
   {
@@ -347,6 +443,10 @@
     "colored_fraction": 0.0,
     "enclosed_regions": 62,
     "largest_enclosed_pixels": 63132,
+    "small_regions": 19,
+    "large_regions": 43,
+    "median_region_pixels": 1529.5,
+    "thin_ink_fraction": 0.02,
     "failures": []
   },
   {
@@ -356,11 +456,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8438,
-    "ink_fraction": 0.0998,
+    "white_fraction": 0.9015,
+    "ink_fraction": 0.0792,
     "colored_fraction": 0.0,
-    "enclosed_regions": 111,
-    "largest_enclosed_pixels": 55798,
+    "enclosed_regions": 24,
+    "largest_enclosed_pixels": 200471,
+    "small_regions": 6,
+    "large_regions": 18,
+    "median_region_pixels": 6445.5,
+    "thin_ink_fraction": 0.0007,
     "failures": []
   },
   {
@@ -370,11 +474,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.7498,
-    "ink_fraction": 0.1447,
+    "white_fraction": 0.8827,
+    "ink_fraction": 0.09,
     "colored_fraction": 0.0,
-    "enclosed_regions": 341,
-    "largest_enclosed_pixels": 48057,
+    "enclosed_regions": 43,
+    "largest_enclosed_pixels": 65968,
+    "small_regions": 9,
+    "large_regions": 34,
+    "median_region_pixels": 3072.0,
+    "thin_ink_fraction": 0.0013,
     "failures": []
   },
   {
@@ -384,11 +492,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8338,
-    "ink_fraction": 0.1101,
+    "white_fraction": 0.9189,
+    "ink_fraction": 0.0623,
     "colored_fraction": 0.0,
-    "enclosed_regions": 111,
-    "largest_enclosed_pixels": 60798,
+    "enclosed_regions": 21,
+    "largest_enclosed_pixels": 111544,
+    "small_regions": 0,
+    "large_regions": 21,
+    "median_region_pixels": 8825.0,
+    "thin_ink_fraction": 0.0,
     "failures": []
   },
   {
@@ -398,11 +510,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.7773,
-    "ink_fraction": 0.1357,
+    "white_fraction": 0.8848,
+    "ink_fraction": 0.0892,
     "colored_fraction": 0.0,
-    "enclosed_regions": 247,
-    "largest_enclosed_pixels": 23443,
+    "enclosed_regions": 37,
+    "largest_enclosed_pixels": 51364,
+    "small_regions": 6,
+    "large_regions": 31,
+    "median_region_pixels": 4326.0,
+    "thin_ink_fraction": 0.0004,
     "failures": []
   },
   {
@@ -412,11 +528,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.7573,
-    "ink_fraction": 0.1472,
+    "white_fraction": 0.8798,
+    "ink_fraction": 0.0904,
     "colored_fraction": 0.0,
-    "enclosed_regions": 271,
-    "largest_enclosed_pixels": 57637,
+    "enclosed_regions": 53,
+    "largest_enclosed_pixels": 68291,
+    "small_regions": 9,
+    "large_regions": 44,
+    "median_region_pixels": 3948.0,
+    "thin_ink_fraction": 0.0007,
     "failures": []
   },
   {
@@ -426,11 +546,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.817,
-    "ink_fraction": 0.1248,
+    "white_fraction": 0.8904,
+    "ink_fraction": 0.0847,
     "colored_fraction": 0.0,
-    "enclosed_regions": 122,
-    "largest_enclosed_pixels": 63750,
+    "enclosed_regions": 39,
+    "largest_enclosed_pixels": 95032,
+    "small_regions": 9,
+    "large_regions": 30,
+    "median_region_pixels": 3582.0,
+    "thin_ink_fraction": 0.0013,
     "failures": []
   },
   {
@@ -440,11 +564,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8143,
-    "ink_fraction": 0.1131,
+    "white_fraction": 0.9036,
+    "ink_fraction": 0.0746,
     "colored_fraction": 0.0,
-    "enclosed_regions": 225,
-    "largest_enclosed_pixels": 17489,
+    "enclosed_regions": 27,
+    "largest_enclosed_pixels": 54014,
+    "small_regions": 6,
+    "large_regions": 21,
+    "median_region_pixels": 6930.0,
+    "thin_ink_fraction": 0.001,
     "failures": []
   },
   {
@@ -454,11 +582,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8533,
-    "ink_fraction": 0.104,
+    "white_fraction": 0.9222,
+    "ink_fraction": 0.0572,
     "colored_fraction": 0.0,
-    "enclosed_regions": 158,
-    "largest_enclosed_pixels": 24123,
+    "enclosed_regions": 37,
+    "largest_enclosed_pixels": 43671,
+    "small_regions": 9,
+    "large_regions": 28,
+    "median_region_pixels": 3346.0,
+    "thin_ink_fraction": 0.017,
     "failures": []
   },
   {
@@ -468,11 +600,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8358,
-    "ink_fraction": 0.0887,
+    "white_fraction": 0.8935,
+    "ink_fraction": 0.0765,
     "colored_fraction": 0.0,
-    "enclosed_regions": 357,
-    "largest_enclosed_pixels": 18243,
+    "enclosed_regions": 50,
+    "largest_enclosed_pixels": 33420,
+    "small_regions": 13,
+    "large_regions": 37,
+    "median_region_pixels": 2079.0,
+    "thin_ink_fraction": 0.0246,
     "failures": []
   },
   {
@@ -482,11 +618,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8582,
-    "ink_fraction": 0.0987,
+    "white_fraction": 0.9108,
+    "ink_fraction": 0.0672,
     "colored_fraction": 0.0,
-    "enclosed_regions": 107,
-    "largest_enclosed_pixels": 33488,
+    "enclosed_regions": 45,
+    "largest_enclosed_pixels": 33422,
+    "small_regions": 18,
+    "large_regions": 27,
+    "median_region_pixels": 2210.0,
+    "thin_ink_fraction": 0.0067,
     "failures": []
   },
   {
@@ -496,11 +636,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8575,
-    "ink_fraction": 0.087,
+    "white_fraction": 0.914,
+    "ink_fraction": 0.0661,
     "colored_fraction": 0.0,
-    "enclosed_regions": 85,
-    "largest_enclosed_pixels": 17839,
+    "enclosed_regions": 27,
+    "largest_enclosed_pixels": 37770,
+    "small_regions": 10,
+    "large_regions": 17,
+    "median_region_pixels": 2347.0,
+    "thin_ink_fraction": 0.0083,
     "failures": []
   },
   {
@@ -510,11 +654,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.7979,
-    "ink_fraction": 0.1007,
+    "white_fraction": 0.8984,
+    "ink_fraction": 0.0764,
     "colored_fraction": 0.0,
-    "enclosed_regions": 562,
-    "largest_enclosed_pixels": 20251,
+    "enclosed_regions": 36,
+    "largest_enclosed_pixels": 57075,
+    "small_regions": 11,
+    "large_regions": 25,
+    "median_region_pixels": 2842.0,
+    "thin_ink_fraction": 0.0119,
     "failures": []
   },
   {
@@ -524,11 +672,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8655,
-    "ink_fraction": 0.0846,
+    "white_fraction": 0.9048,
+    "ink_fraction": 0.0704,
     "colored_fraction": 0.0,
-    "enclosed_regions": 89,
-    "largest_enclosed_pixels": 86309,
+    "enclosed_regions": 47,
+    "largest_enclosed_pixels": 33857,
+    "small_regions": 17,
+    "large_regions": 30,
+    "median_region_pixels": 1608.0,
+    "thin_ink_fraction": 0.0128,
     "failures": []
   },
   {
@@ -543,6 +695,10 @@
     "colored_fraction": 0.0,
     "enclosed_regions": 64,
     "largest_enclosed_pixels": 35967,
+    "small_regions": 11,
+    "large_regions": 53,
+    "median_region_pixels": 3675.5,
+    "thin_ink_fraction": 0.0059,
     "failures": []
   },
   {
@@ -552,11 +708,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.7528,
-    "ink_fraction": 0.1377,
+    "white_fraction": 0.8714,
+    "ink_fraction": 0.0952,
     "colored_fraction": 0.0,
-    "enclosed_regions": 319,
-    "largest_enclosed_pixels": 18330,
+    "enclosed_regions": 75,
+    "largest_enclosed_pixels": 29953,
+    "small_regions": 24,
+    "large_regions": 51,
+    "median_region_pixels": 1733.0,
+    "thin_ink_fraction": 0.0036,
     "failures": []
   },
   {
@@ -566,11 +726,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8009,
-    "ink_fraction": 0.1046,
-    "colored_fraction": 2e-05,
-    "enclosed_regions": 339,
-    "largest_enclosed_pixels": 44051,
+    "white_fraction": 0.9096,
+    "ink_fraction": 0.0656,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 44,
+    "largest_enclosed_pixels": 82967,
+    "small_regions": 11,
+    "large_regions": 33,
+    "median_region_pixels": 3790.0,
+    "thin_ink_fraction": 0.0109,
     "failures": []
   },
   {
@@ -580,11 +744,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8545,
-    "ink_fraction": 0.0934,
+    "white_fraction": 0.8989,
+    "ink_fraction": 0.0766,
     "colored_fraction": 0.0,
-    "enclosed_regions": 126,
-    "largest_enclosed_pixels": 31165,
+    "enclosed_regions": 45,
+    "largest_enclosed_pixels": 38948,
+    "small_regions": 22,
+    "large_regions": 23,
+    "median_region_pixels": 1060.0,
+    "thin_ink_fraction": 0.0002,
     "failures": []
   },
   {
@@ -594,11 +762,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.8014,
-    "ink_fraction": 0.1115,
+    "white_fraction": 0.8987,
+    "ink_fraction": 0.0747,
     "colored_fraction": 0.0,
-    "enclosed_regions": 335,
-    "largest_enclosed_pixels": 16314,
+    "enclosed_regions": 33,
+    "largest_enclosed_pixels": 61062,
+    "small_regions": 2,
+    "large_regions": 31,
+    "median_region_pixels": 3646.0,
+    "thin_ink_fraction": 0.0007,
     "failures": []
   },
   {
@@ -608,11 +780,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.822,
-    "ink_fraction": 0.112,
+    "white_fraction": 0.9082,
+    "ink_fraction": 0.0654,
     "colored_fraction": 0.0,
-    "enclosed_regions": 176,
-    "largest_enclosed_pixels": 35422,
+    "enclosed_regions": 44,
+    "largest_enclosed_pixels": 45360,
+    "small_regions": 16,
+    "large_regions": 28,
+    "median_region_pixels": 2095.5,
+    "thin_ink_fraction": 0.0462,
     "failures": []
   },
   {
@@ -622,11 +798,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.7986,
-    "ink_fraction": 0.1242,
+    "white_fraction": 0.8855,
+    "ink_fraction": 0.0812,
     "colored_fraction": 0.0,
-    "enclosed_regions": 267,
-    "largest_enclosed_pixels": 30789,
+    "enclosed_regions": 62,
+    "largest_enclosed_pixels": 135712,
+    "small_regions": 21,
+    "large_regions": 41,
+    "median_region_pixels": 1210.0,
+    "thin_ink_fraction": 0.0257,
     "failures": []
   },
   {
@@ -636,11 +816,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.783,
-    "ink_fraction": 0.1218,
+    "white_fraction": 0.8984,
+    "ink_fraction": 0.0749,
     "colored_fraction": 0.0,
-    "enclosed_regions": 300,
-    "largest_enclosed_pixels": 19479,
+    "enclosed_regions": 34,
+    "largest_enclosed_pixels": 82790,
+    "small_regions": 2,
+    "large_regions": 32,
+    "median_region_pixels": 5186.5,
+    "thin_ink_fraction": 0.0026,
     "failures": []
   },
   {
@@ -650,11 +834,15 @@
       1254,
       1254
     ],
-    "white_fraction": 0.7733,
-    "ink_fraction": 0.1248,
+    "white_fraction": 0.8826,
+    "ink_fraction": 0.0797,
     "colored_fraction": 0.0,
-    "enclosed_regions": 368,
-    "largest_enclosed_pixels": 25128,
+    "enclosed_regions": 73,
+    "largest_enclosed_pixels": 39456,
+    "small_regions": 17,
+    "large_regions": 56,
+    "median_region_pixels": 3281.0,
+    "thin_ink_fraction": 0.0074,
     "failures": []
   },
   {
@@ -669,118 +857,370 @@
     "colored_fraction": 0.0,
     "enclosed_regions": 77,
     "largest_enclosed_pixels": 61618,
+    "small_regions": 12,
+    "large_regions": 65,
+    "median_region_pixels": 2692.0,
+    "thin_ink_fraction": 0.0906,
     "failures": []
   },
   {
-    "id": "hero",
-    "title": "My First Superhero",
+    "id": "friend-club",
+    "title": "Our After-School Club",
     "size": [
       1254,
       1254
     ],
-    "white_fraction": 0.8655,
-    "ink_fraction": 0.0869,
+    "white_fraction": 0.9056,
+    "ink_fraction": 0.0675,
     "colored_fraction": 0.0,
-    "enclosed_regions": 96,
-    "largest_enclosed_pixels": 44383,
+    "enclosed_regions": 48,
+    "largest_enclosed_pixels": 171136,
+    "small_regions": 21,
+    "large_regions": 27,
+    "median_region_pixels": 1291.0,
+    "thin_ink_fraction": 0.0384,
     "failures": []
   },
   {
-    "id": "hero-city",
-    "title": "Helping the City",
+    "id": "babysitting-crew",
+    "title": "The Babysitting Crew",
     "size": [
       1254,
       1254
     ],
-    "white_fraction": 0.778,
-    "ink_fraction": 0.1289,
+    "white_fraction": 0.8848,
+    "ink_fraction": 0.0855,
     "colored_fraction": 0.0,
-    "enclosed_regions": 205,
-    "largest_enclosed_pixels": 22805,
+    "enclosed_regions": 56,
+    "largest_enclosed_pixels": 37871,
+    "small_regions": 15,
+    "large_regions": 41,
+    "median_region_pixels": 1961.5,
+    "thin_ink_fraction": 0.0177,
     "failures": []
   },
   {
-    "id": "comic-cat",
-    "title": "Captain Cat Saves the Day",
+    "id": "talent-show",
+    "title": "Ready for the Talent Show",
     "size": [
       1254,
       1254
     ],
-    "white_fraction": 0.829,
-    "ink_fraction": 0.1097,
+    "white_fraction": 0.8759,
+    "ink_fraction": 0.0904,
     "colored_fraction": 0.0,
-    "enclosed_regions": 92,
-    "largest_enclosed_pixels": 53200,
+    "enclosed_regions": 39,
+    "largest_enclosed_pixels": 44984,
+    "small_regions": 9,
+    "large_regions": 30,
+    "median_region_pixels": 1848.0,
+    "thin_ink_fraction": 0.009,
     "failures": []
   },
   {
-    "id": "comic-robot",
-    "title": "Robot Rescue Team",
+    "id": "new-friend",
+    "title": "A Seat for a New Friend",
     "size": [
       1254,
       1254
     ],
-    "white_fraction": 0.8298,
-    "ink_fraction": 0.1001,
+    "white_fraction": 0.873,
+    "ink_fraction": 0.094,
     "colored_fraction": 0.0,
-    "enclosed_regions": 138,
-    "largest_enclosed_pixels": 15677,
+    "enclosed_regions": 60,
+    "largest_enclosed_pixels": 40337,
+    "small_regions": 15,
+    "large_regions": 45,
+    "median_region_pixels": 2016.0,
+    "thin_ink_fraction": 0.0095,
     "failures": []
   },
   {
-    "id": "comic-panels",
-    "title": "Make Your Own Comic",
+    "id": "science-team",
+    "title": "The Science Fair Team",
     "size": [
       1254,
       1254
     ],
-    "white_fraction": 0.8987,
-    "ink_fraction": 0.0732,
+    "white_fraction": 0.8951,
+    "ink_fraction": 0.0726,
     "colored_fraction": 0.0,
-    "enclosed_regions": 44,
-    "largest_enclosed_pixels": 217627,
+    "enclosed_regions": 39,
+    "largest_enclosed_pixels": 53207,
+    "small_regions": 14,
+    "large_regions": 25,
+    "median_region_pixels": 2122.0,
+    "thin_ink_fraction": 0.0654,
     "failures": []
   },
   {
-    "id": "dragon",
-    "title": "The Dragon\u2019s Delivery",
+    "id": "forest-patrol",
+    "title": "Forest Cat Patrol",
     "size": [
       1254,
       1254
     ],
-    "white_fraction": 0.807,
-    "ink_fraction": 0.1127,
+    "white_fraction": 0.894,
+    "ink_fraction": 0.07,
     "colored_fraction": 0.0,
-    "enclosed_regions": 207,
-    "largest_enclosed_pixels": 55016,
+    "enclosed_regions": 23,
+    "largest_enclosed_pixels": 83628,
+    "small_regions": 11,
+    "large_regions": 12,
+    "median_region_pixels": 1057.0,
+    "thin_ink_fraction": 0.0952,
     "failures": []
   },
   {
-    "id": "comic-space",
-    "title": "Space Friends to the Rescue",
+    "id": "river-crossing",
+    "title": "Across the Stream",
     "size": [
       1254,
       1254
     ],
-    "white_fraction": 0.7921,
-    "ink_fraction": 0.1195,
+    "white_fraction": 0.9203,
+    "ink_fraction": 0.0542,
     "colored_fraction": 0.0,
-    "enclosed_regions": 261,
-    "largest_enclosed_pixels": 20523,
+    "enclosed_regions": 28,
+    "largest_enclosed_pixels": 38328,
+    "small_regions": 10,
+    "large_regions": 18,
+    "median_region_pixels": 1333.5,
+    "thin_ink_fraction": 0.0862,
     "failures": []
   },
   {
-    "id": "comic-unicorn",
-    "title": "Unicorn\u2019s Rainbow Adventure",
+    "id": "moon-gathering",
+    "title": "The Moonlit Gathering",
     "size": [
       1254,
       1254
     ],
-    "white_fraction": 0.8735,
-    "ink_fraction": 0.0712,
+    "white_fraction": 0.8975,
+    "ink_fraction": 0.0722,
     "colored_fraction": 0.0,
-    "enclosed_regions": 133,
-    "largest_enclosed_pixels": 82092,
+    "enclosed_regions": 28,
+    "largest_enclosed_pixels": 94443,
+    "small_regions": 7,
+    "large_regions": 21,
+    "median_region_pixels": 2160.0,
+    "thin_ink_fraction": 0.0529,
+    "failures": []
+  },
+  {
+    "id": "forest-lookout",
+    "title": "Cat on the Lookout",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.9004,
+    "ink_fraction": 0.0695,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 28,
+    "largest_enclosed_pixels": 91596,
+    "small_regions": 6,
+    "large_regions": 22,
+    "median_region_pixels": 2424.5,
+    "thin_ink_fraction": 0.08,
+    "failures": []
+  },
+  {
+    "id": "cat-apprentices",
+    "title": "Forest Cat Apprentices",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8872,
+    "ink_fraction": 0.078,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 26,
+    "largest_enclosed_pixels": 98964,
+    "small_regions": 11,
+    "large_regions": 15,
+    "median_region_pixels": 1131.0,
+    "thin_ink_fraction": 0.0708,
+    "failures": []
+  },
+  {
+    "id": "cat-den",
+    "title": "The Cozy Forest Den",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.8949,
+    "ink_fraction": 0.0709,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 29,
+    "largest_enclosed_pixels": 91218,
+    "small_regions": 10,
+    "large_regions": 19,
+    "median_region_pixels": 1991.0,
+    "thin_ink_fraction": 0.0938,
+    "failures": []
+  },
+  {
+    "id": "unicorn-rainbow",
+    "title": "Unicorn under a Rainbow",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.9147,
+    "ink_fraction": 0.0603,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 26,
+    "largest_enclosed_pixels": 96343,
+    "small_regions": 3,
+    "large_regions": 23,
+    "median_region_pixels": 7302.0,
+    "thin_ink_fraction": 0.0066,
+    "failures": []
+  },
+  {
+    "id": "unicorn-flower-friend",
+    "title": "Unicorn\u2019s Flower Garden",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.9056,
+    "ink_fraction": 0.0689,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 47,
+    "largest_enclosed_pixels": 91909,
+    "small_regions": 9,
+    "large_regions": 38,
+    "median_region_pixels": 2773.0,
+    "thin_ink_fraction": 0.0049,
+    "failures": []
+  },
+  {
+    "id": "winged-unicorn",
+    "title": "Flying Unicorn",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.9096,
+    "ink_fraction": 0.0673,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 29,
+    "largest_enclosed_pixels": 95297,
+    "small_regions": 5,
+    "large_regions": 24,
+    "median_region_pixels": 2454.0,
+    "thin_ink_fraction": 0.0051,
+    "failures": []
+  },
+  {
+    "id": "baby-dragon",
+    "title": "Baby Dragon and the Moon",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.9241,
+    "ink_fraction": 0.0545,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 18,
+    "largest_enclosed_pixels": 121008,
+    "small_regions": 3,
+    "large_regions": 15,
+    "median_region_pixels": 3475.5,
+    "thin_ink_fraction": 0.0241,
+    "failures": []
+  },
+  {
+    "id": "zoo-tiger",
+    "title": "Tiger by the Pond",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.884,
+    "ink_fraction": 0.0856,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 30,
+    "largest_enclosed_pixels": 183155,
+    "small_regions": 10,
+    "large_regions": 20,
+    "median_region_pixels": 1341.0,
+    "thin_ink_fraction": 0.0198,
+    "failures": []
+  },
+  {
+    "id": "zoo-cheetah",
+    "title": "Cheetah on the Lookout",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.9088,
+    "ink_fraction": 0.0676,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 24,
+    "largest_enclosed_pixels": 159092,
+    "small_regions": 3,
+    "large_regions": 21,
+    "median_region_pixels": 1419.0,
+    "thin_ink_fraction": 0.0141,
+    "failures": []
+  },
+  {
+    "id": "zoo-elephant",
+    "title": "Elephant and a Butterfly",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.93,
+    "ink_fraction": 0.0517,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 24,
+    "largest_enclosed_pixels": 269415,
+    "small_regions": 11,
+    "large_regions": 13,
+    "median_region_pixels": 923.5,
+    "thin_ink_fraction": 0.0167,
+    "failures": []
+  },
+  {
+    "id": "zoo-giraffe",
+    "title": "Giraffe by a Tree",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.9101,
+    "ink_fraction": 0.0675,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 25,
+    "largest_enclosed_pixels": 82192,
+    "small_regions": 4,
+    "large_regions": 21,
+    "median_region_pixels": 3581.0,
+    "thin_ink_fraction": 0.0021,
+    "failures": []
+  },
+  {
+    "id": "zoo-hippo",
+    "title": "Hippo\u2019s Splash",
+    "size": [
+      1254,
+      1254
+    ],
+    "white_fraction": 0.9138,
+    "ink_fraction": 0.0651,
+    "colored_fraction": 0.0,
+    "enclosed_regions": 28,
+    "largest_enclosed_pixels": 255645,
+    "small_regions": 14,
+    "large_regions": 14,
+    "median_region_pixels": 937.5,
+    "thin_ink_fraction": 0.0043,
     "failures": []
   }
 ]
