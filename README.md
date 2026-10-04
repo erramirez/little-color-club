@@ -94,3 +94,17 @@ The October 4 additions include three forest-cat adventures, three unicorns, one
 Validation: 43 tests plus module/catalog/manifest/UI-reference checks. Netlify functions bundle for Node 22. No fresh rendered browser, native accessibility, Safari share or physical iPad approval is claimed: the Mac was locked during the latest browser attempt. The static preview saves locally but does not serve Netlify APIs; use Netlify Dev for isolated backend integration and a preview deployment before publishing.
 
 Optional decisions still separate from this implementation: credential reset/revocation (which disconnects devices), a new theme-first navigation flow, and empirical gesture tuning. Three-word phrases, soft child profiles, no speech, no parent lock and no coloring assistance are retained.
+
+## Palette update
+
+The latest extra/custom color remains visible when a main color is selected, and the custom picker retains that choice. Peach also remains available. Hold a main, extra or remembered custom swatch for 500 ms to choose lighter or darker shades; tapping still selects its color. Moving more than 10 pixels or cancelling the pointer cancels a pending hold. Keyboard users can press Down Arrow on a swatch to open shades; the dialog supports normal Escape dismissal.
+
+Validation: all 45 automated tests and build checks pass, including custom-color restoration, shade selection, hold-click suppression and gesture cancellation. These controller tests use mocked DOM/canvas; physical iPad gesture and rendered visual verification remain pending. Publication authorized for October 4, 2026.
+
+## Drawing styles and emoji controls
+
+Pen retains solid coverage. Watercolor uses translucent coverage with soft edges and subtle pigment variation; crayon uses grainy coverage with paper gaps. Fresh gestures layer pigment over previous paint, deepening the same color or mixing different colors. Coverage within a gesture is stable, independent of pointer-event frequency. Each gesture remains one undo step. Both tools use all four existing sizes, the existing paint layer, saved artwork format and eraser. Original outlines remain visible through the existing multiply composition.
+
+Control symbols throughout static screens and dynamically created buttons now use emoji, including settings, navigation, drawing, gallery, puzzle, sharing and completion. Text labels and accessible names are retained, and symbols are decorative for screen readers. The existing crayon brand/install artwork remains. The old SVG control sprite is unused. The tool rail scrolls on short landscape screens; tools wrap on narrow portrait screens.
+
+Validation: 51 automated tests and build checks pass. Pixel tests cover translucent texture, repeated-pass buildup, mixed colors and event-frequency independence; controller tests cover tool selection and gesture history. Browser preview was blocked by an unavailable security-policy check; rendered layout, emoji appearance and iPad responsiveness remain unverified. Publication authorized for October 4, 2026.

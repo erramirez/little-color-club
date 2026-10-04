@@ -1,10 +1,10 @@
-import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import vm from 'node:vm';import {webcrypto} from 'node:crypto';import * as core from '../dist/core.mjs';import * as library from '../dist/library.mjs';import * as drag from '../dist/puzzle-drag.mjs';
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import vm from 'node:vm';import {webcrypto} from 'node:crypto';import * as core from '../dist/core.mjs';import * as library from '../dist/library.mjs';import * as drag from '../dist/puzzle-drag.mjs';import * as texturePaint from '../dist/textured-paint.mjs';
 // Exercises the actual app controller with mocked DOM/canvas/storage. This does not test rendering.
 class Element{
  constructor(tag='div'){Object.assign(this,{tag,children:[],attributes:{},dataset:{},hidden:false,disabled:false,open:false,value:'',textContent:'',className:'',style:{setProperty(k,v){this[k]=v}}});this.classList={contains:c=>this.className.split(' ').includes(c),toggle:(c,on)=>{const s=new Set(this.className.split(' ').filter(Boolean));on??=!s.has(c);on?s.add(c):s.delete(c);this.className=[...s].join(' ')},add:c=>this.classList.toggle(c,true),remove:c=>this.classList.toggle(c,false)}}
  setAttribute(k,v){this.attributes[k]=String(v);if(k==='id')this.id=v;if(k==='class')this.className=v;if(k.startsWith('data-'))this.dataset[k.slice(5)]=String(v)}getAttribute(k){return this.attributes[k]}
  append(...els){for(const e of els){if(e.parentElement)e.remove();e.parentElement=this;this.children.push(e)}}replaceChildren(...els){this.children=[];this.append(...els)}remove(){this.parentElement.children=this.parentElement.children.filter(e=>e!==this)}querySelectorAll(s){return walk(this).filter(e=>matches(e,s))}querySelector(s){return this.querySelectorAll(s)[0]}focus(){this.ownerDocument.activeElement=this}showModal(){this.open=true}close(){this.open=false}
- getContext(){return this.context??={globalCompositeOperation:'source-over',operations:[],fillRect(){},clearRect(){},drawImage(){},beginPath(){},moveTo(){},lineTo(){},stroke(){this.operations.push(this.globalCompositeOperation)},getImageData(){return {data:new Uint8ClampedArray(core.SIDE*core.SIDE*4).fill(255)}},putImageData(){}}}toDataURL(type='image/png'){return `data:${type};base64,AA==`}getBoundingClientRect(){return {left:0,top:0,width:900,height:900}}setPointerCapture(){}
+ getContext(){return this.context??={globalCompositeOperation:'source-over',operations:[],fillRect(){},clearRect(){},drawImage(){},beginPath(){},moveTo(){},lineTo(){},stroke(){this.operations.push(this.globalCompositeOperation)},getImageData(){return {width:core.SIDE,height:core.SIDE,data:new Uint8ClampedArray(core.SIDE*core.SIDE*4).fill(255)}},putImageData(){}}}toDataURL(type='image/png'){return `data:${type};base64,AA==`}getBoundingClientRect(){return {left:0,top:0,width:900,height:900}}setPointerCapture(){}
 }
 function walk(e){return e.children.flatMap(c=>[c,...walk(c)])}
 function matches(e,s){if(s.includes(' ')){const [p,...tail]=s.split(' ');let a=e.parentElement;while(a){if(matches(a,p)&&matches(e,tail.join(' ')))return true;a=a.parentElement}return false}if(s[0]==='#')return e.id===s.slice(1);if(s[0]==='.')return e.classList.contains(s.slice(1));if(s[0]==='['){const [,k,v]=s.match(/^\[([^=\]]+)(?:="([^"\]]+)")?\]$/);return e.dataset[k.slice(5)]!==undefined&&(v===undefined||String(e.dataset[k.slice(5)])===v)}return e.tag===s}
@@ -12,7 +12,7 @@ async function setup(options={}){
  const html=await fs.readFile(new URL('../dist/index.html',import.meta.url),'utf8'),root=new Element('document'),ids=new Map(),stack=[root];
  for(const [full,tag,attrs] of html.matchAll(/<\/?([a-z][\w-]*)([^>]*)>/gi)){if(full.startsWith('</')){while(stack.length>1){if(stack.pop().tag===tag)break}continue}const e=new Element(tag);for(const a of attrs.matchAll(/([\w-]+)(?:="([^"]*)")?/g)){e.setAttribute(a[1],a[2]??'');if(a[1]==='hidden')e.hidden=true;if(a[1]==='disabled')e.disabled=true;if(a[1]==='value')e.value=a[2]}stack.at(-1).append(e);if(e.id)ids.set(e.id,e);if(!full.endsWith('/>')&&!['meta','link','img','input','br'].includes(tag))stack.push(e)}
  const listeners={},document={body:walk(root).find(e=>e.tag==='body'),hidden:false,getElementById:id=>ids.get(id),createElement:tag=>{const e=new Element(tag);e.ownerDocument=document;return e},createElementNS:(_,tag)=>document.createElement(tag),querySelectorAll:s=>root.querySelectorAll(s),querySelector:s=>root.querySelector(s),addEventListener:(n,cb)=>listeners[n]=cb};walk(root).forEach(e=>e.ownerDocument=document);
- let now=0;const saved=new Map(),settings=new Map();const context=vm.createContext({...core,...library,...drag,bindPuzzleDrag:(piece,options)=>drag.bindPuzzleDrag(piece,{...options,document}),PuzzleClock:class extends core.PuzzleClock{constructor(){super(()=>now)}},document,window:{addEventListener(){}},navigator:{onLine:false},location:{href:'https://club.example/'},Image:class{width=900;height=900;async decode(){if(options.decode)await options.decode();if(options.failDecode)throw new Error("decode failed")}},crypto:webcrypto,URL,Blob,Uint8ClampedArray,setTimeout(){return 1},clearTimeout(){},setInterval(){},family:'a'.repeat(64),familyPassphrase:'purple-dog-kite',ensureFamilyPassphrase:async()=> 'purple-dog-kite',getSetting:async k=>settings.get(k),setSetting:async(k,v)=>settings.set(k,v),listArt:async(f,p)=>[...saved.values()].filter(a=>a.family===f&&a.profile===p&&!a.deleted).sort((a,b)=>b.updatedAt-a.updatedAt),deleteArt:async a=>saved.set(a.key,{...a,deleted:true}),syncProblems:async()=>[],previousFamilyPhrase:async()=>'',retrySync:async()=>{},putArt:async a=>{if(options.failSave)throw new Error("storage full");saved.set(a.key,structuredClone(a));return a},getArt:async k=>saved.get(k),artKey:(f,p,id)=>f+':'+p+':'+id,initFamily:async()=>{},pairFamily:async()=>{},flush:async()=>{},mergeGallery:async p=>[...saved.values()].filter(a=>a.profile===p&&!a.deleted),loadRemote:async()=>{}});
+ let now=0;const saved=new Map(),settings=new Map();const context=vm.createContext({...core,...library,...drag,...texturePaint,bindPuzzleDrag:(piece,options)=>drag.bindPuzzleDrag(piece,{...options,document}),PuzzleClock:class extends core.PuzzleClock{constructor(){super(()=>now)}},document,window:{addEventListener(){}},navigator:{onLine:false},location:{href:'https://club.example/'},Image:class{width=900;height=900;async decode(){if(options.decode)await options.decode();if(options.failDecode)throw new Error("decode failed")}},crypto:webcrypto,URL,Blob,Uint8ClampedArray,setTimeout:options.setTimeout??(()=>1),clearTimeout:options.clearTimeout??(()=>{}),setInterval(){},family:'a'.repeat(64),familyPassphrase:'purple-dog-kite',ensureFamilyPassphrase:async()=> 'purple-dog-kite',getSetting:async k=>settings.get(k),setSetting:async(k,v)=>settings.set(k,v),listArt:async(f,p)=>[...saved.values()].filter(a=>a.family===f&&a.profile===p&&!a.deleted).sort((a,b)=>b.updatedAt-a.updatedAt),deleteArt:async a=>saved.set(a.key,{...a,deleted:true}),syncProblems:async()=>[],previousFamilyPhrase:async()=>'',retrySync:async()=>{},putArt:async a=>{if(options.failSave)throw new Error("storage full");saved.set(a.key,structuredClone(a));return a},getArt:async k=>saved.get(k),artKey:(f,p,id)=>f+':'+p+':'+id,initFamily:async()=>{},pairFamily:async()=>{},flush:async()=>{},mergeGallery:async p=>[...saved.values()].filter(a=>a.profile===p&&!a.deleted),loadRemote:async()=>{}});
  vm.runInContext((await fs.readFile(new URL('../dist/app.mjs',import.meta.url),'utf8')).replace(/^import[\s\S]*?;\n/gm,''),context);await new Promise(r=>setImmediate(r));
  return {document,saved,listeners,$:id=>ids.get(id),run:s=>vm.runInContext(s,context),advance:ms=>now+=ms,async click(e){assert.ok(e&&!e.disabled,'available control');await e.onclick();await new Promise(r=>setImmediate(r))}};
 }
@@ -75,4 +75,44 @@ test('revisiting a saved page offers Continue/New; parent gallery rename and del
  await u.click(u.$('resumeSaved'));assert.equal(u.saved.size,1);
  await u.click(u.$('parentBtn'));await u.click(u.$('manageGallery'));let manage=u.$('galleryItems').children[0].children[2];await u.click(manage.children[0]);u.$('galleryTitle').value='Olivia’s cat';await u.click(u.$('saveRename'));assert.equal([...u.saved.values()][0].title,'Olivia’s cat');
  manage=u.$('galleryItems').children[0].children[2];await u.click(manage.children[1]);await u.click(u.$('confirmDelete'));assert.equal([...u.saved.values()][0].deleted,true);assert.equal(u.$('galleryItems').children[0].className,'empty');
+});
+
+test('custom color survives main-color taps and can be selected again', async()=>{
+ const u=await setup();
+ u.$('customColor').oninput({target:{value:'#123456'}});
+ await u.click(u.$('palette').children[0]);
+ assert.equal(u.run('color'),'#f05b67');
+ assert.equal(u.$('customColor').value,'#123456');
+ assert.equal(u.$('recentColor').hidden,false);
+ assert.equal(u.$('recentColor').getAttribute('aria-pressed'),'false');
+ await u.click(u.$('recentColor'));assert.equal(u.run('color'),'#123456');
+ u.$('customColor').oninput({target:{value:'#abcdef'}});
+ await u.click(u.$('palette').children[1]);await u.click(u.$('recentColor'));assert.equal(u.run('color'),'#abcdef');
+});
+test('hold opens shades, suppresses tap; movement and cancellation abort the hold',async()=>{
+ let pending;const u=await setup({setTimeout:cb=>{pending=cb;return 1},clearTimeout:()=>{pending=null}});
+ const b=u.$('palette').children[5],e={clientX:20,clientY:20,button:0,isPrimary:true,preventDefault(){}};
+ b.onpointerdown(e);pending();b.onpointerup(e);await u.click(b);
+ assert.equal(u.$('shadeDialog').open,true);assert.equal(u.run('color'),'#f05b67');assert.equal(u.$('shadePalette').children.length,7);
+ await u.click(u.$('shadePalette').children[1]);assert.equal(u.$('shadeDialog').open,false);
+ const shade=u.run('color');assert.notEqual(shade,b.dataset.color);
+ await u.click(b);await u.click(u.$('recentColor'));assert.equal(u.run('color'),shade);
+ b.onpointerdown(e);b.onpointermove({...e,clientX:40});assert.equal(pending,null);
+ b.onpointerdown(e);b.onpointercancel(e);assert.equal(pending,null);
+ u.$('recentColor').onkeydown({key:'ArrowDown',preventDefault(){}});assert.equal(u.$('shadeDialog').open,true);await u.click(u.$('closeShades'));
+ const extra=u.$('extraPalette').children[0];extra.onpointerdown(e);pending();assert.equal(u.$('shadeDialog').open,true);
+});
+test('textured tools share sizes, one undo checkpoint per gesture, and eraser remains available',async()=>{
+ const u=await setup();await u.click(u.document.querySelector('[data-profile="Olivia"]'));await u.click(u.$('pageLibrary').children[0]);
+ for(const t of ['watercolor','crayon']){
+  await u.click(u.$(t+'Tool'));assert.equal(u.run('tool'),t);assert.equal(u.$('brushSize').hidden,false);assert.equal(u.$(t+'Tool').getAttribute('aria-pressed'),'true');
+  const count=u.run('undo.length');u.$('canvas').onpointerdown({clientX:100,clientY:100,pointerId:1,preventDefault(){}});u.$('canvas').onpointermove({clientX:110,clientY:100});u.$('canvas').onpointerup();assert.equal(u.run('undo.length'),count+1);assert.equal(u.run('texture'),null);
+  await u.click(u.$('undo'));await u.click(u.$('redo'));
+ }
+ await u.click(u.$('eraserTool'));assert.equal(u.run('tool'),'eraser');
+});
+test('all control icons use emoji and keep decorative symbols hidden from screen readers',async()=>{
+ const u=await setup();assert.equal(u.document.querySelectorAll('use').length,0);
+ for(const symbol of u.document.querySelectorAll('.ui-icon'))assert.equal(symbol.getAttribute('aria-hidden'),'true');
+ assert.equal(u.$('parentBtn').getAttribute('aria-label'),'Grown-up settings');
 });

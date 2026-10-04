@@ -1,3 +1,4 @@
+import { beginTexture, textureSegment } from "./textured-paint.mjs";
 import { PROFILES, SIDE, puzzleGrid, shuffled, PuzzleClock, formatTime, floodFill, validateArtwork } from "./core.mjs";
 import { PAGES, THEMES, pageById, pageThumbnail } from "./library.mjs";
 import { getSetting, setSetting, putArt, getArt, listArt, deleteArt, artKey } from "./storage.mjs";
@@ -22,13 +23,13 @@ const extraColors = [["#9d253c", "Dark red"], ["#db6f24", "Dark orange"], ["#f8e
 const themePictures = { "All": ["🎨", "All"], "Animals": ["🐾", "Animals"], "Space": ["🚀", "Space"], "Ocean": ["🐟", "Ocean"], "Wheels": ["🚗", "Vehicles"], "Sports": ["⚽", "Sports"], "Fairy Tales": ["👑", "Fairy tales"], "Graphic Novels": ["📖", "Stories"] };
 const avatars = { Olivia: "🦄", Henry: "⚽", Issa: "🐱" };
 const profileButtons = [...document.querySelectorAll("[data-profile]")];
+const uiIcons = {"palette": "🎨", "pictures": "🖼️", "puzzle": "🧩", "fill": "🪣", "draw": "🖊️", "watercolor": "🖌️", "crayon": "🖍️", "erase": "🧽", "back": "⬅️", "undo": "↩️", "redo": "↪️", "check": "✔︎", "close": "✖️", "more": "➕", "settings": "⚙️", "pause": "⏸️", "play": "▶️", "mix": "🔀", "eye": "👁️", "download": "📥", "flower": "🌸", "rocket": "🚀", "sun": "☀️", "star": "⭐", "share": "📤"};
 function icon(name) {
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("aria-hidden", "true");
-  const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-  use.setAttribute("href", "icons/ui.svg#" + name);
-  svg.append(use);
-  return svg;
+  const symbol = document.createElement("span");
+  symbol.className = "ui-icon";
+  symbol.setAttribute("aria-hidden", "true");
+  symbol.textContent = uiIcons[name];
+  return symbol;
 }
 function buttonContents(button, name, label) {
   const span = document.createElement("span");
@@ -103,7 +104,7 @@ function studioLoading(on) {
   $("studio").classList.toggle("loading", on);
   $("loadingArt").hidden = !on;
   canvas.setAttribute("aria-busy", String(on));
-  ["fillTool", "brushTool", "eraserTool", "brushSize", "studioMore", "save"].forEach((id) => $(id).disabled = on || !ready);
+  ["fillTool", "brushTool", "watercolorTool", "crayonTool", "eraserTool", "brushSize", "studioMore", "save"].forEach((id) => $(id).disabled = on || !ready);
   document.querySelectorAll(".swatch").forEach((b) => b.disabled = on || !ready);
   updateHistory();
 }
@@ -344,35 +345,37 @@ THEMES.forEach((t) => {
 markTheme();
 function setTool(t) {
   tool = t;
-  ["fill", "brush", "eraser"].forEach((v) => {
+  ["fill", "brush", "watercolor", "crayon", "eraser"].forEach((v) => {
     $(v + "Tool").classList.toggle("selected", v === t);
     $(v + "Tool").setAttribute("aria-pressed", String(v === t));
   });
   $("brushSize").hidden = t === "fill";
   canvas.dataset.tool = t;
 }
+let rememberedColor = null;
 function setColor(c, close = true) {
   color = c;
   const recent = $("recentColor");
   $("palette").append(recent);
   const peach = $("palette").querySelector('[data-color="#f6c4a0"]');
-  if (peach) peach.hidden = !mainColors.some(([value]) => value === c);
+  if (peach) peach.hidden = false;
   const custom = !mainColors.some(([value]) => value === c);
-  recent.hidden = !custom;
+  recent.hidden = !rememberedColor && !custom;
   if (custom) {
+    rememberedColor = c;
     recent.dataset.color = c;
     recent.style.setProperty("--c", c);
     const rgb = c.slice(1).match(/../g).map((v) => parseInt(v, 16));
     recent.style.setProperty("--mark", rgb[0] * 0.299 + rgb[1] * 0.587 + rgb[2] * 0.114 > 170 ? "#263746" : "#fff");
     recent.setAttribute("aria-label", "Current color " + c);
-    recent.onclick = () => setColor(c);
+
   }
   document.querySelectorAll(".swatch").forEach((b) => {
     const selected2 = b.dataset.color === c;
     b.classList.toggle("selected", selected2);
     b.setAttribute("aria-pressed", String(selected2));
   });
-  $("customColor").value = c;
+  if (custom) $("customColor").value = c;
   if (tool === "eraser") setTool("fill");
   if (close && $("artMenu").open) $("artMenu").close();
 }
@@ -385,14 +388,58 @@ function swatch(c, name, parent) {
   b.dataset.color = c;
   b.setAttribute("aria-label", name);
   b.append(icon("check"));
-  b.onclick = () => setColor(c);
+  bindColorPress(b, parent !== "shadePalette");
   $(parent).append(b);
 }
+function openShades(button) {
+  const c = button.dataset.color;
+  const rgb = c.slice(1).match(/../g).map(h => parseInt(h, 16));
+  $("shadePalette").replaceChildren();
+  const shades = [...new Set([-0.65, -0.4, -0.2, 0, 0.25, 0.5, 0.75].map(amount =>
+    "#" + rgb.map(v => Math.round(amount < 0 ? v * (1 + amount) : v + (255 - v) * amount).toString(16).padStart(2, "0")).join("")))];
+  shades.forEach((value, i) => swatch(value, "Shade " + (i + 1) + " " + value, "shadePalette"));
+  document.querySelectorAll(".swatch").forEach(b => {
+    b.classList.toggle("selected", b.dataset.color === color);
+    b.setAttribute("aria-pressed", String(b.dataset.color === color));
+  });
+  $("shadeDialog").showModal();
+}
+function bindColorPress(b, shades = true) {
+  let timer, start, held = false;
+  const cancel = () => { clearTimeout(timer); timer = null; start = null; };
+  b.onclick = () => {
+    if (held) { held = false; return; }
+    setColor(b.dataset.color);
+    if ($("shadeDialog").open) $("shadeDialog").close();
+  };
+  if (!shades) return;
+  b.setAttribute("aria-haspopup", "dialog");
+  b.title = "Hold for shades";
+  b.onpointerdown = e => {
+    cancel();
+    if (e.isPrimary === false || (e.button !== undefined && e.button !== 0)) return;
+    held = false;
+    start = { x: e.clientX, y: e.clientY };
+    timer = setTimeout(() => { cancel(); held = true; openShades(b); }, 500);
+  };
+  b.onpointermove = e => {
+    if (start && Math.hypot(e.clientX - start.x, e.clientY - start.y) > 10) cancel();
+  };
+  b.onpointerup = cancel;
+  b.onpointercancel = () => { cancel(); held = false; };
+  b.onpointerleave = cancel;
+  b.oncontextmenu = e => { e.preventDefault(); cancel(); held = true; if (!$("shadeDialog").open) openShades(b); };
+  b.onkeydown = e => {
+    if (e.key === "ArrowDown") { e.preventDefault(); openShades(b); }
+  };
+}
+$("closeShades").onclick = () => $("shadeDialog").close();
+bindColorPress($("recentColor"));
 mainColors.forEach(([c, n]) => swatch(c, n, "palette"));
 extraColors.forEach(([c, n]) => swatch(c, n, "extraPalette"));
 setColor(color, false);
 $("customColor").oninput = (e) => setColor(e.target.value, false);
-["fill", "brush", "eraser"].forEach((t) => $(t + "Tool").onclick = () => setTool(t));
+["fill", "brush", "watercolor", "crayon", "eraser"].forEach((t) => $(t + "Tool").onclick = () => setTool(t));
 const brushSizes = [{ value: 18, name: "small", dot: 12 }, { value: 36, name: "medium", dot: 22 }, { value: 52, name: "medium-large", dot: 27 }, { value: 70, name: "large", dot: 32 }];
 let brushIndex = 1;
 $("brushSize").onclick = () => {
@@ -410,7 +457,13 @@ function point(e) {
   const r = canvas.getBoundingClientRect();
   return { x: Math.max(0, Math.min(SIDE - 1, Math.floor((e.clientX - r.left) * SIDE / r.width))), y: Math.max(0, Math.min(SIDE - 1, Math.floor((e.clientY - r.top) * SIDE / r.height))) };
 }
+let texture = null, textureSeed = 0;
 function stroke(p) {
+  if (texture) {
+    paintCtx.putImageData(textureSegment(texture, last, p), 0, 0);
+    last = p;
+    return;
+  }
   paintCtx.globalCompositeOperation = tool === "eraser" ? "destination-out" : "source-over";
   paintCtx.strokeStyle = color;
   paintCtx.lineWidth = brushSize;
@@ -442,6 +495,7 @@ canvas.onpointerdown = (e) => {
   }
   checkpoint();
   drawing = true;
+  texture = tool === "watercolor" || tool === "crayon" ? beginTexture(paintCtx.getImageData(0, 0, SIDE, SIDE), tool, color, brushSize, ++textureSeed) : null;
   last = p;
   canvas.setPointerCapture(e.pointerId);
   stroke({ x: p.x + 0.01, y: p.y });
@@ -458,6 +512,7 @@ canvas.onpointermove = (e) => {
 function stopDrawing() {
   if (drawing) {
     drawing = false;
+    texture = null;
     saveLocal().catch(() => {
     });
   }

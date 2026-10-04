@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="color-club-release" content="c4cde608265b6962">
+  <meta name="color-club-release" content="bf201ca57b6e8a5e">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#eef6f0">
@@ -20,7 +20,7 @@
   <span class="brand"><img src="icons/crayons.svg" width="44" height="44" alt="">Color Club</span>
   <div class="header-actions">
     <button id="switchBtn" class="profile-switch" hidden aria-label="Change player"><span id="profileAvatar" aria-hidden="true">✿</span><span id="profileName"></span></button>
-    <button id="parentBtn" class="icon-only" aria-label="Grown-up settings"><svg aria-hidden="true"><use href="icons/ui.svg#settings"/></svg></button>
+    <button id="parentBtn" class="icon-only" aria-label="Grown-up settings"><span class="ui-icon" aria-hidden="true">⚙️</span></button>
   </div>
 </header>
 <main>
@@ -34,8 +34,8 @@
   </section>
   <div id="app" hidden>
     <nav class="tabs" aria-label="Activities">
-      <button id="libraryTab" class="active" aria-pressed="true"><svg aria-hidden="true"><use href="icons/ui.svg#palette"/></svg><span>Color</span></button>
-      <button id="galleryTab" aria-pressed="false"><svg aria-hidden="true"><use href="icons/ui.svg#pictures"/></svg><span>My pictures</span></button>
+      <button id="libraryTab" class="active" aria-pressed="true"><span class="ui-icon" aria-hidden="true">🎨</span><span>Color</span></button>
+      <button id="galleryTab" aria-pressed="false"><span class="ui-icon" aria-hidden="true">🖼️</span><span>My pictures</span></button>
     </nav>
     <section id="library" aria-labelledby="libraryHeading">
       <h1 id="libraryHeading" tabindex="-1">Pick a picture</h1>
@@ -45,44 +45,46 @@
     </section>
     <section id="studio" hidden tabindex="-1" aria-label="Coloring">
       <div class="studio-bar">
-        <button id="backLibrary" aria-label="Back to pictures" class="back-button"><svg aria-hidden="true"><use href="icons/ui.svg#back"/></svg><span>Back</span></button>
+        <button id="backLibrary" aria-label="Back to pictures" class="back-button"><span class="ui-icon" aria-hidden="true">⬅️</span><span>Back</span></button>
         <div class="history-buttons">
-          <button id="undo" aria-label="Undo" disabled><svg aria-hidden="true"><use href="icons/ui.svg#undo"/></svg><span>Undo</span></button>
-          <button id="redo" aria-label="Redo" disabled><svg aria-hidden="true"><use href="icons/ui.svg#redo"/></svg><span>Redo</span></button>
+          <button id="undo" aria-label="Undo" disabled><span class="ui-icon" aria-hidden="true">↩️</span><span>Undo</span></button>
+          <button id="redo" aria-label="Redo" disabled><span class="ui-icon" aria-hidden="true">↪️</span><span>Redo</span></button>
         </div>
-        <button class="primary" id="save"><svg aria-hidden="true"><use href="icons/ui.svg#check"/></svg><span>Done</span></button>
+        <button class="primary" id="save"><span class="ui-icon" aria-hidden="true">✔︎</span><span>Done</span></button>
         <span id="saveStatus" class="sr-only" aria-live="off">Ready</span>
       </div>
       <div id="saveIssue" hidden role="alert"><span>Can’t save yet.</span><button id="retrySave">Try again</button></div>
       <div class="studio-shell">
         <div class="canvas-stage">
-          <div class="paper"><canvas id="canvas" width="900" height="900" aria-label="Coloring picture. Select a color and use Fill, Draw, or Erase."></canvas></div>
+          <div class="paper"><canvas id="canvas" width="900" height="900" aria-label="Coloring picture. Select a color and use Fill, Pen, Watercolor, Crayon, or Erase."></canvas></div>
           <div id="loadingArt" class="loading-art" hidden role="status"><img id="loadingPreview" alt=""><span>Opening…</span></div>
         </div>
         <div class="tool-dock" role="group" aria-label="Coloring tools">
-          <button id="fillTool" class="tool selected" aria-pressed="true"><svg aria-hidden="true"><use href="icons/ui.svg#fill"/></svg><span>Fill</span></button>
-          <button id="brushTool" class="tool" aria-pressed="false"><svg aria-hidden="true"><use href="icons/ui.svg#draw"/></svg><span>Draw</span></button>
-          <button id="eraserTool" class="tool" aria-pressed="false"><svg aria-hidden="true"><use href="icons/ui.svg#erase"/></svg><span>Erase</span></button>
+          <button id="fillTool" class="tool selected" aria-pressed="true"><span class="ui-icon" aria-hidden="true">🪣</span><span>Fill</span></button>
+          <button id="brushTool" class="tool" aria-pressed="false"><span class="ui-icon" aria-hidden="true">🖊️</span><span>Pen</span></button>
+          <button id="watercolorTool" class="tool" aria-pressed="false"><span class="ui-icon" aria-hidden="true">🖌️</span><span>Watercolor</span></button>
+          <button id="crayonTool" class="tool" aria-pressed="false"><span class="ui-icon" aria-hidden="true">🖍️</span><span>Crayon</span></button>
+          <button id="eraserTool" class="tool" aria-pressed="false"><span class="ui-icon" aria-hidden="true">🧽</span><span>Erase</span></button>
           <button id="brushSize" class="tool" hidden aria-label="Brush size: medium"><span class="brush-indicator" aria-hidden="true"><span id="brushDot"></span></span><span>Size</span></button>
-          <button id="studioMore" class="tool"><svg aria-hidden="true"><use href="icons/ui.svg#more"/></svg><span>More</span></button>
+          <button id="studioMore" class="tool"><span class="ui-icon" aria-hidden="true">➕</span><span>More</span></button>
           
         </div>
-        <div class="palette-dock"><div id="palette" role="group" aria-label="Colors"></div><button id="recentColor" class="swatch" hidden aria-pressed="false"><svg aria-hidden="true"><use href="icons/ui.svg#check"/></svg></button></div>
+        <div class="palette-dock"><div id="palette" role="group" aria-label="Colors"></div><button id="recentColor" class="swatch" hidden aria-pressed="false"><span class="ui-icon" aria-hidden="true">✔︎</span></button></div>
       </div>
     </section>
     <section id="puzzle" hidden tabindex="-1" aria-label="Picture puzzle">
       <div class="puzzle-bar">
-        <button id="back"><svg aria-hidden="true"><use href="icons/ui.svg#back"/></svg><span>Color</span></button>
+        <button id="back"><span class="ui-icon" aria-hidden="true">⬅️</span><span>Color</span></button>
         <div class="puzzle-progress"><span id="puzzleStatus" role="status">Pick a piece</span><span id="timer" role="timer" aria-label="Puzzle time">0:00</span></div>
-        <button id="hint" aria-pressed="false"><svg aria-hidden="true"><use href="icons/ui.svg#eye"/></svg><span>Picture</span></button>
-        <button id="pauseTimer" disabled><svg aria-hidden="true"><use href="icons/ui.svg#pause"/></svg><span>Pause</span></button>
-        <button id="shuffle"><svg aria-hidden="true"><use href="icons/ui.svg#mix"/></svg><span>Mix</span></button>
+        <button id="hint" aria-pressed="false"><span class="ui-icon" aria-hidden="true">👁️</span><span>Picture</span></button>
+        <button id="pauseTimer" disabled><span class="ui-icon" aria-hidden="true">⏸️</span><span>Pause</span></button>
+        <button id="shuffle"><span class="ui-icon" aria-hidden="true">🔀</span><span>Mix</span></button>
       </div>
       <div class="puzzle-layout">
         <div class="board-wrap"><div class="board-frame">
           <div id="board" aria-label="Puzzle board"></div>
           <img id="reference" alt="Completed picture hint" hidden>
-          <div id="pauseOverlay" hidden><svg aria-hidden="true"><use href="icons/ui.svg#pause"/></svg><button id="resume" class="primary"><svg aria-hidden="true"><use href="icons/ui.svg#play"/></svg><span>Play</span></button></div>
+          <div id="pauseOverlay" hidden><span class="ui-icon" aria-hidden="true">⏸️</span><button id="resume" class="primary"><span class="ui-icon" aria-hidden="true">▶️</span><span>Play</span></button></div>
         </div></div>
         <div id="tray" role="group" aria-label="Puzzle pieces"></div>
       </div>
@@ -97,41 +99,45 @@
 </main>
 <div id="toast" role="status" aria-live="polite"></div>
 <dialog id="artMenu" aria-labelledby="artMenuHeading">
-  <div class="dialog-top"><h2 id="artMenuHeading">Your picture</h2><button id="closeArtMenu" class="icon-only" aria-label="Close"><svg aria-hidden="true"><use href="icons/ui.svg#close"/></svg></button></div>
+  <div class="dialog-top"><h2 id="artMenuHeading">Your picture</h2><button id="closeArtMenu" class="icon-only" aria-label="Close"><span class="ui-icon" aria-hidden="true">✖️</span></button></div>
   <div id="extraPalette" role="group" aria-label="More colors"></div>
   <label class="custom-color">More colors<input type="color" id="customColor" value="#f05b67" aria-label="Choose any color"></label>
   <div class="art-menu-actions">
-    <button id="makePuzzle" class="primary"><svg aria-hidden="true"><use href="icons/ui.svg#puzzle"/></svg><span>Puzzle</span></button>
-    <button id="clear"><svg aria-hidden="true"><use href="icons/ui.svg#erase"/></svg><span>Start over</span></button>
+    <button id="makePuzzle" class="primary"><span class="ui-icon" aria-hidden="true">🧩</span><span>Puzzle</span></button>
+    <button id="clear"><span class="ui-icon" aria-hidden="true">🧽</span><span>Start over</span></button>
   </div>
   <button id="studioParent" class="grown-up-link">Grown-ups</button>
 </dialog>
+<dialog id="shadeDialog" aria-labelledby="shadeHeading">
+  <div class="dialog-top"><h2 id="shadeHeading">Pick a shade</h2><button id="closeShades" class="icon-only" aria-label="Close shades"><span class="ui-icon" aria-hidden="true">✖️</span></button></div>
+  <div id="shadePalette" role="group" aria-label="Color shades"></div>
+</dialog>
 <dialog id="finishedDialog" aria-labelledby="finishedHeading">
-  <div class="dialog-top"><h2 id="finishedHeading">Your picture!</h2><button id="closeFinished" class="icon-only" aria-label="Keep coloring"><svg aria-hidden="true"><use href="icons/ui.svg#close"/></svg></button></div>
+  <div class="dialog-top"><h2 id="finishedHeading">Your picture!</h2><button id="closeFinished" class="icon-only" aria-label="Keep coloring"><span class="ui-icon" aria-hidden="true">✖️</span></button></div>
   <img id="finishedPicture" alt="Your saved coloring picture">
-  <div class="completion-actions"><button id="finishedShare"><svg aria-hidden="true"><use href="icons/ui.svg#share"/></svg><span>Share</span></button><button id="finishedPuzzle" class="primary"><svg aria-hidden="true"><use href="icons/ui.svg#puzzle"/></svg><span>Puzzle</span></button><button id="finishedColor"><svg aria-hidden="true"><use href="icons/ui.svg#palette"/></svg><span>Color</span></button><button id="finishedGallery"><svg aria-hidden="true"><use href="icons/ui.svg#pictures"/></svg><span>My pictures</span></button></div>
+  <div class="completion-actions"><button id="finishedShare"><span class="ui-icon" aria-hidden="true">📤</span><span>Share</span></button><button id="finishedPuzzle" class="primary"><span class="ui-icon" aria-hidden="true">🧩</span><span>Puzzle</span></button><button id="finishedColor"><span class="ui-icon" aria-hidden="true">🎨</span><span>Color</span></button><button id="finishedGallery"><span class="ui-icon" aria-hidden="true">🖼️</span><span>My pictures</span></button></div>
 </dialog>
 <dialog id="puzzleSetup" aria-labelledby="puzzleSetupHeading">
-  <div class="dialog-top"><h2 id="puzzleSetupHeading">Pick a puzzle</h2><button id="closePuzzleSetup" class="icon-only" aria-label="Cancel puzzle"><svg aria-hidden="true"><use href="icons/ui.svg#close"/></svg></button></div>
+  <div class="dialog-top"><h2 id="puzzleSetupHeading">Pick a puzzle</h2><button id="closePuzzleSetup" class="icon-only" aria-label="Cancel puzzle"><span class="ui-icon" aria-hidden="true">✖️</span></button></div>
   <div id="puzzleSizes" class="puzzle-sizes" role="group" aria-label="Number of puzzle pieces"></div>
 </dialog>
 <dialog id="completeDialog" aria-labelledby="completeHeading">
-  <div class="celebration" aria-hidden="true"><svg><use href="icons/ui.svg#check"/></svg></div>
+  <div class="celebration" aria-hidden="true"><span class="ui-icon" aria-hidden="true">✔︎</span></div>
   <h2 id="completeHeading">You did it!</h2>
   <p id="completeTime"></p>
-  <div class="completion-actions"><button id="playAgain" class="primary"><svg aria-hidden="true"><use href="icons/ui.svg#mix"/></svg><span>Again</span></button><button id="completeColor"><svg aria-hidden="true"><use href="icons/ui.svg#palette"/></svg><span>Color</span></button><button id="completeGallery"><svg aria-hidden="true"><use href="icons/ui.svg#pictures"/></svg><span>My pictures</span></button></div>
+  <div class="completion-actions"><button id="playAgain" class="primary"><span class="ui-icon" aria-hidden="true">🔀</span><span>Again</span></button><button id="completeColor"><span class="ui-icon" aria-hidden="true">🎨</span><span>Color</span></button><button id="completeGallery"><span class="ui-icon" aria-hidden="true">🖼️</span><span>My pictures</span></button></div>
 </dialog>
 <dialog id="resetDialog" aria-labelledby="resetHeading">
   <h2 id="resetHeading">Erase all your colors?</h2>
   <div class="dialog-actions"><button id="cancelReset">No</button><button id="confirmReset" class="danger">Yes, erase</button></div>
 </dialog>
 <dialog id="parentDialog" aria-labelledby="parentHeading">
-  <div class="dialog-top"><h2 id="parentHeading">Grown-ups</h2><button id="closeParent" class="icon-only" aria-label="Close settings"><svg aria-hidden="true"><use href="icons/ui.svg#close"/></svg></button></div>
+  <div class="dialog-top"><h2 id="parentHeading">Grown-ups</h2><button id="closeParent" class="icon-only" aria-label="Close settings"><span class="ui-icon" aria-hidden="true">✖️</span></button></div>
   <section><h3>Add to the iPad</h3><p>In Safari, tap Share → Add to Home Screen. Open Color Club from the new icon. Use your three-word family phrase below to connect that installation if needed.</p></section>
   <section class="parent-files"><h3>Your files</h3><button id="manageGallery">Manage pictures</button>
-    <label class="file-button"><svg aria-hidden="true"><use href="icons/ui.svg#pictures"/></svg><span>Add a coloring page</span><input id="upload" type="file" accept="image/*" aria-label="Add a coloring page"></label>
-    <label class="file-button"><svg aria-hidden="true"><use href="icons/ui.svg#pictures"/></svg><span>Open an editable file</span><input id="importArt" type="file" accept=".json,.colorclub,application/json" aria-label="Open an editable artwork file"></label>
-    <div id="parentArtActions" hidden><label for="artTitle">Picture name</label><input id="artTitle" maxlength="100"><button id="download"><svg aria-hidden="true"><use href="icons/ui.svg#download"/></svg><span>Download picture</span></button><button id="exportArt"><svg aria-hidden="true"><use href="icons/ui.svg#download"/></svg><span>Download editable file</span></button></div>
+    <label class="file-button"><span class="ui-icon" aria-hidden="true">🖼️</span><span>Add a coloring page</span><input id="upload" type="file" accept="image/*" aria-label="Add a coloring page"></label>
+    <label class="file-button"><span class="ui-icon" aria-hidden="true">🖼️</span><span>Open an editable file</span><input id="importArt" type="file" accept=".json,.colorclub,application/json" aria-label="Open an editable artwork file"></label>
+    <div id="parentArtActions" hidden><label for="artTitle">Picture name</label><input id="artTitle" maxlength="100"><button id="download"><span class="ui-icon" aria-hidden="true">📥</span><span>Download picture</span></button><button id="exportArt"><span class="ui-icon" aria-hidden="true">📥</span><span>Download editable file</span></button></div>
   </section>
   <section><h3>Family connection</h3><p id="syncStatus" role="status">Ready</p><div id="syncDetails"></div><button id="retrySync">Retry sync</button><div id="previousFamilyArea" hidden><p>Previous family phrase: <strong id="previousFamilyPhrase"></strong></p></div><p>Use these three words on another device to open your family’s pictures.</p><button id="showCode">Show family phrase</button><div id="familyCodeArea" hidden><textarea id="familyCode" rows="1" readonly aria-label="Three-word family phrase"></textarea><button id="copyCode">Copy phrase</button></div><label for="pairCode">Connect another family</label><input id="pairCode" placeholder="purple-dog-kite" autocomplete="off" spellcheck="false"><button id="pair" class="primary">Connect</button><p id="pairStatus" role="status">Connecting changes the family shown here. Previous artwork stays saved under its previous family phrase.</p></section>
 </dialog>

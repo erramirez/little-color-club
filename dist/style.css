@@ -16,7 +16,7 @@ button, .file-button {
 button:active {transform: scale(.96)}
 button:disabled {opacity: .35; cursor: default; transform: none}
 button:focus-visible, input:focus-visible, textarea:focus-visible, .file-button:focus-within {outline: 4px solid #8249ba; outline-offset: 4px}
-svg {width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0}
+.ui-icon {width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0}
 h1, h2, h3, p {margin: 0}
 h1 {font-size: clamp(26px, 3.5vw, 38px); font-weight: 850; letter-spacing: -.8px}
 h2 {font-size: 27px; font-weight: 850}
@@ -38,7 +38,7 @@ main {max-width: 1400px; margin: auto; padding: 8px 24px 32px}
 .tabs {display: flex; justify-content: center; gap: 12px; margin: 0 auto 28px}
 .tabs button {min-width: 180px; min-height: 64px; font-size: 19px}
 .tabs button.active {background: var(--green); border-color: var(--green); color: #fff}
-.tabs button svg {width: 34px; height: 34px}
+.tabs button .ui-icon {width: 34px; height: 34px}
 #welcome {text-align: center; display: flex; flex-direction: column; justify-content: center; min-height: calc(100dvh - 140px); padding: 24px 0 80px}
 .profiles {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; max-width: 940px; width: 100%; margin: 40px auto 0}
 .profile {min-height: 270px; flex-direction: column; gap: 26px; border-radius: 34px; border-width: 3px; box-shadow: 0 7px 0 #26423110; padding: 32px 14px}
@@ -63,10 +63,10 @@ main {max-width: 1400px; margin: auto; padding: 8px 24px 32px}
 .gallery-picture {display: block; border: 0; padding: 0; width: 100%; border-radius: 14px}
 .gallery-buttons {display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px}
 .gallery-buttons button {padding: 9px 6px; font-size: 16px}
-.gallery-buttons svg {width: 25px; height: 25px}
+.gallery-buttons .ui-icon {width: 25px; height: 25px}
 #finishManaging {display: block; margin: 0 auto 20px}
 .empty {grid-column: 1/-1; display: grid; place-items: center; gap: 24px; padding: 70px 24px; text-align: center}
-.empty>svg {width: 85px; height: 85px; color: #749c87}
+.empty>.ui-icon {width: 85px; height: 85px; color: #749c87}
 .loading-shelf {text-align: center; grid-column: 1/-1; padding: 70px 20px; font-size: 22px}
 body[data-view=studio], body[data-view=puzzle] {overflow: hidden; overscroll-behavior: none}
 body[data-view=studio] .site-header, body[data-view=puzzle] .site-header,
@@ -85,15 +85,15 @@ body[data-view=studio] main, body[data-view=puzzle] main {max-width: none; paddi
 .paper canvas {display: block; width: 100%; height: 100%; touch-action: none}
 .tool-dock {grid-row: 2; display: flex; align-items: center; justify-content: center; gap: 8px}
 .tool {width: 76px; height: 76px; min-height: 76px; flex-shrink: 0; flex-direction: column; padding: 7px 8px; gap: 3px; font-size: 15px}
-.tool svg {width: 32px; height: 32px}
+.tool .ui-icon {width: 32px; height: 32px}
 .tool.selected {background: var(--accent); border: 3px solid #6c5924; box-shadow: 0 3px 0 #6c592420}
 .palette-dock {grid-row: 3; display: grid; place-items: center; padding: 7px 4px 2px}
 #palette {display: grid; grid-template-columns: repeat(6, 60px); gap: 12px}
 .swatch {width: 60px; height: 60px; min-height: 60px; border: 2px solid #263a321f; border-radius: 50%; padding: 0; background: var(--c); color: var(--mark, #fff); position: relative}
 .swatch:hover:not(:disabled) {background: var(--c); filter: brightness(.99)}
-.swatch svg {width: 30px; height: 30px; opacity: 0; stroke-width: 3.5}
+.swatch .ui-icon {width: 30px; height: 30px; opacity: 0; stroke-width: 3.5}
 .swatch.selected {outline: 4px solid #273d33; outline-offset: 3px; border-color: #fff; transform: translateY(-2px)}
-.swatch.selected svg {opacity: 1}
+.swatch.selected .ui-icon {opacity: 1}
 .brush-indicator {width: 32px; height: 32px; flex: 0 0 32px; display: grid; place-items: center}
 #brushDot {width: var(--dot, 22px); height: var(--dot, 22px); border-radius: 50%; background: var(--ink); display: block; margin: 0; flex-shrink: 0}
 .loading-art img {width: min(80%, 360px); max-height: 80%; object-fit: contain; border-radius: 12px}
@@ -122,14 +122,14 @@ body[data-view=studio] main, body[data-view=puzzle] main {max-width: none; paddi
 .drag-ghost {position: fixed; z-index: 40; width: 96px; min-height: 56px; aspect-ratio: var(--ratio, 1); transform: translate(-50%, -60%); pointer-events: none; box-shadow: 0 8px 24px #18342655; border-color: #8249ba; opacity: .95}
 #reference {position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); object-fit: contain; opacity: .3; pointer-events: none}
 #pauseOverlay {position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; background: #eef6f0f5; border-radius: 16px; z-index: 2}
-#pauseOverlay>svg {width: 68px; height: 68px; color: var(--green)}
+#pauseOverlay>.ui-icon {width: 68px; height: 68px; color: var(--green)}
 .paused #tray {opacity: .4; pointer-events: none}
 .puzzle-sizes {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px}
 .puzzle-size {min-height: 128px; flex-direction: column; gap: 10px; font-size: 28px; background: #edf6f0}
-.puzzle-size svg {width: 62px; height: 62px; stroke-width: 1.3}
+.puzzle-size .ui-icon {width: 62px; height: 62px; stroke-width: 1.3}
 .puzzle-size:first-child {border: 3px solid var(--green)}
 .celebration {width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; background: #d9efdc; color: var(--green); margin: 0 auto 18px}
-.celebration svg {width: 58px; height: 58px; stroke-width: 3.5}
+.celebration .ui-icon {width: 58px; height: 58px; stroke-width: 3.5}
 #completeDialog {text-align: center}
 #completeTime {font-size: 20px; font-variant-numeric: tabular-nums; margin: 12px 0 24px}
 .completion-actions {display: flex; flex-wrap: wrap; justify-content: center; gap: 10px}
@@ -196,7 +196,7 @@ dialog input {margin-bottom: 12px}
   .page-grid {grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px}
   .studio-bar, .puzzle-bar {gap: 6px; padding: 8px}
   .studio-bar button {padding: 8px 10px; font-size: 15px; gap: 5px}
-  .studio-bar button svg {width: 26px; height: 26px}
+  .studio-bar button .ui-icon {width: 26px; height: 26px}
   .history-buttons {gap: 5px}
   .studio-shell {padding: 10px 8px}
   .tool-dock {gap: 6px}
@@ -205,14 +205,14 @@ dialog input {margin-bottom: 12px}
   .swatch {width: 56px; height: 56px; min-height: 56px}
   .paper {width: min(100%, calc(100dvh - var(--bar) - 226px - var(--safe-bottom) - env(safe-area-inset-top, 0px)))}
   .puzzle-bar button {width: 56px; padding: 8px; flex-direction: column; gap: 1px; font-size: 13px}
-  .puzzle-bar button svg {width: 23px; height: 23px}
+  .puzzle-bar button .ui-icon {width: 23px; height: 23px}
   .puzzle-progress {min-width: 68px}
   #puzzleStatus {font-size: 13px}
   #timer {font-size: 18px}
   .puzzle-layout {padding: 8px; gap: 8px}
   .gallery-buttons {gap: 6px}
   .gallery-buttons button {font-size: 14px; flex-direction: column; gap: 3px}
-  .gallery-buttons svg {width: 26px; height: 26px}
+  .gallery-buttons .ui-icon {width: 26px; height: 26px}
   dialog {padding: 20px}
   #extraPalette {grid-template-columns: repeat(4, 56px); gap: 12px}
   .art-menu-actions button {font-size: 15px; padding: 10px}
@@ -222,7 +222,7 @@ dialog input {margin-bottom: 12px}
   .studio-shell {grid-template-columns: 88px minmax(0, 1fr) 196px; gap: 8px; padding: 8px}
   .tool-dock {gap: 6px}
   .tool {width: 76px; height: 56px; min-height: 56px; flex-direction: row; padding: 8px; gap: 4px; font-size: 13px}
-  .tool svg {width: 25px; height: 25px}
+  .tool .ui-icon {width: 25px; height: 25px}
   .brush-indicator {width: 25px; height: 25px; flex-basis: 25px}
   #brushDot {max-width: 25px; max-height: 25px}
   #palette {grid-template-columns: repeat(3, 56px); gap: 8px}
@@ -242,3 +242,21 @@ dialog input {margin-bottom: 12px}
   #galleryItems.page-grid {grid-template-columns: 1fr}
 }
 @media (prefers-reduced-motion: reduce) {button:active, .page-card:active, .piece.chosen, .swatch.selected {transform: none}}
+
+#shadePalette {display: flex; flex-wrap: wrap; gap: 18px; padding: 12px 6px}
+.swatch {user-select: none; -webkit-user-select: none; -webkit-touch-callout: none}
+
+.ui-icon {display: inline-flex; align-items: center; justify-content: center; font-size: 28px; line-height: 1; font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif}
+.tool-dock {flex-wrap: wrap}
+.tool {font-size: 13px}
+
+/* Text presentation keeps the selection mark legible on every paint color. */
+.swatch .ui-icon {font-family: system-ui, sans-serif; color: var(--mark); font-size: 30px}
+@media (orientation: landscape) and (min-width: 700px) {
+  .tool-dock {flex-wrap: nowrap; overflow-y: auto; min-height: 0; justify-content: flex-start; padding: 4px 0}
+}
+@media (orientation: portrait) and (max-width: 600px) {
+  .tool-dock {gap: 5px}
+  .tool {width: 68px; font-size: 11px}
+  .paper {width: min(100%, calc(100dvh - var(--bar) - 322px - var(--safe-bottom) - env(safe-area-inset-top, 0px)))}
+}
