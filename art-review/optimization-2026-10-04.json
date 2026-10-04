@@ -1,0 +1,546 @@
+[
+  {
+    "file": "astronaut-simple.png",
+    "before": 1216167,
+    "after": 445448,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "baby-dragon.png",
+    "before": 1051368,
+    "after": 387786,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "babysitting-crew.png",
+    "before": 1190569,
+    "after": 437216,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "baseball-simple.png",
+    "before": 1099446,
+    "after": 403905,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "basketball-simple.png",
+    "before": 1113000,
+    "after": 406244,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "bike-simple.png",
+    "before": 1264581,
+    "after": 463201,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "bunny.png",
+    "before": 1376701,
+    "after": 500210,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "bus-simple.png",
+    "before": 890996,
+    "after": 329132,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "car.png",
+    "before": 1334860,
+    "after": 483699,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 13
+  },
+  {
+    "file": "cat-apprentices.png",
+    "before": 1273830,
+    "after": 465603,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "cat-den.png",
+    "before": 1229556,
+    "after": 454998,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 13
+  },
+  {
+    "file": "cat.png",
+    "before": 1385294,
+    "after": 505868,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "dinosaur-simple.png",
+    "before": 1097016,
+    "after": 400727,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "dolphin.png",
+    "before": 1276852,
+    "after": 466011,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 13
+  },
+  {
+    "file": "enchanted-carriage-simple.png",
+    "before": 1111003,
+    "after": 407698,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "excavator-simple.png",
+    "before": 1022838,
+    "after": 374628,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "fairy-tea-simple.png",
+    "before": 1114307,
+    "after": 413667,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "fire-simple.png",
+    "before": 1035479,
+    "after": 375506,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "fish.png",
+    "before": 1229458,
+    "after": 457986,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "football-simple.png",
+    "before": 1064239,
+    "after": 390814,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "forest-lookout.png",
+    "before": 1205728,
+    "after": 441331,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "forest-patrol.png",
+    "before": 1273395,
+    "after": 467329,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "fox-simple.png",
+    "before": 1024890,
+    "after": 377070,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "friend-club.png",
+    "before": 1108553,
+    "after": 410961,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "friendly-dragon-simple.png",
+    "before": 1221284,
+    "after": 441385,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "garden-simple.png",
+    "before": 1178924,
+    "after": 433885,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "lion-simple.png",
+    "before": 1132494,
+    "after": 415936,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "mermaid-palace-simple.png",
+    "before": 1242988,
+    "after": 448444,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "mermaid-simple.png",
+    "before": 1054493,
+    "after": 390554,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "moon-base-simple.png",
+    "before": 1097668,
+    "after": 411217,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 14
+  },
+  {
+    "file": "moon-gathering.png",
+    "before": 1191762,
+    "after": 437293,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "new-friend.png",
+    "before": 1181697,
+    "after": 430899,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 13
+  },
+  {
+    "file": "octopus-simple.png",
+    "before": 1085346,
+    "after": 400362,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "owl-simple.png",
+    "before": 1124463,
+    "after": 411761,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 14
+  },
+  {
+    "file": "planet.png",
+    "before": 1136234,
+    "after": 418964,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "princess-garden-simple.png",
+    "before": 1141695,
+    "after": 420234,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "puppy-simple.png",
+    "before": 1019770,
+    "after": 375454,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "race-simple.png",
+    "before": 1104244,
+    "after": 402790,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "reef-simple.png",
+    "before": 1144875,
+    "after": 421932,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "river-crossing.png",
+    "before": 1100626,
+    "after": 405488,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "robot-simple.png",
+    "before": 1044838,
+    "after": 387068,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "rocket.png",
+    "before": 1162433,
+    "after": 425772,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "science-team.png",
+    "before": 1203602,
+    "after": 440913,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "skateboard-simple.png",
+    "before": 1093685,
+    "after": 399515,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "soccer-simple.png",
+    "before": 1052457,
+    "after": 386946,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "solar-system-simple.png",
+    "before": 1087149,
+    "after": 400836,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "star-map-simple.png",
+    "before": 987060,
+    "after": 362750,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "storybook-castle-simple.png",
+    "before": 994884,
+    "after": 364374,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "submarine-simple.png",
+    "before": 1077354,
+    "after": 398223,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "talent-show.png",
+    "before": 1219743,
+    "after": 440667,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "tennis-simple.png",
+    "before": 1146937,
+    "after": 421415,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "tractor-simple.png",
+    "before": 1098308,
+    "after": 399276,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "train-simple.png",
+    "before": 1104596,
+    "after": 403817,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "trophy.png",
+    "before": 1307904,
+    "after": 481085,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "truck-simple.png",
+    "before": 931547,
+    "after": 335324,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 14
+  },
+  {
+    "file": "turtle-simple.png",
+    "before": 1067597,
+    "after": 393098,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "ufo.png",
+    "before": 1276362,
+    "after": 465558,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "unicorn-flower-friend.png",
+    "before": 1147984,
+    "after": 420171,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "unicorn-meadow.png",
+    "before": 1437673,
+    "after": 530730,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "unicorn-rainbow.png",
+    "before": 1105108,
+    "after": 411087,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "whale.png",
+    "before": 1199567,
+    "after": 455167,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "winged-unicorn.png",
+    "before": 1119743,
+    "after": 412131,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "winter-castle-simple.png",
+    "before": 1077140,
+    "after": 389951,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 13
+  },
+  {
+    "file": "zoo-cheetah.png",
+    "before": 1110038,
+    "after": 408707,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "zoo-elephant.png",
+    "before": 1028185,
+    "after": 378354,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "zoo-giraffe.png",
+    "before": 1100918,
+    "after": 402222,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  },
+  {
+    "file": "zoo-hippo.png",
+    "before": 1073951,
+    "after": 392602,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 11
+  },
+  {
+    "file": "zoo-tiger.png",
+    "before": 1213895,
+    "after": 442167,
+    "width": 1254,
+    "height": 1254,
+    "maximum_channel_change": 12
+  }
+]

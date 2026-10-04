@@ -1,5 +1,56 @@
-const CACHE='little-color-club-v4-ui-5';
-const SHELL=['./','./index.html','./style.css','./app.mjs','./core.mjs','./puzzle-drag.mjs','./storage.mjs','./sync.mjs','./library.mjs','./manifest.webmanifest','./icons/ui.svg','./icons/crayons.svg','./icons/crayons-192.png','./icons/crayons-512.png','./icons/crayons-apple.png'];
-self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)))});
-self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('little-color-club-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
-self.addEventListener('fetch',event=>{const url=new URL(event.request.url);if(url.origin!==self.location.origin||event.request.method!=='GET'||url.pathname.startsWith('/api/')||url.pathname.startsWith('/.netlify/functions/'))return;event.respondWith(fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();event.waitUntil(caches.open(CACHE).then(cache=>cache.put(event.request,copy)))}return response}).catch(async()=>{const cached=await caches.match(event.request);if(cached)return cached;if(event.request.mode==='navigate')return caches.match('./index.html');return new Response('Offline',{status:503})}))});
+/* Generated release hashes keep the offline shell together; no skipWaiting during play. */
+const RELEASE = "c4cde608265b6962";
+const HASHES = {"/app.mjs":"3e1df039a003ec9e238864f2d8e0e705863d6e69da3b504ae05db4d08b6483e2","/core.mjs":"35ac735041ac8c5a02932510e457bb333e8dc511e16d4635f26fb3999294e0e4","/index.html":"344a3143a6fa7700a9608d8abc195afca18a720d5d985cc5551e8897377fee1a","/library.mjs":"6d6494a7d1688ee436fd3abced57016b083d95b188221b74544f37f045ae5989","/manifest.webmanifest":"222e265b42b1107eb69ad13ff3a6632615db0163b33c0227826f01992658e9e8","/puzzle-drag.mjs":"533e0bfb568984b1227bfe420e89f521f5ae837ff07458b0776b143eb8d96494","/storage.mjs":"82752f8400d8c57182e86ccc91b73ba68b755fc14204fa35a5e7595dfdd5e620","/style.css":"50f545abfadd23249ad1dfd13e3cd4430f492702d9ae8842eebd5bef84499fae","/sync.mjs":"c08e82bfc6b40a50be88381ca84315a2b1f6682edb9f5ca5be699e3dfc93c8e1","/icons/crayons-192.png":"b9d92fa88ef03501750adb3213714c4785a5031ec0ef8ff1b3c0531f5b6d2365","/icons/crayons-512.png":"05077281c0a2f947e4143096038b5b0ab4e6e2bcaf2d65a1dc32b479a59378cd","/icons/crayons-apple.png":"83c0719abe36bdd176108aea551fdf1972028f2ea0b748c301b4c171818d4900","/icons/crayons.svg":"0b1d97de214cf0cf6d465d6925ca512bd3a2fa0b8e37d0a689d07c96763b1f0e","/icons/ui.svg":"4895c994d2081c4bb94efdb179f4d761a782733a317bc7bbf8ccdb01e344709f"};
+const SHELL = 'little-color-club-shell-' + RELEASE;
+const IMAGES = 'little-color-club-images-' + RELEASE;
+const shellPath = url => url.pathname.endsWith('/') ? '/index.html' : url.pathname;
+self.addEventListener('install', event => event.waitUntil((async () => {
+  const entries = await Promise.all(Object.entries(HASHES).map(async ([path, expected]) => {
+    const response = await fetch(path, {cache: 'reload'});
+    if (!response.ok) throw new Error('Incomplete app release');
+    const bytes = await response.clone().arrayBuffer();
+    const digest = await crypto.subtle.digest('SHA-256', bytes);
+    const actual = Array.from(new Uint8Array(digest), x => x.toString(16).padStart(2, '0')).join('');
+    // Hosting can inject HTML; its release marker must still match the cached modules.
+    if(path==='/index.html'&&!(await response.clone().text()).includes('name="color-club-release" content="'+RELEASE+'"'))throw new Error('Mixed HTML release');
+    if (path !== '/index.html' && actual !== expected) throw new Error('Mixed app release');
+    return [path, response];
+  }));
+  const cache = await caches.open(SHELL);
+  await Promise.all(entries.map(([path, response]) => cache.put(path, response)));
+})()));
+self.addEventListener('activate', event => event.waitUntil((async () => {
+  const keys = await caches.keys();
+  await Promise.all(keys.filter(k => k.startsWith('little-color-club-') && ![SHELL, IMAGES].includes(k)).map(k => caches.delete(k)));
+  await self.clients.claim();
+})()));
+async function cacheImage(request) {
+  const abort = new AbortController(), timeout = setTimeout(() => abort.abort(), 3000);
+  try {
+    const response = await fetch(request, {signal: abort.signal});
+    if (response.ok) try {
+      const cache = await caches.open(IMAGES);
+      await cache.put(request, response.clone());
+      const keys = await cache.keys();
+      await Promise.all(keys.slice(0, Math.max(0, keys.length - 100)).map(k => cache.delete(k)));
+    } catch { /* A full cache must not hide a successfully downloaded image. */ }
+    return response;
+  } finally {clearTimeout(timeout);}
+}
+self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+  if (url.origin !== self.location.origin || event.request.method !== 'GET' || url.pathname.startsWith('/api/') || url.pathname.startsWith('/.netlify/functions/')) return;
+  if (event.request.mode === 'navigate' || HASHES[shellPath(url)]) {
+    event.respondWith((async () => {
+      const cache = await caches.open(SHELL);
+      return await cache.match(event.request.mode === 'navigate' ? '/index.html' : shellPath(url)) || fetch(event.request);
+    })());
+  } else if (url.pathname.startsWith('/pages/') || url.pathname === '/.netlify/images') {
+    event.respondWith((async () => {
+      const cached = await (await caches.open(IMAGES)).match(event.request);
+      if (cached) return cached;
+      try {return await cacheImage(event.request);}
+      catch {return new Response('Connect to open this picture', {status: 503});}
+    })());
+  }
+});

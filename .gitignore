@@ -4,3 +4,10 @@ node_modules/
 *.tar.gz
 .env*
 .DS_Store
+
+video/frames/
+video/silent.mp4
+video/check-*.jpg
+art-review/**/*.png
+art-review/**/*.jpg
+library-contact-sheet.png

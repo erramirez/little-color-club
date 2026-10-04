@@ -8,7 +8,7 @@ Source: https://github.com/erramirez/little-color-club
 
 ## Play
 
-Open the deployed Netlify URL in Safari on the iPad. Tap Share → Add to Home Screen, then launch the Color Club icon. Pick a child's name to start. Every child can access all 56 built-in coloring pages; saved artwork belongs to the selected profile.
+Open the deployed Netlify URL in Safari on the iPad. Tap Share → Add to Home Screen, then launch the Color Club icon. Pick a child's name to start. Every child can access all 68 built-in coloring pages; saved artwork belongs to the selected profile.
 
 The library includes seven themes with at least eight pages each: original fairy tales, space, ocean, animals, vehicles, sports, and original young-reader graphic-novel scenes. Browse the picture categories. The library uses professionally styled black-and-white coloring-book illustrations, with original princesses, castles, fairies, dragons, and unicorns.
 
@@ -20,11 +20,11 @@ Puzzles use 9, 16, 24, or 36 picture tiles (24 = 6×4). Swipe the horizontal tra
 
 On the original device, open Grown-up settings → Show family phrase. The app creates a three-word phrase, such as `purple-dog-kite`. Keep it safely: it provides access to the family's artwork. On another device, open the same app URL and enter the three words under Connect another family. The three buttons select profiles within that family; they are deliberately soft logins, with no passwords for kids.
 
-If the new home-screen installation uses a different browser storage context, use the same three-word phrase there. Pairing shows the connected family's galleries; the previous family's local artwork remains stored, and its old phrase is needed to see it again.
+If the new home-screen installation uses a different browser storage context, use the same three-word phrase there. Pairing waits for pending artwork to sync before switching families. The previous family phrase is retained in Grown-ups for recovery; local records remain scoped to their original family.
 
 Each device saves full editable artwork in IndexedDB first. Online saves upload through Netlify Functions to a site-scoped, strongly consistent Netlify Blobs store. Other devices load cloud galleries and fetch full images on demand. Offline changes queue for upload on reconnect. Conditional writes prevent stale revisions from replacing newer art; conflicts preserve a separate copy.
 
-The service worker caches the full app shell after the first successful online visit. Illustrations and library thumbnails are cached as they are opened. Previously opened pages and loaded artwork are available offline. New cloud artwork requires a connection. Clearing browser storage removes unsynced local work; keep the family phrase and use picture/editable exports for independent copies.
+The build generates a release marker and module hashes. The service worker verifies the shell before installation, keeps a complete release cache-first, and waits for open sessions to close before switching versions. Illustrations and thumbnails are cached as opened, with a 100-entry limit and a three-second fetch deadline. Previously opened pages and loaded artwork are available offline. New cloud artwork requires a connection. Clearing browser storage removes unsynced local work; keep the family phrase and use picture/editable exports for independent copies.
 
 ## Architecture
 
@@ -38,7 +38,7 @@ The service worker caches the full app shell after the first successful online v
 - `netlify/functions/_shared/art-handler.mjs`: validation, per-family/per-child storage keys, conditional writes.
 - `netlify.toml`: static hosting, function bundling, security headers.
 
-The device retains a random 256-bit internal family key, transmitted in the Authorization header and hashed into artwork storage prefixes. A separate site-scoped phrase registry maps a generated three-word phrase to that existing key; matching ignores case and accepts spaces or hyphens. Unknown phrases are rejected. Phrase claims use conditional writes to avoid collisions; concurrent registrations return the same canonical phrase. `/api/family` configures 20 requests per IP/domain per minute using Netlify’s function rate-limit configuration. Phrase creation needs a connection; previously saved phrases remain available offline. Local play does not wait for phrase registration. Existing full-length codes are accepted for compatibility but are no longer shown to users. Artwork and pairing secrets are excluded from GitHub. This is a family toy, not a system for password-protected separation between siblings.
+The device retains a random 256-bit internal family key in local storage/IndexedDB, transmits it in the Authorization header, and hashes it into artwork prefixes. The old JavaScript cookie is read once for migration and then expired. A separate site-scoped phrase registry maps a generated three-word phrase to that existing key; matching ignores case and accepts spaces or hyphens. Unknown phrases are rejected. Phrase claims use conditional writes to avoid collisions; concurrent registrations return the same canonical phrase. `/api/family` configures 20 requests per IP/domain per minute using Netlify’s function rate-limit configuration. Phrase creation needs a connection; previously saved phrases remain available offline. Local play does not wait for phrase registration. Existing full-length codes are accepted for compatibility but are no longer shown to users. Artwork and pairing secrets are excluded from GitHub. The artwork endpoint requires a registered key for PUT and configures 120 requests per IP/domain per minute. Payload budgets are conservative: 500 retained IDs per family (including tombstones), 120 MiB reserved per family, 512 MiB/3,000 retained IDs site-wide. Committed deletion reclaims payload reservation bytes; record IDs remain as tombstones to block offline resurrection. Failed reservations can retain capacity until maintenance. Existing pre-review data is accounted as it is updated; the ceilings govern new allocations, not an audited inventory of old production objects. This is a family toy, not a system for password-protected separation between siblings.
 
 ## Develop and deploy
 
@@ -70,8 +70,27 @@ Tests cover fill boundaries, protected outlines, erasing, puzzle grids, timer se
 
 The child flow is Pick your name → Pick a picture → Color → Done → Puzzle. Coloring occupies a focused full-screen studio with large tools and swatches. My pictures contains personal artwork with Color and Puzzle actions; file imports/exports, naming and family pairing are in Grown-ups. Destructive resets are confirmed and coloring can be undone.
 
-The review and step-by-step implementation record are in [ux-review/REVIEW.md](ux-review/REVIEW.md) and [ux-review/IMPLEMENTATION_PLAN.md](ux-review/IMPLEMENTATION_PLAN.md). The owner declined speech, a parent lock and coloring assistance; drag puzzles and three-word family pairing are implemented locally. The owner approved this revision for GitHub and Netlify publication on October 4, 2026; release build checks pass. Twenty-six tests pass, including mocked-DOM controller journeys, failed-save recovery and load cancellation. Rendered browser, physical iPad and native accessibility verification remain pending because browser security verification was unavailable.
+The review and step-by-step implementation record are in [ux-review/REVIEW.md](ux-review/REVIEW.md) and [ux-review/IMPLEMENTATION_PLAN.md](ux-review/IMPLEMENTATION_PLAN.md). The owner declined speech, a parent lock and coloring assistance; drag puzzles and three-word family pairing are implemented locally. The owner approved this revision for GitHub and Netlify publication on October 4, 2026; release build checks pass. Forty-three tests pass, including mocked-DOM controller journeys, failed-save recovery and load cancellation. Rendered browser, physical iPad and native accessibility verification remain pending because browser security verification was unavailable.
 
 For a static local UI preview without running a build, serve `dist` with a local web server. The production `/api/art` endpoint is not supplied by a static server; local artwork can still be saved on that browser and sync will wait. Use Netlify development only when backend preview is needed. Use the deployment commands above for authorized releases.
 
 The October 4 additions include three forest-cat adventures, three unicorns, one baby dragon and five zoo animals. The start-page brand and installed app use three colorful crayons; profile symbols are 🦄 Olivia, ⚽ Henry and 🐱 Issa. See `art-review/additions-2026-10-04.json` for the exact generation prompts. Publication was authorized on October 4, 2026.
+
+
+## Focused review implementation
+
+- Brush sizes: 18, 36, **52**, 70. A selected extra/custom color stays visible and checked in the main palette without adding another toolbar row.
+- Dark paint can be refilled; fill boundaries come from the original page.
+- Reopening a locally saved library page offers Keep coloring / New picture. The latest available local picture has a Keep coloring shortcut.
+- Grown-ups → Manage pictures exposes rename and confirmed delete. Deleted cloud records become immutable tombstones; offline stale saves cannot recreate them.
+- Done → Share uses the native file share sheet when available, with PNG download fallback.
+- Save failures remain visible with Try again. Grown-ups provides per-picture sync errors, manual retry and the previous family phrase.
+- IndexedDB version 2 migrates existing pictures, separates full paint/base payloads from indexed gallery metadata, and uses atomic acknowledgement/conflict operations. Stale editor saves follow their own conflict branch; remote originals remain independently editable.
+- Uploads continue past a rejected picture, back off transient failures and preserve local editable backups. Large local backups can re-import even when above cloud limits.
+- Cloud gallery summaries are stored separately from paint; each response is limited to 12 records. Old records migrate summaries on demand. New saved drawings retain their base image, so future library retirement cannot silently remove their original page.
+- All 68 page PNGs retain 1254×1254 resolution. Brightest-channel grayscale reduces bytes from 77,619,347 to 28,483,562 (63.3%) without palette quantization. Source outline threshold pixels are preserved exactly; physical-device fill/visual checks remain pending.
+- Repeated CSS layouts were consolidated, obsolete icons archived, test-only pixel oracles removed from runtime, unused difficulty data/state wrappers removed, build counts derived, and production verification made read-only.
+
+Validation: 43 tests plus module/catalog/manifest/UI-reference checks. Netlify functions bundle for Node 22. No fresh rendered browser, native accessibility, Safari share or physical iPad approval is claimed: the Mac was locked during the latest browser attempt. The static preview saves locally but does not serve Netlify APIs; use Netlify Dev for isolated backend integration and a preview deployment before publishing.
+
+Optional decisions still separate from this implementation: credential reset/revocation (which disconnects devices), a new theme-first navigation flow, and empirical gesture tuning. Three-word phrases, soft child profiles, no speech, no parent lock and no coloring assistance are retained.

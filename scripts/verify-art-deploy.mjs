@@ -1,4 +1,4 @@
-import {PAGES,pageSource,pageById,pageThumbnail} from '../dist/library.mjs';
+import {PAGES,pageThumbnail} from '../dist/library.mjs';
 const origin=process.argv[2];
 if(!/^https:\/\/[a-z0-9-]+\.netlify\.app$/.test(origin))throw new Error('Pass a Netlify URL.');
 const hosted=await fetch(origin+'/library.mjs').then(r=>r.text());
@@ -16,4 +16,4 @@ for(const theme of [...new Set(PAGES.map(p=>p.theme))]){
  const p=PAGES.find(p=>p.theme===theme),r=await fetch(origin+pageThumbnail(p));
  if(!r.ok||!r.headers.get('content-type')?.startsWith('image/'))throw new Error('Thumbnail failed: '+theme);
 }
-console.log('Verified all 56 hosted PNG illustrations, thumbnails for all seven themes, and the refreshed library.');
+console.log('Verified '+PAGES.length+' hosted illustrations and thumbnails for '+new Set(PAGES.map(p=>p.theme)).size+' themes.');
