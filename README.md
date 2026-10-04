@@ -2,6 +2,10 @@
 
 A touch-friendly family coloring studio and picture-puzzle app for Olivia, Henry, and Issa. Hosted on Netlify, with source on GitHub.
 
+Live app: https://little-color-club.netlify.app
+
+Source: https://github.com/erramirez/little-color-club
+
 ## Play
 
 Open the deployed Netlify URL in Safari on the iPad. Tap Share → Add to Home Screen, then launch the Color Club icon. Pick a child's name to start. Every child can access all 56 built-in coloring pages; saved artwork belongs to the selected profile.
@@ -53,8 +57,8 @@ npx netlify-cli deploy --no-build --dir dist --functions netlify/functions
 npx netlify-cli deploy --prod --no-build --dir dist --functions netlify/functions
 ```
 
-For Git-based continuous deployment, connect this GitHub repository in Netlify using branch `main`, build command `npm run build`, publish directory `dist`, and functions directory `netlify/functions`. No app runtime secrets or API keys need to be configured for Netlify Blobs.
+Git-based continuous deployment is configured for this GitHub repository. Pushes to `main` build and publish through Netlify, using build command `npm run build`, publish directory `dist`, and functions directory `netlify/functions`. GitHub deploy keys and notification hooks are configured by Netlify. No app runtime secrets or API keys need to be configured for Netlify Blobs.
 
 ## Verification
 
-Tests cover fill boundaries, protected outlines, erasing, puzzle grids, timer semantics, profile/family isolation, offline uploads, remote reads, conflict copies, editable-file validation, and device pairing. All library SVGs have been rasterized for asset review. Interactive browser and physical iPad testing are still needed; browser automation was blocked by the environment's policy check.
+Tests cover fill boundaries, protected outlines, erasing, puzzle grids, timer semantics, profile/family isolation, offline uploads, remote reads, conflict copies, editable-file validation, and device pairing. All library SVGs have been rasterized for asset review. Production HTTP/API checks verified profiles, app modules, install icons, the service worker, cloud writes/reads, isolation between profiles/families, and rejection of stale writes. Interactive browser and physical iPad testing are still needed; browser automation was blocked by the environment's policy check.
