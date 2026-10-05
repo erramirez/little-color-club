@@ -73,21 +73,21 @@ body[data-view=studio] .site-header, body[data-view=puzzle] .site-header,
 body[data-view=studio] .tabs, body[data-view=puzzle] .tabs {display: none}
 body[data-view=studio] main, body[data-view=puzzle] main {max-width: none; padding: 0}
 #studio, #puzzle {height: 100vh; height: 100dvh; padding-top: env(safe-area-inset-top, 0px); padding-bottom: var(--safe-bottom); display: flex; flex-direction: column}
-.studio-bar, .puzzle-bar {height: var(--bar); flex: 0 0 var(--bar); display: flex; align-items: center; gap: 10px; padding: 8px max(12px, env(safe-area-inset-right, 0px)) 8px max(12px, env(safe-area-inset-left, 0px)); background: #fff; border-bottom: 2px solid #d8e6dd}
+.studio-bar, .puzzle-bar {position: relative; z-index: 1; height: var(--bar); flex: 0 0 var(--bar); display: flex; align-items: center; gap: 10px; padding: 8px max(12px, env(safe-area-inset-right, 0px)) 8px max(12px, env(safe-area-inset-left, 0px)); background: #fff; border-bottom: 2px solid #d8e6dd}
 .studio-bar .back-button {margin-right: auto}
 .studio-bar #save {margin-left: auto}
 .history-buttons {display: flex; gap: 8px}
 .studio-bar button {height: 56px; padding: 8px 14px}
 #saveIssue {display: flex; align-items: center; justify-content: center; gap: 12px; background: #fff0b8; padding: 8px}
-.studio-shell {min-height: 0; flex: 1; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto auto; gap: 8px; padding: 12px}
-.canvas-stage {grid-row: 1; grid-column: 1; min-width: 0; min-height: 0; position: relative; display: grid; place-items: center}
-.paper {background: #fff; box-shadow: 0 3px 14px #244b2e12; border-radius: 12px; overflow: hidden; aspect-ratio: 1; width: min(100%, calc(100dvh - var(--bar) - 242px - var(--safe-bottom) - env(safe-area-inset-top, 0px))); max-width: 900px}
+.studio-shell {min-height: 0; min-width: 0; overflow: hidden; flex: 1; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, max-content) minmax(0, max-content); gap: 8px; padding: 12px}
+.canvas-stage {grid-row: 1; grid-column: 1; min-width: 0; min-height: 0; position: relative; overflow: hidden; display: grid; place-items: center}
+.paper {position: absolute; inset: 0; margin: auto; width: var(--paper-side, 0px); height: var(--paper-side, 0px); max-width: 100%; max-height: 100%; background: #fff; box-shadow: 0 3px 14px #244b2e12; border-radius: 12px; overflow: hidden}
 .paper canvas {display: block; width: 100%; height: 100%; touch-action: none}
 .tool-dock {grid-row: 2; display: flex; align-items: center; justify-content: center; gap: 8px}
 .tool {width: 76px; height: 76px; min-height: 76px; flex-shrink: 0; flex-direction: column; padding: 7px 8px; gap: 3px; font-size: 15px}
 .tool .ui-icon {width: 32px; height: 32px}
 .tool.selected {background: var(--accent); border: 3px solid #6c5924; box-shadow: 0 3px 0 #6c592420}
-.palette-dock {grid-row: 3; display: grid; place-items: center; padding: 7px 4px 2px}
+.palette-dock {grid-row: 3; min-width: 0; min-height: 0; overflow: auto; max-height: 222px; display: grid; place-items: center; padding: 7px 4px 2px}
 #palette {display: grid; grid-template-columns: repeat(6, 60px); gap: 12px}
 .swatch {width: 60px; height: 60px; min-height: 60px; border: 2px solid #263a321f; border-radius: 50%; padding: 0; background: var(--c); color: var(--mark, #fff); position: relative}
 .swatch:hover:not(:disabled) {background: var(--c); filter: brightness(.99)}
@@ -163,10 +163,9 @@ dialog input {margin-bottom: 12px}
 @media (orientation: landscape) and (min-width: 700px) {
   .studio-shell {grid-template-columns: 104px minmax(0, 1fr) 140px; grid-template-rows: minmax(0, 1fr); gap: 12px}
   .canvas-stage {grid-column: 2}
-  .paper {width: min(100%, calc(100dvh - var(--bar) - 24px - var(--safe-bottom) - env(safe-area-inset-top, 0px)))}
   .tool-dock {grid-row: 1; grid-column: 1; flex-direction: column; gap: 12px}
   .tool {width: 86px}
-  .palette-dock {grid-row: 1; grid-column: 3; padding: 6px}
+  .palette-dock {grid-row: 1; grid-column: 3; max-height: none; padding: 6px; align-items: start}
   #palette {grid-template-columns: repeat(2, 56px); gap: 12px}
   .swatch {width: 56px; height: 56px; min-height: 56px}
 }
@@ -203,7 +202,6 @@ dialog input {margin-bottom: 12px}
   .tool {width: 64px; height: 72px; min-height: 72px; padding: 6px; font-size: 14px}
   #palette {grid-template-columns: repeat(6, 56px); gap: 8px 6px}
   .swatch {width: 56px; height: 56px; min-height: 56px}
-  .paper {width: min(100%, calc(100dvh - var(--bar) - 226px - var(--safe-bottom) - env(safe-area-inset-top, 0px)))}
   .puzzle-bar button {width: 56px; padding: 8px; flex-direction: column; gap: 1px; font-size: 13px}
   .puzzle-bar button .ui-icon {width: 23px; height: 23px}
   .puzzle-progress {min-width: 68px}
@@ -234,7 +232,6 @@ dialog input {margin-bottom: 12px}
   .tool {width: 56px; flex-shrink: 0}
   .tool-dock {gap: 4px}
   #palette {grid-template-columns: repeat(4, 56px); gap: 8px 10px}
-  .paper {width: min(100%, calc(100dvh - var(--bar) - 306px - var(--safe-bottom) - env(safe-area-inset-top, 0px)))}
   .puzzle-bar {flex-wrap: wrap; height: auto; min-height: 144px; flex-basis: 144px}
   .puzzle-progress {min-width: 75px}
   .puzzle-layout {--bar: 144px}
@@ -247,16 +244,15 @@ dialog input {margin-bottom: 12px}
 .swatch {user-select: none; -webkit-user-select: none; -webkit-touch-callout: none}
 
 .ui-icon {display: inline-flex; align-items: center; justify-content: center; font-size: 28px; line-height: 1; font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif}
-.tool-dock {flex-wrap: wrap}
+.tool-dock {flex-wrap: wrap; min-width: 0; min-height: 0; overflow: auto; max-height: 176px; padding: 4px 0}
 .tool {font-size: 13px}
 
 /* Text presentation keeps the selection mark legible on every paint color. */
 .swatch .ui-icon {font-family: system-ui, sans-serif; color: var(--mark); font-size: 30px}
 @media (orientation: landscape) and (min-width: 700px) {
-  .tool-dock {flex-wrap: nowrap; overflow-y: auto; min-height: 0; justify-content: flex-start; padding: 4px 0}
+  .tool-dock {max-height: none; flex-wrap: nowrap; overflow-y: auto; min-height: 0; justify-content: flex-start; padding: 4px 0}
 }
 @media (orientation: portrait) and (max-width: 600px) {
   .tool-dock {gap: 5px}
   .tool {width: 68px; font-size: 11px}
-  .paper {width: min(100%, calc(100dvh - var(--bar) - 322px - var(--safe-bottom) - env(safe-area-inset-top, 0px)))}
 }

@@ -1,3 +1,4 @@
+import { watchStudioPaper } from "./studio-layout.mjs";
 import { manageUpdates } from "./updates.mjs";
 import { beginTexture, textureSegment } from "./textured-paint.mjs";
 import { PROFILES, SIDE, puzzleGrid, shuffled, PuzzleClock, formatTime, floodFill, validateArtwork } from "./core.mjs";
@@ -75,6 +76,7 @@ function thumbnail() {
   return result.length <= 2e5 ? result : c.toDataURL("image/jpeg", 0.75);
 }
 let appUpdates = null;
+const fitStudio = watchStudioPaper($("canvasStage"), $("studioPaper"));
 let keyboardNavigation = false;
 document.addEventListener("keydown", (e) => {
   if (e.key === "Tab") keyboardNavigation = true;
@@ -96,6 +98,7 @@ function view(name) {
     $(v + "Tab").classList.toggle("active", active);
     $(v + "Tab").setAttribute("aria-pressed", String(active));
   });
+  if (name === "studio") fitStudio();
   focusView(name);
   appUpdates?.available();
 }

@@ -116,3 +116,9 @@ The installed app checks for updates at launch, on returning to the foreground, 
 No deletion or reinstallation is needed. Installations running the previous release may need all Color Club windows fully closed and reopened once to acquire this updater. Thereafter updates can apply within an idle session. Offline users keep the cached complete release until a new one can download.
 
 Validation: 58 automated tests and build checks pass, including safe activation, save failure, multiple windows, first installation and scoped cache cleanup. Physical Home Screen/Safari verification remains pending.
+
+## Coloring layout containment
+
+The coloring paper now measures the actual remaining canvas-stage width and height, capped at 900 CSS pixels. Its absolute placement contributes no intrinsic size to the grid, and the stage clips overflow. ResizeObserver refits it after controls wrap, brush size appears, a remembered color adds a palette row, a save issue opens, or the window rotates/resizes. Viewport/orientation listeners provide a fallback. The backing canvas and saved paint are unchanged. Tool/palette docks can scroll within their own allotted space on short screens.
+
+Validation: 60 tests and build checks pass, including stage height changes and orientation/viewport resizing. These are layout-controller regressions; physical Safari/iPad and rendered visual verification remain pending.

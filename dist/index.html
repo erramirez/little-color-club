@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="color-club-release" content="1fcb3d0cf88fa16a">
+  <meta name="color-club-release" content="c04f6a8469787f76">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#eef6f0">
@@ -55,8 +55,8 @@
       </div>
       <div id="saveIssue" hidden role="alert"><span>Can’t save yet.</span><button id="retrySave">Try again</button></div>
       <div class="studio-shell">
-        <div class="canvas-stage">
-          <div class="paper"><canvas id="canvas" width="900" height="900" aria-label="Coloring picture. Select a color and use Fill, Pen, Watercolor, Crayon, or Erase."></canvas></div>
+        <div id="canvasStage" class="canvas-stage">
+          <div id="studioPaper" class="paper"><canvas id="canvas" width="900" height="900" aria-label="Coloring picture. Select a color and use Fill, Pen, Watercolor, Crayon, or Erase."></canvas></div>
           <div id="loadingArt" class="loading-art" hidden role="status"><img id="loadingPreview" alt=""><span>Opening…</span></div>
         </div>
         <div class="tool-dock" role="group" aria-label="Coloring tools">
