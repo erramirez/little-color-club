@@ -1,4 +1,4 @@
-/* Generated release hashes keep the offline shell together; no skipWaiting during play. */
+/* Generated release hashes keep the offline shell together. Activation during play is deferred. */
 const RELEASE = __RELEASE__;
 const HASHES = __HASHES__;
 const SHELL = 'little-color-club-shell-' + RELEASE;
@@ -19,7 +19,20 @@ self.addEventListener('install', event => event.waitUntil((async () => {
   const cache = await caches.open(SHELL);
   await Promise.all(entries.map(([path, response]) => cache.put(path, response)));
 })()));
-self.addEventListener('activate', event => event.waitUntil((async () => {
+self.addEventListener('message', event => {
+  if (event.data?.type !== 'APPLY_UPDATE' || !event.ports?.[0]) return;
+  event.waitUntil((async () => {
+    // Never force another tab or Home Screen window onto a different release.
+    const windows = await self.clients.matchAll({type: 'window', includeUncontrolled: true});
+    if (windows.length !== 1 || windows[0].id !== event.source?.id) {
+      event.ports[0].postMessage('OTHER_WINDOWS');
+      return;
+    }
+    event.ports[0].postMessage('UPDATING');
+    await self.skipWaiting();
+  })());
+});
+self.addEventListener('activate' , event => event.waitUntil((async () => {
   const keys = await caches.keys();
   await Promise.all(keys.filter(k => k.startsWith('little-color-club-') && ![SHELL, IMAGES].includes(k)).map(k => caches.delete(k)));
   await self.clients.claim();

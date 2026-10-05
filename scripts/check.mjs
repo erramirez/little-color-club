@@ -1,7 +1,7 @@
 import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { PAGES } from "../dist/library.mjs";
-for (const file of ["app.mjs", "textured-paint.mjs", "core.mjs", "puzzle-drag.mjs", "library.mjs", "storage.mjs", "sync.mjs", "sw.js"]) execFileSync(process.execPath, ["--check", "dist/" + file]);
+for (const file of ["app.mjs", "textured-paint.mjs", "updates.mjs", "core.mjs", "puzzle-drag.mjs", "library.mjs", "storage.mjs", "sync.mjs", "sw.js"]) execFileSync(process.execPath, ["--check", "dist/" + file]);
 const manifest = JSON.parse(readFileSync("dist/manifest.webmanifest"));
 for (const icon of manifest.icons) if (!existsSync("dist" + icon.src)) throw new Error("Missing app icon " + icon.src);
 const html = readFileSync("dist/index.html", "utf8"), app = readFileSync("dist/app.mjs", "utf8");

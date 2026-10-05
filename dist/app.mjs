@@ -1,3 +1,4 @@
+import { manageUpdates } from "./updates.mjs";
 import { beginTexture, textureSegment } from "./textured-paint.mjs";
 import { PROFILES, SIDE, puzzleGrid, shuffled, PuzzleClock, formatTime, floodFill, validateArtwork } from "./core.mjs";
 import { PAGES, THEMES, pageById, pageThumbnail } from "./library.mjs";
@@ -73,6 +74,7 @@ function thumbnail() {
   const result = c.toDataURL("image/webp", 0.75);
   return result.length <= 2e5 ? result : c.toDataURL("image/jpeg", 0.75);
 }
+let appUpdates = null;
 let keyboardNavigation = false;
 document.addEventListener("keydown", (e) => {
   if (e.key === "Tab") keyboardNavigation = true;
@@ -95,6 +97,7 @@ function view(name) {
     $(v + "Tab").setAttribute("aria-pressed", String(active));
   });
   focusView(name);
+  appUpdates?.available();
 }
 function updateHistory() {
   $("undo").disabled = !ready || !undo.length;
@@ -1023,7 +1026,10 @@ document.addEventListener("visibilitychange", () => {
     pausePuzzle();
     saveLocal().catch(() => {
     });
-  } else if (profile) flush();
+  } else {
+    if (profile) flush();
+    appUpdates?.check();
+  }
 });
 window.addEventListener("pagehide", () => {
   saveLocal().catch(() => {
@@ -1119,7 +1125,14 @@ async function boot() {
     flush();
     profileButtons.forEach((b) => b.disabled = false);
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("./sw.js").catch(() => {
+      appUpdates = manageUpdates({
+        serviceWorker: navigator.serviceWorker,
+        isSafe: () => !document.hidden && !drawing && !["studio", "puzzle"].includes(document.body.dataset.view) && ![...document.querySelectorAll("dialog")].some(d => d.open),
+        save: saveLocal,
+        lock: () => $("updatingDialog").showModal(),
+        unlock: () => $("updatingDialog").close(),
+        status: message => $("updateStatus").textContent = message,
+        reload: () => window.location.reload()
       });
       navigator.storage?.persist?.().catch(() => {
       });
@@ -1208,3 +1221,9 @@ $("retrySync").onclick = async () => {
     b.disabled = false;
   }
 };
+
+$("updatingDialog").oncancel = event => event.preventDefault();
+$("checkUpdates").onclick = () => appUpdates?.check(true);
+$("closeParent").onclick = () => { $("parentDialog").close(); appUpdates?.available(); };
+window.addEventListener("online", () => appUpdates?.check());
+setInterval(() => { if (!document.hidden) appUpdates?.check(); }, 300000);

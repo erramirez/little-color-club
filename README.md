@@ -108,3 +108,11 @@ Pen retains solid coverage. Watercolor uses translucent coverage with soft edges
 Control symbols throughout static screens and dynamically created buttons now use emoji, including settings, navigation, drawing, gallery, puzzle, sharing and completion. Text labels and accessible names are retained, and symbols are decorative for screen readers. The existing crayon brand/install artwork remains. The old SVG control sprite is unused. The tool rail scrolls on short landscape screens; tools wrap on narrow portrait screens.
 
 Validation: 51 automated tests and build checks pass. Pixel tests cover translucent texture, repeated-pass buildup, mixed colors and event-frequency independence; controller tests cover tool selection and gesture history. Browser preview was blocked by an unavailable security-policy check; rendered layout, emoji appearance and iPad responsiveness remain unverified. Publication authorized for October 4, 2026.
+
+## Home Screen updates
+
+The installed app checks for updates at launch, on returning to the foreground, on reconnecting and every five minutes while visible. Grown-ups → Check for updates provides a manual check and status. Complete, hash-verified releases activate automatically on a safe screen after local saves finish; coloring, puzzles and open dialogs defer activation. The brief updating dialog blocks new input until the app reloads. A failed save keeps the current release; another open window defers activation until that window is closed. Activation removes obsolete app shell/image caches, while saved pictures, pending uploads and family settings in IndexedDB/local storage remain untouched.
+
+No deletion or reinstallation is needed. Installations running the previous release may need all Color Club windows fully closed and reopened once to acquire this updater. Thereafter updates can apply within an idle session. Offline users keep the cached complete release until a new one can download.
+
+Validation: 58 automated tests and build checks pass, including safe activation, save failure, multiple windows, first installation and scoped cache cleanup. Physical Home Screen/Safari verification remains pending.

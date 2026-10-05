@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="color-club-release" content="bf201ca57b6e8a5e">
+  <meta name="color-club-release" content="1fcb3d0cf88fa16a">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#eef6f0">
@@ -131,9 +131,11 @@
   <h2 id="resetHeading">Erase all your colors?</h2>
   <div class="dialog-actions"><button id="cancelReset">No</button><button id="confirmReset" class="danger">Yes, erase</button></div>
 </dialog>
+<dialog id="updatingDialog" aria-labelledby="updatingHeading"><h2 id="updatingHeading">Updating Color Club…</h2><p>Your saved pictures will be here when it opens again.</p></dialog>
 <dialog id="parentDialog" aria-labelledby="parentHeading">
   <div class="dialog-top"><h2 id="parentHeading">Grown-ups</h2><button id="closeParent" class="icon-only" aria-label="Close settings"><span class="ui-icon" aria-hidden="true">✖️</span></button></div>
   <section><h3>Add to the iPad</h3><p>In Safari, tap Share → Add to Home Screen. Open Color Club from the new icon. Use your three-word family phrase below to connect that installation if needed.</p></section>
+  <section><h3>App updates</h3><p>Updates arrive here without removing the Home Screen app. Finish coloring or your puzzle before an update is applied.</p><button id="checkUpdates">Check for updates</button><p id="updateStatus" role="status">Updates are checked automatically when connected.</p></section>
   <section class="parent-files"><h3>Your files</h3><button id="manageGallery">Manage pictures</button>
     <label class="file-button"><span class="ui-icon" aria-hidden="true">🖼️</span><span>Add a coloring page</span><input id="upload" type="file" accept="image/*" aria-label="Add a coloring page"></label>
     <label class="file-button"><span class="ui-icon" aria-hidden="true">🖼️</span><span>Open an editable file</span><input id="importArt" type="file" accept=".json,.colorclub,application/json" aria-label="Open an editable artwork file"></label>

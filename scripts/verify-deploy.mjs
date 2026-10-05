@@ -2,7 +2,7 @@ import {readFile} from 'node:fs/promises';
 const origin=process.argv[2];
 if(!/^https:\/\/[a-z0-9-]+\.netlify\.app$/.test(origin))throw new Error('Pass a Netlify URL.');
 const manifest=JSON.parse(await readFile(new URL('../dist/manifest.webmanifest',import.meta.url),'utf8'));
-const paths=new Set(['/','/style.css','/app.mjs','/library.mjs','/core.mjs','/storage.mjs','/sync.mjs','/puzzle-drag.mjs','/textured-paint.mjs','/sw.js','/manifest.webmanifest','/icons/crayons.svg','/icons/crayons-apple.png',...manifest.icons.map(i=>i.src)]);
+const paths=new Set(['/','/style.css','/app.mjs','/library.mjs','/core.mjs','/storage.mjs','/sync.mjs','/puzzle-drag.mjs','/textured-paint.mjs','/updates.mjs','/sw.js','/manifest.webmanifest','/icons/crayons.svg','/icons/crayons-apple.png',...manifest.icons.map(i=>i.src)]);
 for(const path of paths){
  const response=await fetch(origin+path);
  if(!response.ok)throw new Error(path+' returned '+response.status);
