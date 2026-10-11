@@ -960,6 +960,14 @@ for (const count of [9, 16, 24, 36]) {
   b.setAttribute("aria-label", count + " piece puzzle");
   const { rows, cols } = puzzleGrid(count), svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("viewBox", "0 0 62 62");
+  svg.setAttribute("class", "puzzle-grid-preview");
+  svg.setAttribute("width", "62");
+  svg.setAttribute("height", "62");
+  svg.setAttribute("fill", "none");
+  svg.setAttribute("stroke", "currentColor");
+  svg.setAttribute("stroke-width", "1.3");
+  svg.setAttribute("stroke-linecap", "round");
+  svg.setAttribute("stroke-linejoin", "round");
   svg.setAttribute("aria-hidden", "true");
   const frame = document.createElementNS("http://www.w3.org/2000/svg", "rect");
   frame.setAttribute("x", "1");

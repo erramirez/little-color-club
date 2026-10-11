@@ -126,7 +126,7 @@ body[data-view=studio] main, body[data-view=puzzle] main {max-width: none; paddi
 .paused #tray {opacity: .4; pointer-events: none}
 .puzzle-sizes {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px}
 .puzzle-size {min-height: 128px; flex-direction: column; gap: 10px; font-size: 28px; background: #edf6f0}
-.puzzle-size .ui-icon {width: 62px; height: 62px; stroke-width: 1.3}
+.puzzle-grid-preview {width: 62px; height: 62px; flex-shrink: 0}
 .puzzle-size:first-child {border: 3px solid var(--green)}
 .celebration {width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; background: #d9efdc; color: var(--green); margin: 0 auto 18px}
 .celebration .ui-icon {width: 58px; height: 58px; stroke-width: 3.5}

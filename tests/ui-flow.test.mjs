@@ -116,3 +116,15 @@ test('all control icons use emoji and keep decorative symbols hidden from screen
  for(const symbol of u.document.querySelectorAll('.ui-icon'))assert.equal(symbol.getAttribute('aria-hidden'),'true');
  assert.equal(u.$('parentBtn').getAttribute('aria-label'),'Grown-up settings');
 });
+
+test('puzzle selector previews remain unfilled grids after emoji control styling',async()=>{
+ const u=await setup();
+ for(const [i,count] of [9,16,24,36].entries()) {
+  const button=u.$('puzzleSizes').children[i], preview=button.children[0];
+  const {rows,cols}=core.puzzleGrid(count);
+  assert.equal(preview.tag,'svg');assert.equal(preview.getAttribute('fill'),'none');assert.equal(preview.getAttribute('stroke'),'currentColor');
+  assert.equal(preview.getAttribute('width'),'62');assert.equal(preview.getAttribute('height'),'62');assert.equal(preview.getAttribute('aria-hidden'),'true');
+  assert.equal(preview.children.length,1+(rows-1)+(cols-1));
+  assert.equal(button.getAttribute('aria-label'),count+' piece puzzle');
+ }
+});
